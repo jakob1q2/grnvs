@@ -1,0 +1,6 @@
+rm -rf build
+rm -f collatz
+mkdir build
+cc -Wall -Wextra -fdiagnostics-color=auto src/arguments.c -c -o build/arguments.o
+cc -Wall -Wextra -fdiagnostics-color=auto src/assignment1.c -c -o build/assignment1.o
+cc build/arguments.o build/assignment1.o  -o collatz

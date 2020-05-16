@@ -1,0 +1,12 @@
+This is GRNVS-Tester in version: 3.2.5
+This is running the test-suite for: collatz
+
+Summary: Passed(6), Failed(0)
+Test: Testee runs - PASS
+Test: Testee prints newline in the right place - PASS
+Test: Testee handles case '1' - PASS
+Test: Testee handles case '2' - PASS
+Test: Testee handles case '19' - PASS
+Test: Testee handles case '42' - PASS
+
+0 minutes and 2 seconds
