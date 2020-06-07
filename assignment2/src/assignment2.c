@@ -198,7 +198,7 @@ void assignment2(int fd, int frames) {
     /* Print your summary here */
     while (infoList != NULL) {
         temp = min(infoList);
-        fprintf(stdout, "0x%4x: %d frames, %d bytes\n", temp->ethType,
+        fprintf(stdout, "0x%04x: %d frames, %d bytes\n", temp->ethType,
                 temp->frameCounter, temp->byteCounter);
         infoList = removeByType(temp->ethType, infoList);
     }
