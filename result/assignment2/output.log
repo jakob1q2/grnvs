@@ -14,7 +14,7 @@ I am ready!
 0x0806: 1 frames, 64 bytes
 0x86dd: 2 frames, 128 bytes
 0 of them were for me
-1 of them were multicast
+0 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -28,7 +28,7 @@ I am ready!
 0x86dd: 1 frames, 64 bytes
 0xffff: 1 frames, 64 bytes
 0 of them were for me
-1 of them were multicast
+0 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -51,7 +51,7 @@ I am ready!
 0x0800: 2 frames, 128 bytes
 0x86dd: 3 frames, 192 bytes
 0 of them were for me
-1 of them were multicast
+0 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -63,55 +63,42 @@ I am ready!
 0x0800: 2 frames, 132 bytes
 0x86dd: 3 frames, 264 bytes
 0 of them were for me
-1 of them were multicast
+0 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: "for me" line has proper format
 Forking: ethstats -i jn0 1
-Local line did not match the expected value:
-Expected: 
-1 of them were for me
-
-Got: 
-0 of them were for me
-
 Stdout: 86 byte, 0 byte dropped
 I am ready!
 0x0800: 1 frames, 64 bytes
-0 of them were for me
-1 of them were multicast
+1 of them were for me
+0 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee counts frames for own MAC address (1)
 Forking: ethstats -i jn0 10
-Own frame count did not match the expected value:
-Expected: 5
-Got: 0
-Stdout: 116 byte, 0 byte dropped
+Stdout: 115 byte, 0 byte dropped
 I am ready!
 0x0800: 6 frames, 384 bytes
 0x86dd: 4 frames, 256 bytes
-0 of them were for me
-10 of them were multicast
+5 of them were for me
+5 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee counts frames for own MAC address (2)
 Forking: ethstats -i jn0 10
-Own frame count did not match the expected value:
-Expected: 7
-Got: 0
-Stdout: 116 byte, 0 byte dropped
+Stdout: 115 byte, 0 byte dropped
 I am ready!
 0x0800: 6 frames, 384 bytes
 0x86dd: 4 frames, 256 bytes
-0 of them were for me
-10 of them were multicast
+7 of them were for me
+3 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -129,30 +116,24 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee counts frames to multicast MAC (1)
 Forking: ethstats -i jn0 10
-Multicast frame count did not match the expected value:
-Expected: 2
-Got: 5
 Stdout: 115 byte, 0 byte dropped
 I am ready!
 0x0800: 6 frames, 384 bytes
 0x86dd: 4 frames, 256 bytes
 0 of them were for me
-5 of them were multicast
+2 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee counts frames to multicast MAC (2)
 Forking: ethstats -i jn0 10
-Multicast frame count did not match the expected value:
-Expected: 4
-Got: 5
 Stdout: 115 byte, 0 byte dropped
 I am ready!
 0x0800: 6 frames, 384 bytes
 0x86dd: 4 frames, 256 bytes
 0 of them were for me
-5 of them were multicast
+4 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -167,7 +148,7 @@ I am ready!
 0x0806: 3 frames, 573 bytes
 0x86dd: 4 frames, 191 bytes
 0 of them were for me
-4 of them were multicast
+0 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -180,51 +161,37 @@ Stdout: 86 byte, 0 byte dropped
 I am ready!
 0x0800: 1 frames, 64 bytes
 0 of them were for me
-1 of them were multicast
+0 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee can do a full run
 Forking: ethstats -i jn0 10
-Local line did not match the expected value:
-Expected: 
-3 of them were for me
-
-Got: 
-0 of them were for me
-
-Multicast line did not match the expected value:
-Expected: 
-4 of them were multicast
-
-Got: 
-10 of them were multicast
-
 Read something that's not stdout:
 The child closed the pipe (probably died)
 Printed line did not match the expected format
 Expected format is:
-Total rate 0.007608 Mbit/s | 0.000907 MiB/s | 0.951022 kB/s | 7.427479 Kibit/s
+Total rate 0.008239 Mbit/s | 0.000982 MiB/s | 1.029821 kB/s | 8.042901 Kibit/s
 Mbit/s did not match the expected value:
-Expected: 0.007608
+Expected: 0.008239
 Got: 0.000000
 MiB/s did not match the expected value:
-Expected: 0.000907
+Expected: 0.000982
 Got: 0.000000
 kB/s did not match the expected value:
-Expected: 0.951022
+Expected: 1.029821
 Got: 0.000000
 Kibit/s did not match the expected value:
-Expected: 7.427479
+Expected: 8.042901
 Got: 0.000000
-Stdout: 144 byte, 0 byte dropped
+Stdout: 143 byte, 0 byte dropped
 I am ready!
 0x0800: 3 frames, 192 bytes
 0x0806: 3 frames, 209 bytes
 0x86dd: 4 frames, 256 bytes
-0 of them were for me
-10 of them were multicast
+3 of them were for me
+4 of them were multicast
 
 Stderr: 0 byte, 0 byte dropped
 

@@ -1,21 +1,21 @@
 This is GRNVS-Tester in version: 3.2.5
 This is running the test-suite for: ethstats
 
-Summary: Passed(7), Failed(8)
+Summary: Passed(12), Failed(3)
 Test: Testee prints ready marker - PASS
 Test: Testee prints the EtherTypes - PASS
 Test: Testee handles edge case EtherTypes - PASS
 Test: EtherType line has proper format - PASS
 Test: Testee prints the correct frame count - PASS
 Test: Testee prints the correct byte count - PASS
-Test: "for me" line has proper format - FAIL
-Test: Testee counts frames for own MAC address (1) - FAIL
-Test: Testee counts frames for own MAC address (2) - FAIL
+Test: "for me" line has proper format - PASS
+Test: Testee counts frames for own MAC address (1) - PASS
+Test: Testee counts frames for own MAC address (2) - PASS
 Test: "multicast" line has proper format - PASS
-Test: Testee counts frames to multicast MAC (1) - FAIL
-Test: Testee counts frames to multicast MAC (2) - FAIL
+Test: Testee counts frames to multicast MAC (1) - PASS
+Test: Testee counts frames to multicast MAC (2) - PASS
 Test: Testee prints proper data rates - FAIL
 Test: Testee terminates when expected - FAIL
 Test: Testee can do a full run - FAIL
 
-0 minutes and 8 seconds
+0 minutes and 9 seconds
