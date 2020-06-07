@@ -8,47 +8,12 @@ rm -f libraw.a
 make[1]: Leaving directory '/assignment2/libraw'
 cc -Wall -Wextra -g -fdiagnostics-color=auto -Ilibraw/include src/arguments.c -c -o build/arguments.o
 cc -Wall -Wextra -g -fdiagnostics-color=auto -Ilibraw/include src/assignment2.c -c -o build/assignment2.o
-src/assignment2.c: In function 'newInfo':
-src/assignment2.c:25:27: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
-     struct typeInfo *ti = malloc(sizeof(struct typeInfo));
-                           ^~~~~~
-src/assignment2.c:25:27: warning: incompatible implicit declaration of built-in function 'malloc'
-src/assignment2.c:25:27: note: include '<stdlib.h>' or provide a declaration of 'malloc'
-src/assignment2.c:10:1:
-+#include <stdlib.h>
- 
-src/assignment2.c:25:27:
-     struct typeInfo *ti = malloc(sizeof(struct typeInfo));
-                           ^~~~~~
-src/assignment2.c: In function 'freeInfo':
-src/assignment2.c:46:9: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
-         free(temp);
-         ^~~~
-src/assignment2.c:46:9: warning: incompatible implicit declaration of built-in function 'free'
-src/assignment2.c:46:9: note: include '<stdlib.h>' or provide a declaration of 'free'
-src/assignment2.c: In function 'removeByType':
-src/assignment2.c:73:9: warning: incompatible implicit declaration of built-in function 'free'
-         free(temp);
-         ^~~~
-src/assignment2.c:73:9: note: include '<stdlib.h>' or provide a declaration of 'free'
-src/assignment2.c:85:9: warning: incompatible implicit declaration of built-in function 'free'
-         free(t);
-         ^~~~
-src/assignment2.c:85:9: note: include '<stdlib.h>' or provide a declaration of 'free'
-src/assignment2.c: In function 'getMac':
-src/assignment2.c:112:22: error: invalid initializer
-     uint8_t mac[6] = memcpy(mac, buf + offset, ETH_ALEN);
-                      ^~~~~~
-src/assignment2.c: In function 'getType':
-src/assignment2.c:122:23: error: invalid initializer
-     uint8_t type[2] = memcpy(type, buf + 12, 2);
-                       ^~~~~~
-src/assignment2.c: In function 'assignment2':
-src/assignment2.c:182:17: warning: comparison between pointer and integer
-         if (mac == mymac) {
-                 ^~
-src/assignment2.c: In function 'newInfo':
-src/assignment2.c:32:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-make: *** [Makefile:21: build/assignment2.o] Error 1
+make -C libraw/
+make[1]: Entering directory '/assignment2/libraw'
+gcc -Iinclude -ggdb -Wall -Wextra -pedantic -fdiagnostics-color=auto -O2 -fPIC -fno-strict-aliasing   -c -o src/raw.o src/raw.c
+gcc -Iinclude -ggdb -Wall -Wextra -pedantic -fdiagnostics-color=auto -O2 -fPIC -fno-strict-aliasing   -c -o src/hexdump.o src/hexdump.c
+gcc -Iinclude -ggdb -Wall -Wextra -pedantic -fdiagnostics-color=auto -O2 -fPIC -fno-strict-aliasing   -c -o src/checksum.o src/checksum.c
+gcc -Iinclude -ggdb -Wall -Wextra -pedantic -fdiagnostics-color=auto -O2 -fPIC -fno-strict-aliasing   -c -o src/crc.o src/crc.c
+ar rcs libraw.a src/raw.o src/hexdump.o src/checksum.o src/crc.o
+make[1]: Leaving directory '/assignment2/libraw'
+cc build/arguments.o build/assignment2.o libraw/libraw.a -o ethstats

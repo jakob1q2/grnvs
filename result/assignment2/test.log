@@ -1,58 +1,21 @@
-failed to build assignment2
+This is GRNVS-Tester in version: 3.2.5
+This is running the test-suite for: ethstats
 
-rm -rf build/arguments.o build/assignment2.o
-rm -rf build
-rm -f ethstats
-make -C libraw/ clean
-make[1]: Entering directory '/assignment2/libraw'
-rm -rf src/raw.o src/hexdump.o src/checksum.o src/crc.o
-rm -f libraw.a
-make[1]: Leaving directory '/assignment2/libraw'
-cc -Wall -Wextra -g -fdiagnostics-color=auto -Ilibraw/include src/arguments.c -c -o build/arguments.o
-cc -Wall -Wextra -g -fdiagnostics-color=auto -Ilibraw/include src/assignment2.c -c -o build/assignment2.o
-src/assignment2.c: In function 'newInfo':
-src/assignment2.c:25:27: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
-     struct typeInfo *ti = malloc(sizeof(struct typeInfo));
-                           ^~~~~~
-src/assignment2.c:25:27: warning: incompatible implicit declaration of built-in function 'malloc'
-src/assignment2.c:25:27: note: include '<stdlib.h>' or provide a declaration of 'malloc'
-src/assignment2.c:10:1:
-+#include <stdlib.h>
- 
-src/assignment2.c:25:27:
-     struct typeInfo *ti = malloc(sizeof(struct typeInfo));
-                           ^~~~~~
-src/assignment2.c: In function 'freeInfo':
-src/assignment2.c:46:9: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
-         free(temp);
-         ^~~~
-src/assignment2.c:46:9: warning: incompatible implicit declaration of built-in function 'free'
-src/assignment2.c:46:9: note: include '<stdlib.h>' or provide a declaration of 'free'
-src/assignment2.c: In function 'removeByType':
-src/assignment2.c:73:9: warning: incompatible implicit declaration of built-in function 'free'
-         free(temp);
-         ^~~~
-src/assignment2.c:73:9: note: include '<stdlib.h>' or provide a declaration of 'free'
-src/assignment2.c:85:9: warning: incompatible implicit declaration of built-in function 'free'
-         free(t);
-         ^~~~
-src/assignment2.c:85:9: note: include '<stdlib.h>' or provide a declaration of 'free'
-src/assignment2.c: In function 'getMac':
-src/assignment2.c:112:22: error: invalid initializer
-     uint8_t mac[6] = memcpy(mac, buf + offset, ETH_ALEN);
-                      ^~~~~~
-src/assignment2.c: In function 'getType':
-src/assignment2.c:122:23: error: invalid initializer
-     uint8_t type[2] = memcpy(type, buf + 12, 2);
-                       ^~~~~~
-src/assignment2.c: In function 'assignment2':
-src/assignment2.c:182:17: warning: comparison between pointer and integer
-         if (mac == mymac) {
-                 ^~
-src/assignment2.c: In function 'newInfo':
-src/assignment2.c:32:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-make: *** [Makefile:21: build/assignment2.o] Error 1
+Summary: Passed(2), Failed(13)
+Test: Testee prints ready marker - PASS
+Test: Testee prints the EtherTypes - FAIL
+Test: Testee handles edge case EtherTypes - FAIL
+Test: EtherType line has proper format - FAIL
+Test: Testee prints the correct frame count - FAIL
+Test: Testee prints the correct byte count - PASS
+Test: "for me" line has proper format - FAIL
+Test: Testee counts frames for own MAC address (1) - FAIL
+Test: Testee counts frames for own MAC address (2) - FAIL
+Test: "multicast" line has proper format - FAIL
+Test: Testee counts frames to multicast MAC (1) - FAIL
+Test: Testee counts frames to multicast MAC (2) - FAIL
+Test: Testee prints proper data rates - FAIL
+Test: Testee terminates when expected - FAIL
+Test: Testee can do a full run - FAIL
 
-0 minutes and 3 seconds
+0 minutes and 7 seconds

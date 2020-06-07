@@ -1,0 +1,306 @@
+Running testcase: Testee prints ready marker
+Forking: ethstats -i jn0 10
+Stdout: 12 byte, 0 byte dropped
+I am ready!
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee prints the EtherTypes
+Forking: ethstats -i jn0 5
+IPv4 ethtype did not start with the expected value:
+Expected: 
+0x0800: 
+Got: 
+800: 2 frames, 128 bytes
+
+ARP ethtype did not start with the expected value:
+Expected: 
+0x0806: 
+Got: 
+806: 1 frames, 64 bytes
+
+IPv6 ethtype did not start with the expected value:
+Expected: 
+0x86dd: 
+Got: 
+86dd: 2 frames, 128 bytes
+
+Stdout: 134 byte, 0 byte dropped
+I am ready!
+800: 2 frames, 128 bytes
+806: 1 frames, 64 bytes
+86dd: 2 frames, 128 bytes
+0 of them were for me
+2 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee handles edge case EtherTypes
+Forking: ethstats -i jn0 5
+Null ethtype did not start with the expected value:
+Expected: 
+0x0000: 
+Got: 
+0: 2 frames, 128 bytes
+
+IPv4 ethtype did not start with the expected value:
+Expected: 
+0x0800: 
+Got: 
+800: 1 frames, 64 bytes
+
+IPv6 ethtype did not start with the expected value:
+Expected: 
+0x86dd: 
+Got: 
+86dd: 1 frames, 64 bytes
+
+FFFF ethtype did not start with the expected value:
+Expected: 
+0xffff: 
+Got: 
+ffff: 1 frames, 64 bytes
+
+Stdout: 156 byte, 0 byte dropped
+I am ready!
+0: 2 frames, 128 bytes
+800: 1 frames, 64 bytes
+86dd: 1 frames, 64 bytes
+ffff: 1 frames, 64 bytes
+0 of them were for me
+2 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: EtherType line has proper format
+Forking: ethstats -i jn0 1
+Printed line did not match the expected format
+Expected format is:
+0x0800: 1 frames, 64 bytes
+Stdout: 83 byte, 0 byte dropped
+I am ready!
+800: 1 frames, 64 bytes
+0 of them were for me
+0 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee prints the correct frame count
+Forking: ethstats -i jn0 5
+Could not parse "framecount for IPv4" as integer
+Could not parse "framecount for IPv6" as integer
+Stdout: 110 byte, 0 byte dropped
+I am ready!
+800: 2 frames, 128 bytes
+86dd: 3 frames, 192 bytes
+0 of them were for me
+2 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee prints the correct byte count
+Forking: ethstats -i jn0 5
+Stdout: 110 byte, 0 byte dropped
+I am ready!
+800: 2 frames, 132 bytes
+86dd: 3 frames, 264 bytes
+0 of them were for me
+2 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: "for me" line has proper format
+Forking: ethstats -i jn0 1
+Local line did not match the expected value:
+Expected: 
+1 of them were for me
+
+Got: 
+0 of them were for me
+
+Stdout: 83 byte, 0 byte dropped
+I am ready!
+800: 1 frames, 64 bytes
+0 of them were for me
+1 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee counts frames for own MAC address (1)
+Forking: ethstats -i jn0 10
+Own frame count did not match the expected value:
+Expected: 5
+Got: 0
+Stdout: 111 byte, 0 byte dropped
+I am ready!
+800: 6 frames, 384 bytes
+86dd: 4 frames, 256 bytes
+0 of them were for me
+10 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee counts frames for own MAC address (2)
+Forking: ethstats -i jn0 10
+Own frame count did not match the expected value:
+Expected: 7
+Got: 0
+Stdout: 111 byte, 0 byte dropped
+I am ready!
+800: 6 frames, 384 bytes
+86dd: 4 frames, 256 bytes
+0 of them were for me
+10 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: "multicast" line has proper format
+Forking: ethstats -i jn0 1
+Multicast line did not match the expected value:
+Expected: 
+1 of them were multicast
+
+Got: 
+0 of them were multicast
+
+Stdout: 83 byte, 0 byte dropped
+I am ready!
+800: 1 frames, 64 bytes
+0 of them were for me
+0 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee counts frames to multicast MAC (1)
+Forking: ethstats -i jn0 10
+Multicast frame count did not match the expected value:
+Expected: 2
+Got: 3
+Stdout: 110 byte, 0 byte dropped
+I am ready!
+800: 6 frames, 384 bytes
+86dd: 4 frames, 256 bytes
+0 of them were for me
+3 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee counts frames to multicast MAC (2)
+Forking: ethstats -i jn0 10
+Multicast frame count did not match the expected value:
+Expected: 4
+Got: 3
+Stdout: 110 byte, 0 byte dropped
+I am ready!
+800: 6 frames, 384 bytes
+86dd: 4 frames, 256 bytes
+0 of them were for me
+3 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee prints proper data rates
+Forking: ethstats -i jn0 10
+Read something that's not stdout:
+The child closed the pipe (probably died)
+Stdout: 135 byte, 0 byte dropped
+I am ready!
+800: 3 frames, 573 bytes
+806: 3 frames, 573 bytes
+86dd: 4 frames, 191 bytes
+0 of them were for me
+5 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee terminates when expected
+Forking: ethstats -i jn0 1
+Read something that's not stdout:
+The child closed the pipe (probably died)
+Stdout: 83 byte, 0 byte dropped
+I am ready!
+800: 1 frames, 64 bytes
+0 of them were for me
+1 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee can do a full run
+Forking: ethstats -i jn0 10
+IP4 line did not match the expected value:
+Expected: 
+0x0800: 3 frames, 192 bytes
+
+Got: 
+800: 3 frames, 192 bytes
+
+ARP line did not match the expected value:
+Expected: 
+0x0806: 3 frames, 209 bytes
+
+Got: 
+806: 3 frames, 209 bytes
+
+IP6 line did not match the expected value:
+Expected: 
+0x86dd: 4 frames, 256 bytes
+
+Got: 
+86dd: 4 frames, 256 bytes
+
+Local line did not match the expected value:
+Expected: 
+3 of them were for me
+
+Got: 
+0 of them were for me
+
+Multicast line did not match the expected value:
+Expected: 
+4 of them were multicast
+
+Got: 
+10 of them were multicast
+
+Read something that's not stdout:
+The child closed the pipe (probably died)
+Printed line did not match the expected format
+Expected format is:
+Total rate 0.009315 Mbit/s | 0.001111 MiB/s | 1.164320 kB/s | 9.093336 Kibit/s
+Mbit/s did not match the expected value:
+Expected: 0.009315
+Got: 0.000000
+MiB/s did not match the expected value:
+Expected: 0.001111
+Got: 0.000000
+kB/s did not match the expected value:
+Expected: 1.164320
+Got: 0.000000
+Kibit/s did not match the expected value:
+Expected: 9.093336
+Got: 0.000000
+Stdout: 136 byte, 0 byte dropped
+I am ready!
+800: 3 frames, 192 bytes
+806: 3 frames, 209 bytes
+86dd: 4 frames, 256 bytes
+0 of them were for me
+10 of them were multicast
+
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
