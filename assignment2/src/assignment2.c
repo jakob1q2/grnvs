@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <unistd.h>
 
 #include "arguments.h"
 #include "checksums.h"
@@ -125,7 +127,7 @@ int macsEqual(uint8_t *x, uint8_t *y) {
 
 uint64_t getType(uint8_t *buf) {
     uint8_t type[2];
-    memcpy(type, buf + 12, 2);
+    memcpy(type, buf + (2 * ETH_ALEN), 2);
     uint64_t res = type[0];
     res <<= 8;
     res += type[1];
@@ -149,6 +151,10 @@ void assignment2(int fd, int frames) {
     struct typeInfo *temp = NULL;
     uint16_t eType = 0;
     uint8_t mac[ETH_ALEN] = {0};
+    struct timespec start;
+    struct timespec end;
+    uint32_t totalByte = 0;
+    double totalTime = 0.0;
 
     memcpy(&mymac, grnvs_get_hwaddr(fd), ETH_ALEN);
 
@@ -161,7 +167,12 @@ void assignment2(int fd, int frames) {
     /* Update the loop condition */
     for (int i = 0; i < frames; i++) {
         /*===========================================================================*/
+
+        clock_gettime(CLOCK_MONOTONIC, &start);
         ret = grnvs_read(fd, recbuffer, sizeof(recbuffer), &timeout);
+        clock_gettime(CLOCK_MONOTONIC, &end);
+        totalTime += ((double)end.tv_sec + 1.0e-9 * end.tv_nsec) -
+                     ((double)start.tv_sec + 1.0e-9 * start.tv_nsec);
         if (ret == 0) {
             fprintf(stderr, "Timed out, this means there was nothing to "
                             "receive. Do you have a sender set up?\n");
@@ -205,6 +216,12 @@ void assignment2(int fd, int frames) {
     }
     fprintf(stdout, "%d of them were for me\n", myFrames);
     fprintf(stdout, "%d of them were multicast\n", multiCastFrames);
+    fprintf(stdout,
+            "Total rate %07f Mbit/s | %07f MiB/s | %07f kB/s | %07f Kibit/s\n",
+            ((double)totalByte) / totalTime * 8 / pow(10.0, 6),
+            ((double)totalByte) / totalTime / pow(2.0, 20),
+            ((double)totalByte) / totalTime / 1.0e3,
+            ((double)totalByte) / totalTime * 8 / pow(2.0, 10));
     /*===========================================================================*/
 }
 
