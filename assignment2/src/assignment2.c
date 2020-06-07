@@ -19,7 +19,6 @@ struct typeInfo {
 };
 
 uint8_t mymac[ETH_ALEN];
-uint64_t MULTI_MASK = 0x100000;
 
 /* Put your ancillary functions here*/
 struct typeInfo *newInfo(u_int16_t type) {
@@ -103,23 +102,25 @@ struct typeInfo *min(struct typeInfo *head) {
     return cur;
 }
 
-int isMulticast(u_int64_t mac) {
-    if (mac & MULTI_MASK) {
+int isMulticast(u_int8_t mac_first) {
+    if (mac_first & 0x1) {
         return 1;
     } else {
         return 0;
     }
 }
 
-uint64_t getMac(uint8_t *buf, uint8_t offset) {
-    uint8_t mac[6];
-    memcpy(mac, buf + offset, ETH_ALEN);
-    uint64_t res = mac[0];
-    for (int i = 1; i < 6; i++) {
-        res <<= 8;
-        res += mac[i];
+void getMac(uint8_t *src, uint8_t offset, uint8_t *dest) {
+    memcpy(dest, src + offset, ETH_ALEN);
+}
+
+int macsEqual(uint8_t *x, uint8_t *y) {
+    for (int i = 0; i < ETH_ALEN; i++) {
+        if (x[i] != y[i]) {
+            return 0;
+        }
     }
-    return res;
+    return 1;
 }
 
 uint64_t getType(uint8_t *buf) {
@@ -147,7 +148,7 @@ void assignment2(int fd, int frames) {
     struct typeInfo *infoList = NULL;
     struct typeInfo *temp = NULL;
     uint16_t eType = 0;
-    uint64_t mac = 0;
+    uint8_t mac[ETH_ALEN] = {0};
 
     memcpy(&mymac, grnvs_get_hwaddr(fd), ETH_ALEN);
 
@@ -174,7 +175,7 @@ void assignment2(int fd, int frames) {
          */
         eType = getType(recbuffer);
         temp = getInfoByType(eType, infoList);
-        mac = getMac(recbuffer, 0);
+        getMac(recbuffer, 0, mac);
         if (temp == NULL) {
             temp = newInfo(eType);
             temp->frameCounter = 1;
@@ -184,10 +185,10 @@ void assignment2(int fd, int frames) {
             temp->frameCounter += 1;
             temp->byteCounter += ret;
         }
-        if (mac == *mymac) {
+        if (macsEqual(mymac, mac)) {
             myFrames += 1;
         }
-        if (isMulticast(mac)) {
+        if (isMulticast(mac[0])) {
             multiCastFrames += 1;
         }
 
