@@ -8,21 +8,21 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee prints the EtherTypes
 Forking: ethstats -i jn0 5
-Stdout: 221 byte, 0 byte dropped
+Stdout: 229 byte, 0 byte dropped
 I am ready!
 0x0800: 2 frames, 128 bytes
 0x0806: 1 frames, 64 bytes
 0x86dd: 2 frames, 128 bytes
 0 of them were for me
 0 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 12.039573 Mbit/s | 1.435229 MiB/s | 1504.946668 kB/s | 11757.395844 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee handles edge case EtherTypes
 Forking: ethstats -i jn0 5
-Stdout: 247 byte, 0 byte dropped
+Stdout: 255 byte, 0 byte dropped
 I am ready!
 0x0000: 2 frames, 128 bytes
 0x0800: 1 frames, 64 bytes
@@ -30,177 +30,153 @@ I am ready!
 0xffff: 1 frames, 64 bytes
 0 of them were for me
 0 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 10.925195 Mbit/s | 1.302385 MiB/s | 1365.649379 kB/s | 10669.135771 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: EtherType line has proper format
 Forking: ethstats -i jn0 1
-Stdout: 165 byte, 0 byte dropped
+Stdout: 170 byte, 0 byte dropped
 I am ready!
 0x0800: 1 frames, 64 bytes
 0 of them were for me
 0 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 2.609237 Mbit/s | 0.311045 MiB/s | 326.154634 kB/s | 2548.083077 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints the correct frame count
 Forking: ethstats -i jn0 5
-Stdout: 194 byte, 0 byte dropped
+Stdout: 202 byte, 0 byte dropped
 I am ready!
 0x0800: 2 frames, 128 bytes
 0x86dd: 3 frames, 192 bytes
 0 of them were for me
 0 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 11.826979 Mbit/s | 1.409886 MiB/s | 1478.372331 kB/s | 11549.783836 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints the correct byte count
 Forking: ethstats -i jn0 5
-Stdout: 194 byte, 0 byte dropped
+Stdout: 202 byte, 0 byte dropped
 I am ready!
 0x0800: 2 frames, 132 bytes
 0x86dd: 3 frames, 264 bytes
 0 of them were for me
 0 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 14.995125 Mbit/s | 1.787558 MiB/s | 1874.390615 kB/s | 14643.676682 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: "for me" line has proper format
 Forking: ethstats -i jn0 1
-Stdout: 165 byte, 0 byte dropped
+Stdout: 170 byte, 0 byte dropped
 I am ready!
 0x0800: 1 frames, 64 bytes
 1 of them were for me
 0 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 2.825172 Mbit/s | 0.336787 MiB/s | 353.146464 kB/s | 2758.956751 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee counts frames for own MAC address (1)
 Forking: ethstats -i jn0 10
-Stdout: 194 byte, 0 byte dropped
+Stdout: 202 byte, 0 byte dropped
 I am ready!
 0x0800: 6 frames, 384 bytes
 0x86dd: 4 frames, 256 bytes
 5 of them were for me
 5 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 17.514394 Mbit/s | 2.087878 MiB/s | 2189.299264 kB/s | 17103.900500 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee counts frames for own MAC address (2)
 Forking: ethstats -i jn0 10
-Stdout: 194 byte, 0 byte dropped
+Stdout: 202 byte, 0 byte dropped
 I am ready!
 0x0800: 6 frames, 384 bytes
 0x86dd: 4 frames, 256 bytes
 7 of them were for me
 3 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 24.293660 Mbit/s | 2.896030 MiB/s | 3036.707531 kB/s | 23724.277583 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: "multicast" line has proper format
 Forking: ethstats -i jn0 1
-Stdout: 165 byte, 0 byte dropped
+Stdout: 170 byte, 0 byte dropped
 I am ready!
 0x0800: 1 frames, 64 bytes
 0 of them were for me
 1 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 2.689292 Mbit/s | 0.320589 MiB/s | 336.161491 kB/s | 2626.261652 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee counts frames to multicast MAC (1)
 Forking: ethstats -i jn0 10
-Stdout: 194 byte, 0 byte dropped
+Stdout: 202 byte, 0 byte dropped
 I am ready!
 0x0800: 6 frames, 384 bytes
 0x86dd: 4 frames, 256 bytes
 0 of them were for me
 2 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 21.501714 Mbit/s | 2.563204 MiB/s | 2687.714203 kB/s | 20997.767209 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee counts frames to multicast MAC (2)
 Forking: ethstats -i jn0 10
-Stdout: 194 byte, 0 byte dropped
+Stdout: 202 byte, 0 byte dropped
 I am ready!
 0x0800: 6 frames, 384 bytes
 0x86dd: 4 frames, 256 bytes
 0 of them were for me
 4 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 34.233076 Mbit/s | 4.080901 MiB/s | 4279.134498 kB/s | 33430.738268 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints proper data rates
 Forking: ethstats -i jn0 10
-Mbit/s did not match the expected value:
-Expected: 0.015211
-Got: 0.000000
-MiB/s did not match the expected value:
-Expected: 0.001814
-Got: 0.000000
-kB/s did not match the expected value:
-Expected: 1.901368
-Got: 0.000000
-Kibit/s did not match the expected value:
-Expected: 14.849683
-Got: 0.000000
-Stdout: 222 byte, 0 byte dropped
+Stdout: 223 byte, 0 byte dropped
 I am ready!
 0x0800: 3 frames, 573 bytes
 0x0806: 3 frames, 573 bytes
 0x86dd: 4 frames, 191 bytes
 0 of them were for me
 0 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 0.015701 Mbit/s | 0.001872 MiB/s | 1.962585 kB/s | 15.332692 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee terminates when expected
 Forking: ethstats -i jn0 1
-Stdout: 165 byte, 0 byte dropped
+Stdout: 170 byte, 0 byte dropped
 I am ready!
 0x0800: 1 frames, 64 bytes
 0 of them were for me
 0 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 6.007998 Mbit/s | 0.716209 MiB/s | 750.999702 kB/s | 5867.185172 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee can do a full run
 Forking: ethstats -i jn0 10
-Mbit/s did not match the expected value:
-Expected: 0.007478
-Got: 0.000000
-MiB/s did not match the expected value:
-Expected: 0.000892
-Got: 0.000000
-kB/s did not match the expected value:
-Expected: 0.934806
-Got: 0.000000
-Kibit/s did not match the expected value:
-Expected: 7.300831
-Got: 0.000000
 Stdout: 222 byte, 0 byte dropped
 I am ready!
 0x0800: 3 frames, 192 bytes
@@ -208,7 +184,7 @@ I am ready!
 0x86dd: 4 frames, 256 bytes
 3 of them were for me
 4 of them were multicast
-Total rate 0.000000 Mbit/s | 0.000000 MiB/s | 0.000000 kB/s | 0.000000 Kibit/s
+Total rate 0.007497 Mbit/s | 0.000894 MiB/s | 0.937120 kB/s | 7.321254 Kibit/s
 
 Stderr: 0 byte, 0 byte dropped
 
