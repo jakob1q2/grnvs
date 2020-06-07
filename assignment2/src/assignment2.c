@@ -1,5 +1,6 @@
 #include <errno.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "arguments.h"
@@ -29,6 +30,8 @@ struct typeInfo *newInfo(u_int16_t type) {
         ti->byteCounter = 0;
         ti->next = NULL;
     }
+
+    return ti;
 }
 
 struct typeInfo *getInfoByType(u_int16_t ethType, struct typeInfo *head) {
@@ -109,7 +112,8 @@ int isMulticast(u_int64_t mac) {
 }
 
 uint64_t getMac(uint8_t *buf, uint8_t offset) {
-    uint8_t mac[6] = memcpy(mac, buf + offset, ETH_ALEN);
+    uint8_t mac[6];
+    memcpy(mac, buf + offset, ETH_ALEN);
     uint64_t res = mac[0];
     for (int i = 1; i < 6; i++) {
         res <<= 8;
@@ -119,7 +123,8 @@ uint64_t getMac(uint8_t *buf, uint8_t offset) {
 }
 
 uint64_t getType(uint8_t *buf) {
-    uint8_t type[2] = memcpy(type, buf + 12, 2);
+    uint8_t type[2];
+    memcpy(type, buf + 12, 2);
     uint64_t res = type[0];
     res <<= 8;
     res += type[1];
@@ -179,7 +184,7 @@ void assignment2(int fd, int frames) {
             temp->frameCounter += 1;
             temp->byteCounter += ret;
         }
-        if (mac == mymac) {
+        if (mac == *mymac) {
             myFrames += 1;
         }
         if (isMulticast(mac)) {
