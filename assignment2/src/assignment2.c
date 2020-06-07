@@ -202,6 +202,7 @@ void assignment2(int fd, int frames) {
         if (isMulticast(mac[0])) {
             multiCastFrames += 1;
         }
+        totalByte += ret;
 
         /*===========================================================================*/
     }
