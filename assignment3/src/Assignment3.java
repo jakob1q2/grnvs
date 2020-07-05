@@ -102,13 +102,10 @@ public class Assignment3 {
 
                 boolean done = false;
 
-                int counter = 0;
-                System.out.println("start attempt");
                 while (!done) {
                     buffer = new byte[1514];
                     ret = sock.read(buffer, to);
 
-                    System.out.println("Counter" + (++counter) + " and read " + ret); /////////////////////////////
                     if (0 > ret) {
                         System.err.printf("failed to read from socket: %d\n", ret);
                         sock.hexdump(buffer, length);
@@ -138,7 +135,6 @@ public class Assignment3 {
         System.arraycopy(buffer, 24, rec, 0, 16);
         String receiver = InetAddress.getByAddress(rec).getHostAddress();
         if (InetAddress.getByAddress(myIP).getHostAddress() != receiver) { //message not for me
-            System.out.println("not for me"); ///////////////////////////////////////////////////////////////
             return false;
         }
         boolean done = false;
@@ -172,7 +168,15 @@ public class Assignment3 {
         return done;
     }
 
-    private static boolean checkProperties(byte[] buffer, int pos) throws UnknownHostException {
+    private static boolean checkProperties(byte[] buffer, int pos) {
+        byte[] sum = new byte[2];
+        System.arraycopy(buffer, pos + 2, sum, 0, 2);
+        buffer[pos + 2] = 0;
+        buffer[pos + 3] = 0;
+        byte[] cksum = GRNVS_RAW.checksum(buffer, 0, buffer, pos, buffer.length - 40);
+        if (cksum[0] != sum[0] || cksum[1] != sum[1]) {
+            return false;
+        }
         return true;
     }
 
