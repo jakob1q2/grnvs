@@ -113,7 +113,6 @@ public class Assignment3 {
                         sock.hexdump(buffer, length);
                         System.exit(1);
                     }
-                    System.out.println("read " + ret); ////////////////////////////////
                     if (ret == 0) {
                         System.out.print("  *"); //timeout
                         done = true;
@@ -121,7 +120,6 @@ public class Assignment3 {
                         byte[] resp = new byte[ret];
                         System.arraycopy(buffer, 0, resp, 0, ret);
                         done = checkMessage(resp);
-                        System.out.println("done is " + done); //////////////////////////////
                     }
                 }
             }
@@ -146,7 +144,6 @@ public class Assignment3 {
          System.out.println("receiver " + receiver + " and my: " + InetAddress.getByAddress(myIP).getHostAddress()); ////////////////////////////////////
 
          if (!InetAddress.getByAddress(myIP).getHostAddress().equals(receiver)) { //message not for me
-         System.out.println("not for me"); ////////////////////////////////////
          return false;
          }
          */
@@ -162,7 +159,8 @@ public class Assignment3 {
         }
         if (buffer[pos] == icmpNH) {
             pos += skip;
-            boolean relevant = checkProperties(buffer, pos);
+            //boolean relevant = checkProperties(buffer, pos);
+            boolean relevant = true;
             if (relevant) {
                 byte[] src = new byte[16];
                 System.arraycopy(buffer, 8, src, 0, 16);
