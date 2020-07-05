@@ -13,12 +13,14 @@ Expected (ignoring case and excessive whitespace):
 Got: 
 1hop: 1
 
-Stdout: 57 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -27,11 +29,12 @@ Running testcase: Testee sends correct header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e32:0db7:3158:a35a:255d:0517:58e9:5ed4
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -40,11 +43,12 @@ Running testcase: Testee sends correct ICMP
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eb2:cdc6:9bb4:5411:0e82:7441:213d:dc87
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -53,11 +57,12 @@ Running testcase: Testee sends correct ICMP checksum
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee9:3ea1:41e1:fc67:3e01:7e97:eadc:6b96
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -66,11 +71,12 @@ Running testcase: Testee sends correct packet
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e38:5c2a:ecb0:3bfb:32af:3c54:ec18:db5c
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -79,11 +85,12 @@ Running testcase: Testee sends correct packet for 2nd attempt
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e1a:fe43:fbfa:aa3a:fb29:d1e6:053c:7c94
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -92,11 +99,12 @@ Running testcase: Testee sends correct packet for 2nd hop
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed8:be61:89f9:5cbb:a899:0f95:b1eb:f1b3
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -105,11 +113,12 @@ Running testcase: Testee prints timeout correctly
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eef:f700:e9a1:3ae5:ca0b:cbd0:4847:64bd
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -118,11 +127,12 @@ Running testcase: Testee stops after correct tries
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7e23:1ea8:1c7b:64c5:1473:5ac5:5e4b:7963
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -131,11 +141,12 @@ Running testcase: Testee prints IP correctly
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7e70:6424:119e:09dc:aad4:acf2:1b10:af3b
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -144,11 +155,12 @@ Running testcase: Testee prints exceeded correctly
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7ecd:e350:4847:155c:bb6f:2219:ba9b:7df5
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -157,11 +169,12 @@ Running testcase: Testee prints unreachable correctly
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7ee1:1a1c:7f23:f829:f8a4:1b13:b5ca:4ee8
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -170,11 +183,12 @@ Running testcase: Testee properly outputs different IPs on hop
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e32:38e0:794d:3d34:bc5f:4e77:facb:6c05
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -183,11 +197,12 @@ Running testcase: Testee properly resets the timeout
 Forking: trace6 -i jn0 -m 4 -q 3 -t 3 7e86:212b:aa1a:55a2:be70:b573:3b04:5cd3
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -196,11 +211,12 @@ Running testcase: Testee sends another attempt after timeout
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e94:b3af:e2f0:e49e:4f32:1549:fd82:4ea9
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -209,11 +225,12 @@ Running testcase: Testee sends another attempt after exceeded
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e70:d4b2:8a29:5448:9a0a:bcd5:0e18:a844
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -222,11 +239,12 @@ Running testcase: Testee sends another attempt after unreachable
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e5b:f38e:4cd7:2d9b:0942:e506:c433:afcd
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -235,11 +253,12 @@ Running testcase: Testee sends another attempt after echo reply
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e84:7f2d:add4:7647:de32:1cec:4ac4:30f6
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -248,11 +267,12 @@ Running testcase: Testee goes to another hop after exceeded
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e23:856c:fbb2:0704:f4ec:0bb9:20ba:86c3
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -261,11 +281,12 @@ Running testcase: Testee goes to another hop after timeout
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e05:f1ec:d967:33b7:9950:a3e3:14d3:d934
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -274,11 +295,12 @@ Running testcase: Testee does not hop after reply (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e5e:a0f2:10a8:f605:9401:beb4:bc44:78fa
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -287,11 +309,12 @@ Running testcase: Testee does not hop after reply (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e69:e623:d01a:da69:6a7e:4c7e:5125:b348
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -300,11 +323,12 @@ Running testcase: Testee does not hop after unreachable (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e53:3a94:fb31:9990:3257:44ee:9bbc:e9e5
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -313,11 +337,12 @@ Running testcase: Testee does not hop after unreachable (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ecf:08f5:e9e2:5e53:60aa:d2b2:d085:fa54
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -332,11 +357,12 @@ Got:
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -351,11 +377,12 @@ Got:
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -370,11 +397,12 @@ Got:
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -389,11 +417,12 @@ Got:
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -402,11 +431,12 @@ Running testcase: Testee ignores the traffic class
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaf:2716:93ac:071f:b86d:1134:2d8d:ef4f
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -415,11 +445,12 @@ Running testcase: Testee ignores the flow label (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e39:02d8:e50a:f89d:7709:d1a5:96c1:f41f
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -428,11 +459,12 @@ Running testcase: Testee ignores the flow label (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea8:ca99:b2c2:372a:cb08:cf61:c9c3:805e
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -441,11 +473,12 @@ Running testcase: Testee ignores the hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e56:9ad4:18d1:fee4:d9cd:45a3:91c6:01ff
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -454,11 +487,12 @@ Running testcase: Testee ignores the exceeded reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7efc:7281:cd71:65a6:3eab:49cf:714b:ce3a
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -467,11 +501,12 @@ Running testcase: Testee ignores the exceeded reserved field (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e0d:e98c:7e4e:32bd:f97c:8c6a:c75b:a43c
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -480,11 +515,12 @@ Running testcase: Testee ignores the exceeded data hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e50:5b17:9f8e:d498:0a61:03d1:bca7:0dbe
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -493,11 +529,12 @@ Running testcase: Testee ignores the unreachable code field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e21:2e2d:af02:c6b9:63c9:8a1f:7097:de0c
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -506,11 +543,12 @@ Running testcase: Testee ignores the unreachable reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ecf:d292:d298:4b35:61d5:55d1:6c33:ddc2
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -519,11 +557,12 @@ Running testcase: Testee ignores the unreachable reserved field (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e53:1aee:eb66:244c:3b79:1ea8:acfb:6a68
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -532,11 +571,12 @@ Running testcase: Testee ignores the unreachable data hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e54:2aab:ba4e:f8f6:c716:9e73:1108:db04
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -545,11 +585,12 @@ Running testcase: Testee skips hop by hop extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e87:7856:d570:4c9c:86ea:0f98:f2eb:9c53
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -558,11 +599,12 @@ Running testcase: Testee skips routing extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:fa5a:d8b0:b5db:50c2:fd5d:095a:2aa5
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -571,11 +613,12 @@ Running testcase: Testee skips destination option extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea3:fbb7:1347:549a:3163:3223:4ece:765b
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -584,11 +627,12 @@ Running testcase: Testee uses the extension header length field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e71:b64d:216b:2871:2e25:cf37:80f9:dc62
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -597,11 +641,12 @@ Running testcase: Testee can traverse multiple extension headers
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ed7:19b0:1e6d:4a4f:d17c:731f:4ae9:7bc0
 Read something that's not network:
 The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
+Stdout: 55 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
