@@ -143,7 +143,7 @@ public class Assignment3 {
         byte[] rec = new byte[16];
         System.arraycopy(buffer, 24, rec, 0, 16);
         String receiver = InetAddress.getByAddress(rec).getHostAddress();
-        if (InetAddress.getByAddress(myIP).getHostAddress() != receiver) { //message not for me
+        if (!InetAddress.getByAddress(myIP).getHostAddress().equals(receiver)) { //message not for me
             System.out.println("not for me"); ////////////////////////////////////
             return false;
         }
