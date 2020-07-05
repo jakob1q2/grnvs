@@ -118,7 +118,9 @@ public class Assignment3 {
                         System.out.print("  *");
                         done = true;
                     } else {
-                        done = checkMessage(buffer);
+                        byte[] resp = new byte[ret];
+                        System.arraycopy(buffer,0,resp,0,ret);
+                        done = checkMessage(resp);
                     }
                 }
             }
