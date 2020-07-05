@@ -1,6 +1,7 @@
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 public class Assignment3 {
 
@@ -19,7 +20,7 @@ public class Assignment3 {
      */
 
     private static final byte versionIpv6 = (byte) 0x60; //version IPv6 (traffic class set 0)
-    private static final byte icmpLength = (byte) 8; //length of ICMPv6 message in byte
+    private static final byte icmpLength = 8; //length of ICMPv6 message in byte
     private static final byte icmpNH = (byte) 0x3a; //Next Header ICMPv6
     private static final byte icmpEchoRequ = (byte) 128; //ICMP type Echo Request
     private static final byte icmpEchoRep = (byte) 129; //ICMP type Echo Reply
@@ -30,10 +31,14 @@ public class Assignment3 {
 
     public static void run(GRNVS_RAW sock, String dst, int timeout,
                            int attempts, int hopLimit) {
+        ByteBuffer bb16 = ByteBuffer.allocate(16);
+        bb16.order(ByteOrder.BIG_ENDIAN);
+        bb16.put(sock.getIPv6(), 0, 16);
         byte[] buffer = new byte[1514];
         int length = 48; //was set 0?
         byte[] dstIp = new byte[16];
-        byte[] srcIp = sock.getIPv6();
+        byte[] srcIp = bb16.array();
+        bb16.clear();
         byte[] ipHeader = new byte[40];
         byte[] payload = new byte[8];
 
@@ -47,15 +52,20 @@ public class Assignment3 {
          * 4) Print the hops found in the specified format
          */
         try {
-            dstIp = InetAddress.getByName(dst).getAddress();
+            bb16.put(InetAddress.getByName(dst).getAddress(), 0, 16);
+            dstIp = bb16.array();
+            bb16.clear();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
 
+        ByteBuffer bb = ByteBuffer.allocate(2);
+        bb.order(ByteOrder.BIG_ENDIAN);
         stopProbes = false;
-
         ipHeader[0] = versionIpv6;
-        ipHeader[4] = icmpLength;
+        bb.putInt(icmpLength);
+        byte[] l = bb.array();
+        System.arraycopy(l, 0, ipHeader, 4, 2);
         ipHeader[6] = icmpNH;
         System.arraycopy(srcIp, 0, ipHeader, 8, 16);
         System.arraycopy(dstIp, 0, ipHeader, 24, 16);
@@ -66,7 +76,6 @@ public class Assignment3 {
 
         int hops = 0;
         char sequenceNumber = 0x0;
-        ByteBuffer bb = ByteBuffer.allocate(2);
 
         while (!stopProbes && hops <= hopLimit) {
             ipHeader[7] = (byte) hops;
@@ -117,7 +126,7 @@ public class Assignment3 {
                 }
             }
             System.out.print("\n");
-
+            hops++;
         }
         /*===========================================================================*/
 
