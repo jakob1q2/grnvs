@@ -2,6 +2,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.Arrays;
 
 public class Assignment3 {
 
@@ -42,6 +43,7 @@ public class Assignment3 {
         byte[] ipHeader = new byte[40];
         byte[] payload = new byte[8];
 
+        System.out.println(dst); //////////////////////////////////
 
         /*====================================TODO===================================*/
 
@@ -55,6 +57,7 @@ public class Assignment3 {
             bb16.put(InetAddress.getByName(dst).getAddress(), 0, 16);
             dstIp = bb16.array();
             bb16.clear();
+            System.out.println(Arrays.toString(dstIp));/////////////
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
@@ -77,7 +80,7 @@ public class Assignment3 {
         payload[1] = (byte) 0x00; // ICMP Code
         payload[4] = icmpID;
 
-        int hops = 0;
+        int hops = 1;
         char sequenceNumber = 0x0;
 
         while (!stopProbes && hops <= hopLimit) {
