@@ -1,0 +1,16 @@
+trace6
+trace6.jar
+
+*.a
+*.class
+*.o
+*.pdf
+*~
+.*.sw?
+.DS_Store
+.classpath
+.idea
+.metadata
+.project
+deps/*.so
+classes
