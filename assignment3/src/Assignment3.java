@@ -75,10 +75,9 @@ public class Assignment3 {
         while (!stopProbes && hops <= hopLimit) {
             buffer = new byte[1514];
             ipHeader[7] = (byte) hops;
-            Timeout to = new Timeout(timeout);
             System.out.print(hops);
             for (int attempt = 1; attempt <= attempts; attempt++) {
-
+                Timeout to = new Timeout(timeout);
                 bb2.putChar(sequenceNumber++);
                 byte[] sequNum = bb2.array();
                 bb2.clear();
@@ -103,7 +102,6 @@ public class Assignment3 {
                 boolean done = false;
                 int counter = 0;
                 while (!done) {
-                    System.out.println("Counter: " + (++counter)); //////////////////////////////////////////////////
                     buffer = new byte[1514];
                     ret = sock.read(buffer, to);
 
