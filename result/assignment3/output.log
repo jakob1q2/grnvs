@@ -7,562 +7,556 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee prints the initial line number
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ec2:54f8:1be8:e78d:765a:2e63:339f:c99a
-Stdout: 39 byte, 0 byte dropped
-1ignored bc default
-ignored bc default
-
+Stdout: 1 byte, 0 byte dropped
+1
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e32:0db7:3158:a35a:255d:0517:58e9:5ed4
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
-
+Stdout: 1 byte, 0 byte dropped
+1
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct ICMP
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eb2:cdc6:9bb4:5411:0e82:7441:213d:dc87
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
-
+Stdout: 1 byte, 0 byte dropped
+1
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct ICMP checksum
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee9:3ea1:41e1:fc67:3e01:7e97:eadc:6b96
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
-
+Stdout: 1 byte, 0 byte dropped
+1
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct packet
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e38:5c2a:ecb0:3bfb:32af:3c54:ec18:db5c
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
-
+Stdout: 1 byte, 0 byte dropped
+1
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct packet for 2nd attempt
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e1a:fe43:fbfa:aa3a:fb29:d1e6:053c:7c94
-Read something that's not network:
-The child printed to stdout
-Stdout: 42 byte, 0 byte dropped
-1ignored bc default
-  *ignored bc default
-
+Stdout: 4 byte, 0 byte dropped
+1  *
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct packet for 2nd hop
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed8:be61:89f9:5cbb:a899:0f95:b1eb:f1b3
-Read something that's not network:
-The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
-1ignored bc default
-  *
-2ignored bc default
-
+Stdout: 6 byte, 0 byte dropped
+1  *
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints timeout correctly
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eef:f700:e9a1:3ae5:ca0b:cbd0:4847:64bd
-Timeout message did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
-  *
-Got: 
-ignored bc default
-
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
-
+Stdout: 4 byte, 0 byte dropped
+1  *
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee stops after correct tries
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7e23:1ea8:1c7b:64c5:1473:5ac5:5e4b:7963
-Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
+Stdout: 5 byte, 0 byte dropped
+1  *
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints IP correctly
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7e70:6424:119e:09dc:aad4:acf2:1b10:af3b
-Output spacing did not start with the expected value:
-Expected: 
-  
-Got: 
-ignored bc default
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 61 byte, 0 byte dropped
-1ignored bc default
-  7e70:6424:119e:9dc:aad4:acf2:1b10:af3b
+Stdout: 42 byte, 0 byte dropped
+1  7e70:6424:119e:9dc:aad4:acf2:1b10:af3b
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints exceeded correctly
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7ecd:e350:4847:155c:bb6f:2219:ba9b:7df5
-Output spacing did not start with the expected value:
-Expected: 
-  
-Got: 
-ignored bc default
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 62 byte, 0 byte dropped
-1ignored bc default
-  7ee1:1a1c:7f23:f829:f8a4:1b13:b5ca:4ee8
+Stdout: 43 byte, 0 byte dropped
+1  7ee1:1a1c:7f23:f829:f8a4:1b13:b5ca:4ee8
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints unreachable correctly
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7e32:38e0:794d:3d34:bc5f:4e77:facb:6c05
-Output spacing did not start with the expected value:
-Expected: 
-  
-Got: 
-ignored bc default
-
-Unreachable marker did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
-!X
-
-Got: 
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
+Stdout: 45 byte, 0 byte dropped
+1  7e86:212b:aa1a:55a2:be70:b573:3b04:5cd3!X
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee properly outputs different IPs on hop
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e94:b3af:e2f0:e49e:4f32:1549:fd82:4ea9
-Output spacing did not start with the expected value:
-Expected: 
-  
-Got: 
-ignored bc default
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Read something that's not network:
-The child printed to stdout
-Stdout: 79 byte, 0 byte dropped
-1ignored bc default
-  7e70:d4b2:8a29:5448:9a0a:bcd5:e18:a844ignored bc default
-
+Stdout: 81 byte, 0 byte dropped
+1  7e70:d4b2:8a29:5448:9a0a:bcd5:e18:a844  7e5b:f38e:4cd7:2d9b:942:e506:c433:afcd
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee properly resets the timeout
-Forking: trace6 -i jn0 -m 4 -q 3 -t 3 7e5b:f38e:4cd7:2d9b:0942:e506:c433:afcd
-Output spacing did not start with the expected value:
-Expected: 
-  
-Got: 
-ignored bc default
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Read something that's not network:
-The child printed to stdout
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7e84:7f2d:add4:7647:de32:1cec:4ac4:30f6ignored bc default
-
+Forking: trace6 -i jn0 -m 4 -q 3 -t 3 7e84:7f2d:add4:7647:de32:1cec:4ac4:30f6
+Stdout: 81 byte, 0 byte dropped
+1  7e23:856c:fbb2:704:f4ec:bb9:20ba:86c3  7e05:f1ec:d967:33b7:9950:a3e3:14d3:d934
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends another attempt after timeout
-Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e23:856c:fbb2:0704:f4ec:0bb9:20ba:86c3
-Read something that's not network:
-The child printed to stdout
-Stdout: 42 byte, 0 byte dropped
-1ignored bc default
-  *ignored bc default
-
+Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e5e:a0f2:10a8:f605:9401:beb4:bc44:78fa
+Stdout: 4 byte, 0 byte dropped
+1  *
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends another attempt after exceeded
-Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e05:f1ec:d967:33b7:9950:a3e3:14d3:d934
-Read something that's not network:
-The child printed to stdout
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7e5e:a0f2:10a8:f605:9401:beb4:bc44:78faignored bc default
-
+Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e69:e623:d01a:da69:6a7e:4c7e:5125:b348
+Stdout: 42 byte, 0 byte dropped
+1  7e53:3a94:fb31:9990:3257:44ee:9bbc:e9e5
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends another attempt after unreachable
-Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e69:e623:d01a:da69:6a7e:4c7e:5125:b348
-Read something that's not network:
-The child printed to stdout
-Stdout: 82 byte, 0 byte dropped
-1ignored bc default
-  7e53:3a94:fb31:9990:3257:44ee:9bbc:e9e5!Xignored bc default
-
+Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7ecf:08f5:e9e2:5e53:60aa:d2b2:d085:fa54
+Stdout: 44 byte, 0 byte dropped
+1  7e35:e8d4:6682:6498:d9a8:8775:6570:5a8a!X
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends another attempt after echo reply
-Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7ecf:08f5:e9e2:5e53:60aa:d2b2:d085:fa54
-Read something that's not network:
-The child printed to stdout
-Stdout: 79 byte, 0 byte dropped
-1ignored bc default
-  7ecf:8f5:e9e2:5e53:60aa:d2b2:d085:fa54ignored bc default
-
+Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e62:8029:44de:7ca5:894e:5759:d351:adac
+Stdout: 42 byte, 0 byte dropped
+1  7e62:8029:44de:7ca5:894e:5759:d351:adac
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee goes to another hop after exceeded
-Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e35:e8d4:6682:6498:d9a8:8775:6570:5a8a
-Second line number did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
+Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e95:80ec:17e4:85f1:8c0c:66f1:7cc0:7cbb
+Stdout: 43 byte, 0 byte dropped
+1  7efc:e466:da61:b63:af62:bc83:b469:2f3a
 2
-Got: 
-  7e62:8029:44de:7ca5:894e:5759:d351:adac
-
-Read something that's not network:
-The child printed to stdout
-Stdout: 82 byte, 0 byte dropped
-1ignored bc default
-  7e62:8029:44de:7ca5:894e:5759:d351:adac
-2ignored bc default
-
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee goes to another hop after timeout
-Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e95:80ec:17e4:85f1:8c0c:66f1:7cc0:7cbb
-Second line number did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
+Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7eaf:2716:93ac:071f:b86d:1134:2d8d:ef4f
+Stdout: 6 byte, 0 byte dropped
+1  *
 2
-Got: 
-  *
-
-Read something that's not network:
-The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
-1ignored bc default
-  *
-2ignored bc default
-
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after reply (1)
-Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7efc:e466:da61:0b63:af62:bc83:b469:2f3a
-Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 61 byte, 0 byte dropped
-1ignored bc default
-  7efc:e466:da61:b63:af62:bc83:b469:2f3a
+Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed4:b663:35c1:c7e4:2483:67d8:ed96:12ec
+Stdout: 43 byte, 0 byte dropped
+1  7ed4:b663:35c1:c7e4:2483:67d8:ed96:12ec
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after reply (2)
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaf:2716:93ac:071f:b86d:1134:2d8d:ef4f
-Read something that's not network:
-The child printed to stdout
-Stdout: 79 byte, 0 byte dropped
-1ignored bc default
-  7eaf:2716:93ac:71f:b86d:1134:2d8d:ef4fignored bc default
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e39:02d8:e50a:f89d:7709:d1a5:96c1:f41f
+Stdout: 86 byte, 0 byte dropped
+1  7e39:2d8:e50a:f89d:7709:d1a5:96c1:f41f  *  7eaa:82ca:6c49:ae90:cd16:68ba:ac7a:a6f2
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after unreachable (1)
-Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed4:b663:35c1:c7e4:2483:67d8:ed96:12ec
-Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
+Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ea8:ca99:b2c2:372a:cb08:cf61:c9c3:805e
+Stdout: 45 byte, 0 byte dropped
+1  7e03:28da:4cd7:6a19:edd2:d399:4c79:8b00!X
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after unreachable (2)
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaa:82ca:6c49:ae90:cd16:68ba:ac7a:a6f2
-Read something that's not network:
-The child printed to stdout
-Stdout: 82 byte, 0 byte dropped
-1ignored bc default
-  7ea8:ca99:b2c2:372a:cb08:cf61:c9c3:805e!Xignored bc default
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e56:9ad4:18d1:fee4:d9cd:45a3:91c6:01ff
+Stdout: 88 byte, 0 byte dropped
+1  7e2a:d915:143:2fee:1502:8761:7c13:629e!X  *  7efc:7281:cd71:65a6:3eab:49cf:714b:ce3a
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements attempts command line option (1)
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e03:28da:4cd7:6a19:edd2:d399:4c79:8b00
-Read something that's not network:
-The child printed to stdout
-Stdout: 42 byte, 0 byte dropped
-1ignored bc default
-  *ignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:4f76:ea7e:64ff:81eb:61fd:fec3:9b67
+Stdout: 12 byte, 0 byte dropped
+1  *  *  *
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements attempts command line option (2)
-Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e56:9ad4:18d1:fee4:d9cd:45a3:91c6:01ff
-Second line number did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
+Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e0d:e98c:7e4e:32bd:f97c:8c6a:c75b:a43c
+Stdout: 6 byte, 0 byte dropped
+1  *
 2
-Got: 
-  *
-
-Stdout: 44 byte, 0 byte dropped
-1ignored bc default
-  *
-2ignored bc default
-
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements hops command line option (1)
-Forking: trace6 -i jn0 -m 2 -q 1 -t 1 7e2a:d915:0143:2fee:1502:8761:7c13:629e
-Second line number did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
-2
-Got: 
-  *
-
-Read something that's not network:
-The child printed to stdout
-Stdout: 44 byte, 0 byte dropped
-1ignored bc default
-  *
-2ignored bc default
+Forking: trace6 -i jn0 -m 2 -q 1 -t 1 7ef4:b2ed:7216:ecf3:014d:f000:108b:67cf
+Stdout: 10 byte, 0 byte dropped
+1  *
+2  *
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements hops command line option (2)
-Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7efc:7281:cd71:65a6:3eab:49cf:714b:ce3a
-Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
+Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7e50:5b17:9f8e:d498:0a61:03d1:bca7:0dbe
+Stdout: 5 byte, 0 byte dropped
+1  *
 
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the IP header version
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ebf:ab0e:d598:01d6:e5f2:d6f6:7d3e:c516
+Stdout: 4 byte, 0 byte dropped
+1  *
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the IP length field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e89:1a2b:211b:0107:0dd8:fd8b:16c2:a1a4
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7e89:1a2b:211b:107:dd8:fd8b:16c2:a1a4
+Stdout: 40 byte, 0 byte dropped
+1  7e89:1a2b:211b:107:dd8:fd8b:16c2:a1a4
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the next header field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ef7:edde:13ef:e520:c7e2:abdd:a44d:8188
+Stdout: 4 byte, 0 byte dropped
+1  *
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the destination IP field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e58:4606:472b:260e:0dd2:ebb2:1f6c:3a3b
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7e58:4606:472b:260e:dd2:ebb2:1f6c:3a3b
+Stdout: 41 byte, 0 byte dropped
+1  7e58:4606:472b:260e:dd2:ebb2:1f6c:3a3b
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the source IP field for echo replies
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e22:0aa7:4d31:b55b:03a0:0d22:0d47:5dcd
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7e22:aa7:4d31:b55b:3a0:d22:d47:5dce
+Stdout: 38 byte, 0 byte dropped
+1  7e22:aa7:4d31:b55b:3a0:d22:d47:5dce
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the echo reply type field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:fa5a:d8b0:b5db:50c2:fd5d:095a:2aa5
+Stdout: 4 byte, 0 byte dropped
+1  *
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the echo reply code field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e71:b64d:216b:2871:2e25:cf37:80f9:dc62
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7e71:b64d:216b:2871:2e25:cf37:80f9:dc62
+Stdout: 42 byte, 0 byte dropped
+1  7e71:b64d:216b:2871:2e25:cf37:80f9:dc62
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the echo reply identifier field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e31:0d7b:9c36:edca:5bbc:02db:b5de:3d52
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7e31:d7b:9c36:edca:5bbc:2db:b5de:3d52
+Stdout: 40 byte, 0 byte dropped
+1  7e31:d7b:9c36:edca:5bbc:2db:b5de:3d52
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the echo reply sequence field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee0:56fd:1643:c871:ffca:4db5:a88a:075e
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7ee0:56fd:1643:c871:ffca:4db5:a88a:75e
+Stdout: 41 byte, 0 byte dropped
+1  7ee0:56fd:1643:c871:ffca:4db5:a88a:75e
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the echo reply checksum field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea0:7ff8:e347:69e3:11b6:98b9:419f:1822
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7ea0:7ff8:e347:69e3:11b6:98b9:419f:1822
+Stdout: 42 byte, 0 byte dropped
+1  7ea0:7ff8:e347:69e3:11b6:98b9:419f:1822
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the unreachable type field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e15:25cb:5c8f:ae6d:4546:2786:e53f:a98d
+Stdout: 4 byte, 0 byte dropped
+1  *
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the unreachable data field (1)
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e8c:b687:1b64:f561:ab1c:e790:5b90:1ee5
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7ea8:1177:4dcd:e13b:8760:748a:76db:74a1!X
+Stdout: 44 byte, 0 byte dropped
+1  7ea8:1177:4dcd:e13b:8760:748a:76db:74a1!X
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the unreachable data field (2)
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e2a:2883:8f1d:e43a:39cc:ca94:5ce8:795e
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7e8a:d6de:57b7:19df:188d:698e:69dd:2fd1!X
+Stdout: 44 byte, 0 byte dropped
+1  7e8a:d6de:57b7:19df:188d:698e:69dd:2fd1!X
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the unreachable checksum field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e57:5497:7539:d1ae:059b:4361:84bc:c015
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7e96:f39e:4d0c:7d65:99e6:f302:c422:d3cc!X
+Stdout: 44 byte, 0 byte dropped
+1  7e96:f39e:4d0c:7d65:99e6:f302:c422:d3cc!X
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the exceeded type field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e28:63ef:6134:9d66:cfe0:c753:9d87:68e4
+Stdout: 4 byte, 0 byte dropped
+1  *
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the exceeded code field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ed9:4f60:0ded:c6dd:cd8d:306a:1599:4e32
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7ed1:9d5c:d16e:5db7:3260:6218:37d8:7936
+Stdout: 42 byte, 0 byte dropped
+1  7ed1:9d5c:d16e:5db7:3260:6218:37d8:7936
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the exceeded data field (1)
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ec8:96bf:b55c:9c83:eacd:edff:663c:315a
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7ecf:b6de:3d13:956f:74f7:87ab:d000:e282
+Stdout: 42 byte, 0 byte dropped
+1  7ecf:b6de:3d13:956f:74f7:87ab:d000:e282
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the exceeded data field (2)
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e78:417e:d5de:01bf:abef:be11:2bef:6b38
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7e22:16fb:35ab:6aa9:a3f2:5573:f237:f5bb
+Stdout: 42 byte, 0 byte dropped
+1  7e22:16fb:35ab:6aa9:a3f2:5573:f237:f5bb
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee tests the exceeded checksum field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e36:3a84:143b:43bf:2a01:d055:f13c:8daf
+Timeout message did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
+Got: 
+  7ea3:ab93:4f15:3df2:792:65fa:c95a:b578
+Stdout: 41 byte, 0 byte dropped
+1  7ea3:ab93:4f15:3df2:792:65fa:c95a:b578
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the traffic class
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:4f76:ea7e:64ff:81eb:61fd:fec3:9b67
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eef:fda5:2b40:6455:4235:ab33:7138:e2cf
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 20 byte, 0 byte dropped
-1ignored bc default
-
+Stdout: 4 byte, 0 byte dropped
+1  *
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the flow label (1)
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ef4:b2ed:7216:ecf3:014d:f000:108b:67cf
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 77 byte, 0 byte dropped
-1ignored bc default
-  7e50:5b17:9f8e:d498:a61:3d1:bca7:dbeignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e70:1174:b076:caf2:ab75:251c:ad08:eb89
+Stdout: 42 byte, 0 byte dropped
+1  7e4d:b438:edd1:e31e:5387:192f:e18c:9c2b
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the flow label (2)
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ebf:ab0e:d598:01d6:e5f2:d6f6:7d3e:c516
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7e21:2e2d:af02:c6b9:63c9:8a1f:7097:de0cignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ead:9fac:2369:9fce:dec4:ea8c:ccd5:1562
+Stdout: 41 byte, 0 byte dropped
+1  7eca:9a10:9b7d:2eef:547:1ee6:d3ba:11cf
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the hop limit
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e89:1a2b:211b:0107:0dd8:fd8b:16c2:a1a4
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7ecf:d292:d298:4b35:61d5:55d1:6c33:ddc2ignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eb1:7c8b:1a1b:5af9:df44:85ac:1a9a:0e3d
+Stdout: 42 byte, 0 byte dropped
+1  7ea8:4d00:267b:ef2b:c30d:1196:c823:6630
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the exceeded reserved field (1)
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ef7:edde:13ef:e520:c7e2:abdd:a44d:8188
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7e53:1aee:eb66:244c:3b79:1ea8:acfb:6a68ignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee2:bbee:fd15:e7dc:5a6c:8874:0796:b16b
+Stdout: 42 byte, 0 byte dropped
+1  7efe:6b65:795a:903c:68a1:d330:c439:6098
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the exceeded reserved field (2)
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e58:4606:472b:260e:0dd2:ebb2:1f6c:3a3b
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7e54:2aab:ba4e:f8f6:c716:9e73:1108:db04ignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e1b:8718:316e:f48b:db7d:ffe2:13b0:4d52
+Stdout: 42 byte, 0 byte dropped
+1  7eb9:b727:1347:647b:e937:abad:700b:468b
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the exceeded data hop limit
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e22:0aa7:4d31:b55b:03a0:0d22:0d47:5dcd
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 79 byte, 0 byte dropped
-1ignored bc default
-  7e87:7856:d570:4c9c:86ea:f98:f2eb:9c53ignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ecd:a358:3b97:e316:14e2:f828:9246:7a40
+Stdout: 41 byte, 0 byte dropped
+1  7e32:6712:79cb:8e62:239:1072:4556:fd6c
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the unreachable code field
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:fa5a:d8b0:b5db:50c2:fd5d:095a:2aa5
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 82 byte, 0 byte dropped
-1ignored bc default
-  7ea3:fbb7:1347:549a:3163:3223:4ece:765b!Xignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea0:c45e:38a7:754c:896d:741b:b3ef:5bb2
+Stdout: 43 byte, 0 byte dropped
+1  7ec2:c59a:8e53:fd90:8c0d:3d1:6300:3d86!X
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the unreachable reserved field (1)
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e71:b64d:216b:2871:2e25:cf37:80f9:dc62
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 82 byte, 0 byte dropped
-1ignored bc default
-  7ed7:19b0:1e6d:4a4f:d17c:731f:4ae9:7bc0!Xignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e01:e4d9:a859:2531:c79a:4c7a:89a7:2daa
+Stdout: 44 byte, 0 byte dropped
+1  7ef2:44f8:4541:88d1:4e8b:a3b1:8ce0:372d!X
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the unreachable reserved field (2)
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e31:0d7b:9c36:edca:5bbc:02db:b5de:3d52
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 81 byte, 0 byte dropped
-1ignored bc default
-  7e57:2d4:c44c:2495:c897:b512:8030:d2db!Xignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e1c:068a:752b:bc3c:c508:b74e:b0e4:f81a
+Stdout: 44 byte, 0 byte dropped
+1  7e3d:121b:7e9a:eccd:268f:7eb2:70b6:df52!X
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the unreachable data hop limit
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee0:56fd:1643:c871:ffca:4db5:a88a:075e
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 82 byte, 0 byte dropped
-1ignored bc default
-  7e09:33a6:5557:3b1d:eef0:2f6e:2002:4981!Xignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee5:dc47:1098:84d6:a13b:2451:1f1d:6bf5
+Stdout: 44 byte, 0 byte dropped
+1  7e7d:10d8:17fc:a53d:8c24:effc:dace:4eac!X
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee skips hop by hop extension header
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea0:7ff8:e347:69e3:11b6:98b9:419f:1822
-Output spacing did not start with the expected value:
-Expected: 
-  
-Got: 
-ignored bc default
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7ea0:7ff8:e347:69e3:11b6:98b9:419f:1822ignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e2a:f3c4:c377:9a64:b2be:b5d1:db20:c635
+Stdout: 42 byte, 0 byte dropped
+1  7e2a:f3c4:c377:9a64:b2be:b5d1:db20:c635
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee skips routing extension header
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e4b:c8fd:a204:1a90:f449:fe15:4b48:962d
-Output spacing did not start with the expected value:
-Expected: 
-  
-Got: 
-ignored bc default
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7e4b:c8fd:a204:1a90:f449:fe15:4b48:962dignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ed6:0eb4:d3b3:f25f:d7e1:5bb1:b0a9:5d63
+Stdout: 41 byte, 0 byte dropped
+1  7ed6:eb4:d3b3:f25f:d7e1:5bb1:b0a9:5d63
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee skips destination option extension header
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e15:25cb:5c8f:ae6d:4546:2786:e53f:a98d
-Output spacing did not start with the expected value:
-Expected: 
-  
-Got: 
-ignored bc default
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7e15:25cb:5c8f:ae6d:4546:2786:e53f:a98dignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e51:2796:c8c1:fa7b:80af:4c5b:cf13:916c
+Stdout: 42 byte, 0 byte dropped
+1  7e51:2796:c8c1:fa7b:80af:4c5b:cf13:916c
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee uses the extension header length field
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e71:8a2c:75a4:bc6a:eeba:7f39:0215:67ea
-Output spacing did not start with the expected value:
-Expected: 
-  
-Got: 
-ignored bc default
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 79 byte, 0 byte dropped
-1ignored bc default
-  7e71:8a2c:75a4:bc6a:eeba:7f39:215:67eaignored bc default
-
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e9f:21bc:5213:1b2a:f476:dba4:1f39:08f3
+Stdout: 41 byte, 0 byte dropped
+1  7e9f:21bc:5213:1b2a:f476:dba4:1f39:8f3
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee can traverse multiple extension headers
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e8c:b687:1b64:f561:ab1c:e790:5b90:1ee5
-Output spacing did not start with the expected value:
-Expected: 
-  
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e2f:8952:f184:cd71:331a:cc03:2d5d:6f16
+Stdout: 42 byte, 0 byte dropped
+1  7e2f:8952:f184:cd71:331a:cc03:2d5d:6f16
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee checks next extension header type
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e90:d34f:a3ee:7998:6554:3c84:8d44:7717
+Stdout: 4 byte, 0 byte dropped
+1  *
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee checks extension header next field
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e01:6a65:8537:d6b8:51a2:bb7e:002b:95fc
+Stdout: 4 byte, 0 byte dropped
+1  *
+Stderr: 0 byte, 0 byte dropped
+
+--------------------------------------------------------------------------------
+Running testcase: Testee validates checksum after extension headers
+Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e68:4b5f:56c4:f7bb:1933:40a6:78b7:beec
+Timeout marker did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+  *
 Got: 
-ignored bc default
-
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 80 byte, 0 byte dropped
-1ignored bc default
-  7e8c:b687:1b64:f561:ab1c:e790:5b90:1ee5ignored bc default
-
+  7e68:4b5f:56c4:f7bb:1933:40a6:78b7:beec
+Stdout: 42 byte, 0 byte dropped
+1  7e68:4b5f:56c4:f7bb:1933:40a6:78b7:beec
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
