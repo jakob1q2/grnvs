@@ -111,7 +111,7 @@ public class Assignment3 {
                         sock.hexdump(buffer, length);
                         System.exit(1);
                     }
-                    if (to.getTimeout() == 0) {
+                    if (to.getTimeout() == 0 && ret == 0) {
                         System.out.print("  *");
                         done = true;
                     } else {
