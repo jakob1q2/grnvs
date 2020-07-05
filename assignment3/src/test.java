@@ -30,8 +30,14 @@ public class test {
         bb.clear();
         bb.putChar(i++);
         res = bb.array();
+        bb.clear();
         System.out.println(Arrays.toString(res));
         System.out.println((int) 0b10101010);
+
+        bb.put(new byte[]{(byte)2,(byte) 3});
+        char x = bb.getChar();
+        bb.clear();
+        System.out.println(x + " " + 0b00100011);
 
 
     }
