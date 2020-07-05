@@ -17,14 +17,25 @@ public class Assignment3 {
      * To get your own IP address use the getIPv6 function.
      * This one is also documented in GRNVS_RAW.java
      */
+
+    private static final byte versionIpv6 = (byte) 0x60; //version IPv6 (traffic class set 0)
+    private static final byte icmpLength = (byte) 8; //length of ICMPv6 message in byte
+    private static final byte icmpNH = (byte) 0x3a; //Next Header ICMPv6
+    private static final byte icmpEchoRequ = (byte) 128; //ICMP type Echo Request
+    private static final byte icmpEchoRep = (byte) 129; //ICMP type Echo Reply
+    private static final byte icmpTimeEx = (byte) 3; //ICMP type Time Exceeded
+    private static final byte icmpDestUnreach = (byte) 1; //ICMP type Destination unreachable
+    private static final byte icmpID = (byte) 0xab; // ICMP Identifier in Byte 44-45, we modify only 44
+    private static boolean stopProbes;
+
     public static void run(GRNVS_RAW sock, String dst, int timeout,
                            int attempts, int hopLimit) {
         byte[] buffer = new byte[1514];
         int length = 48; //was set 0?
-        byte[] dstIp;
-        byte[] srcIp;
-        byte[] ipHeader;
-        byte[] payload;
+        byte[] dstIp = new byte[16];
+        byte[] srcIp = sock.getIPv6();
+        byte[] ipHeader = new byte[40];
+        byte[] payload = new byte[8];
 
 
         /*====================================TODO===================================*/
@@ -35,38 +46,41 @@ public class Assignment3 {
          * 3) Build and send the packet for each iteration
          * 4) Print the hops found in the specified format
          */
-        srcIp = sock.getIPv6();
         try {
             dstIp = InetAddress.getByName(dst).getAddress();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
 
+        stopProbes = false;
+
+        ipHeader[0] = versionIpv6;
+        ipHeader[4] = icmpLength;
+        ipHeader[6] = icmpNH;
+        System.arraycopy(srcIp, 0, ipHeader, 8, 16);
+        System.arraycopy(dstIp, 0, ipHeader, 24, 16);
+
+        payload[0] = icmpEchoRequ;
+        payload[1] = (byte) 0x00; // ICMP Code
+        payload[4] = icmpID;
+
         int hops = 0;
         char sequenceNumber = 0x0;
         ByteBuffer bb = ByteBuffer.allocate(2);
 
-        boolean dstReached = false;
-
-        while (!dstReached && hops <= hopLimit) {
+        while (!stopProbes && hops <= hopLimit) {
+            ipHeader[7] = (byte) hops;
+            Timeout to = new Timeout(timeout);
+            System.out.print(hops);
             for (int attempt = 1; attempt <= attempts; ++attempt) {
-
-                buffer[0] = (byte) 0x60; //version IPv6 (traffic class set 0)
-                buffer[4] = (byte) 8; //length of ICMPv6 message in byte
-                buffer[6] = (byte) 0x3a; //Next Header ICMPv6
-                buffer[7] = (byte) hops;
-                System.arraycopy(srcIp, 0, buffer, 8, 16);
-                System.arraycopy(dst, 0, buffer, 24, 16);
-
-                buffer[40] = (byte) 128; //ICMP type Echo Request
-                buffer[41] = (byte) 0x00; // ICMP Code
-                buffer[44] = (byte) 0xab; // ICMP Identifier in Byte 44-45
-
 
                 bb.putChar(sequenceNumber++);
                 byte[] sequNum = bb.array();
                 bb.clear();
-                System.arraycopy(sequNum, 0, buffer, 46, 2);
+                System.arraycopy(sequNum, 0, payload, 6, 2);
+
+                System.arraycopy(ipHeader, 0, buffer, 0, 40);
+                System.arraycopy(payload, 0, buffer, 40, 8);
 
                 byte[] cksum = GRNVS_RAW.checksum(buffer, 0, buffer, 40, length - 40);
 
@@ -80,13 +94,80 @@ public class Assignment3 {
                     sock.hexdump(buffer, length);
                     System.exit(1);
                 }
+
+                boolean done = false;
+                while (!done) {
+                    ret = sock.read(buffer, to);
+
+                    if (0 > ret) {
+                        System.err.printf("failed to read from socket: %d\n", ret);
+                        sock.hexdump(buffer, length);
+                        System.exit(1);
+                    }
+                    if (to.getTimeout() == 0) {
+                        System.out.print("  *");
+                        done = true;
+                    } else {
+                        try {
+                            done = checkMessage(buffer, done);
+                        } catch (UnknownHostException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
             }
+            System.out.print("\n");
 
         }
         /*===========================================================================*/
 
     }
 
+
+    private static boolean checkMessage(byte[] buffer, boolean done) throws UnknownHostException {
+        int pos = 6;
+        int skip = 34;
+        while (buffer[pos] == (byte) 0x00 || buffer[pos] == (byte) 0x2b || buffer[pos] == (byte) 0x3c) {
+            pos += skip;
+            skip = 8 + 8 * (int) buffer[pos + 1];
+        }
+        if (buffer[pos] == icmpNH) {
+            pos += skip;
+            byte[] src = new byte[16];
+            System.arraycopy(buffer, 8, src, 0, 16);
+            String host = InetAddress.getByAddress(src).getHostAddress();
+            switch (buffer[pos]) {
+                case icmpTimeEx:
+                    done = handleIcmpTimeEx(buffer, pos, host);
+                    break;
+                case icmpDestUnreach:
+                    done = handleIcmpDestUnreach(buffer, pos, host);
+                    break;
+                case icmpEchoRep:
+                    done = handleIcmpEchoRep(buffer, pos, host);
+                    break;
+                default:
+            }
+        }
+        return done;
+    }
+
+    private static boolean handleIcmpTimeEx(byte[] buffer, int pos, String host) {
+        System.out.print("  " + host);
+        return true;
+    }
+
+    private static boolean handleIcmpDestUnreach(byte[] buffer, int pos, String host) {
+        stopProbes = true;
+        System.out.print("  " + host + "!X");
+        return true;
+    }
+
+    private static boolean handleIcmpEchoRep(byte[] buffer, int pos, String host) {
+        System.out.print("  " + host);
+        stopProbes = true;
+        return true;
+    }
 
     public static void main(String[] argv) {
         Arguments args = new Arguments(argv);
