@@ -2,7 +2,6 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.util.Arrays;
 
 public class Assignment3 {
 
@@ -30,6 +29,8 @@ public class Assignment3 {
     private static final byte icmpID = (byte) 0xab; // ICMP Identifier in Byte 44-45, we modify only 44
     private static boolean stopProbes;
     private static byte[] myIP;
+    private static char sequenceNumber = 0x0;
+
 
     public static void run(GRNVS_RAW sock, String dst, int timeout,
                            int attempts, int hopLimit) throws UnknownHostException {
@@ -55,7 +56,7 @@ public class Assignment3 {
         bb2.order(ByteOrder.BIG_ENDIAN);
         stopProbes = false;
         int hops = 1;
-        char sequenceNumber = 0x0;
+        sequenceNumber = 0x0;
         Timeout to = new Timeout(timeout * 1000);
 
         while (!stopProbes && hops <= hopLimit) {
@@ -157,8 +158,7 @@ public class Assignment3 {
         }
         if (buffer[pos] == icmpNH) {
             pos += skip;
-            //boolean relevant = checkProperties(buffer, pos);
-            boolean relevant = true;
+            boolean relevant = checkIcmpProperties(buffer, pos);
             if (relevant) {
                 byte[] src = new byte[16];
                 System.arraycopy(buffer, 8, src, 0, 16);
@@ -180,7 +180,7 @@ public class Assignment3 {
         return done;
     }
 
-    private static boolean checkProperties(byte[] buffer, int pos) {
+    private static boolean checkIcmpProperties(byte[] buffer, int pos) {
         //check checksum
         byte[] sum = new byte[2];
         System.arraycopy(buffer, pos + 2, sum, 0, 2);
@@ -216,6 +216,11 @@ public class Assignment3 {
     private static boolean handleIcmpEchoRep(byte[] buffer, int pos, String host) {
         //check code
         if (buffer[pos + 1] != (byte) 0x0) {
+            return false;
+        }
+
+        //check id
+        if (buffer[pos + 4] != icmpID && buffer[pos + 5] != (byte) 0x0) {
             return false;
         }
 

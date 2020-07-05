@@ -322,13 +322,8 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee tests the echo reply checksum field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea0:7ff8:e347:69e3:11b6:98b9:419f:1822
-Timeout message did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
-  *
-Got: 
-  7ea0:7ff8:e347:69e3:11b6:98b9:419f:1822
-Stdout: 42 byte, 0 byte dropped
-1  7ea0:7ff8:e347:69e3:11b6:98b9:419f:1822
+Stdout: 4 byte, 0 byte dropped
+1  *
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
@@ -433,62 +428,81 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee skips hop by hop extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ead:9fac:2369:9fce:dec4:ea8c:ccd5:1562
-Stdout: 42 byte, 0 byte dropped
-1  7ead:9fac:2369:9fce:dec4:ea8c:ccd5:1562
-Stderr: 0 byte, 0 byte dropped
+Read something that's not stdout:
+The child closed the pipe (probably died)
+Stdout: 1 byte, 0 byte dropped
+1
+Stderr: 351 byte, 0 byte dropped
+java.lang.IllegalArgumentException: payload is shorter than payloadLength.
+	at GRNVS_RAW.checksum(GRNVS_RAW.java:101)
+	at Assignment3.checkIcmpProperties(Assignment3.java:189)
+	at Assignment3.checkMessage(Assignment3.java:161)
+	at Assignment3.run(Assignment3.java:123)
+	at Assignment3.main(Assignment3.java:237)
+payload is shorter than payloadLength.
 
 --------------------------------------------------------------------------------
 Running testcase: Testee skips routing extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eca:9a10:9b7d:2eef:0547:1ee6:d3ba:11cf
-Stdout: 41 byte, 0 byte dropped
-1  7eca:9a10:9b7d:2eef:547:1ee6:d3ba:11cf
-Stderr: 0 byte, 0 byte dropped
+Read something that's not stdout:
+The child closed the pipe (probably died)
+Stdout: 1 byte, 0 byte dropped
+1
+Stderr: 351 byte, 0 byte dropped
+java.lang.IllegalArgumentException: payload is shorter than payloadLength.
+	at GRNVS_RAW.checksum(GRNVS_RAW.java:101)
+	at Assignment3.checkIcmpProperties(Assignment3.java:189)
+	at Assignment3.checkMessage(Assignment3.java:161)
+	at Assignment3.run(Assignment3.java:123)
+	at Assignment3.main(Assignment3.java:237)
+payload is shorter than payloadLength.
 
 --------------------------------------------------------------------------------
 Running testcase: Testee skips destination option extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eb1:7c8b:1a1b:5af9:df44:85ac:1a9a:0e3d
-Stdout: 41 byte, 0 byte dropped
-1  7eb1:7c8b:1a1b:5af9:df44:85ac:1a9a:e3d
-Stderr: 0 byte, 0 byte dropped
+Read something that's not stdout:
+The child closed the pipe (probably died)
+Stdout: 1 byte, 0 byte dropped
+1
+Stderr: 351 byte, 0 byte dropped
+java.lang.IllegalArgumentException: payload is shorter than payloadLength.
+	at GRNVS_RAW.checksum(GRNVS_RAW.java:101)
+	at Assignment3.checkIcmpProperties(Assignment3.java:189)
+	at Assignment3.checkMessage(Assignment3.java:161)
+	at Assignment3.run(Assignment3.java:123)
+	at Assignment3.main(Assignment3.java:237)
+payload is shorter than payloadLength.
 
 --------------------------------------------------------------------------------
 Running testcase: Testee uses the extension header length field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea8:4d00:267b:ef2b:c30d:1196:c823:6630
-Stdout: 42 byte, 0 byte dropped
-1  7ea8:4d00:267b:ef2b:c30d:1196:c823:6630
-Stderr: 0 byte, 0 byte dropped
+Read something that's not stdout:
+The child closed the pipe (probably died)
+Stdout: 1 byte, 0 byte dropped
+1
+Stderr: 351 byte, 0 byte dropped
+java.lang.IllegalArgumentException: payload is shorter than payloadLength.
+	at GRNVS_RAW.checksum(GRNVS_RAW.java:101)
+	at Assignment3.checkIcmpProperties(Assignment3.java:189)
+	at Assignment3.checkMessage(Assignment3.java:161)
+	at Assignment3.run(Assignment3.java:123)
+	at Assignment3.main(Assignment3.java:237)
+payload is shorter than payloadLength.
 
 --------------------------------------------------------------------------------
 Running testcase: Testee can traverse multiple extension headers
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee2:bbee:fd15:e7dc:5a6c:8874:0796:b16b
-Stdout: 41 byte, 0 byte dropped
-1  7ee2:bbee:fd15:e7dc:5a6c:8874:796:b16b
-Stderr: 0 byte, 0 byte dropped
-
---------------------------------------------------------------------------------
-Running testcase: Testee checks next extension header type
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7efe:6b65:795a:903c:68a1:d330:c439:6098
-Stdout: 4 byte, 0 byte dropped
-1  *
-Stderr: 0 byte, 0 byte dropped
-
---------------------------------------------------------------------------------
-Running testcase: Testee checks extension header next field
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e1b:8718:316e:f48b:db7d:ffe2:13b0:4d52
-Stdout: 4 byte, 0 byte dropped
-1  *
-Stderr: 0 byte, 0 byte dropped
-
---------------------------------------------------------------------------------
-Running testcase: Testee validates checksum after extension headers
-Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eb9:b727:1347:647b:e937:abad:700b:468b
-Timeout marker did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
-  *
-Got: 
-  7eb9:b727:1347:647b:e937:abad:700b:468b
-Stdout: 42 byte, 0 byte dropped
-1  7eb9:b727:1347:647b:e937:abad:700b:468b
-Stderr: 0 byte, 0 byte dropped
+Read something that's not stdout:
+The child closed the pipe (probably died)
+Stdout: 1 byte, 0 byte dropped
+1
+Stderr: 351 byte, 0 byte dropped
+java.lang.IllegalArgumentException: payload is shorter than payloadLength.
+	at GRNVS_RAW.checksum(GRNVS_RAW.java:101)
+	at Assignment3.checkIcmpProperties(Assignment3.java:189)
+	at Assignment3.checkMessage(Assignment3.java:161)
+	at Assignment3.run(Assignment3.java:123)
+	at Assignment3.main(Assignment3.java:237)
+payload is shorter than payloadLength.
 
 --------------------------------------------------------------------------------
