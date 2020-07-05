@@ -13,439 +13,413 @@ Expected (ignoring case and excessive whitespace):
 Got: 
 1hop: 1
 
-Stdout: 213 byte, 0 byte dropped
+Stdout: 175 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver ff02:0:0:0:0:1:ff00:2 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 checkMessage
-receiver 7ec2:54f8:1be8:e78d:765a:2e63:339f:c99a and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 437 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 18 3a ff   fe 80 00 00 00 00 00 00   
->> 0010:  b6 ee f5 a6 f8 23 53 bc   ff 02 00 00 00 00 00 00   
->> 0020:  00 00 00 01 ff 00 00 02   87 00 04 ad 00 00 00 00   
->> 0030:  7f 00 00 00 00 00 00 00   00 00 00 00 00 00 00 02 
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e c2 54 f8 1b e8 e7 8d   
->> 0020:  76 5a 2e 63 33 9f c9 9a   80 00 dc 92 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e32:0db7:3158:a35a:255d:0517:58e9:5ed4
 Read something that's not network:
 The child printed to stdout
-Stdout: 129 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e32:db7:3158:a35a:255d:517:58e9:5ed4 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 32 0d b7 31 58 a3 5a   
->> 0020:  25 5d 05 17 58 e9 5e d4   80 00 12 ed ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct ICMP
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eb2:cdc6:9bb4:5411:0e82:7441:213d:dc87
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7eb2:cdc6:9bb4:5411:e82:7441:213d:dc87 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e b2 cd c6 9b b4 54 11   
->> 0020:  0e 82 74 41 21 3d dc 87   80 00 98 f3 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct ICMP checksum
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee9:3ea1:41e1:fc67:3e01:7e97:eadc:6b96
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ee9:3ea1:41e1:fc67:3e01:7e97:eadc:6b96 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e e9 3e a1 41 e1 fc 67   
->> 0020:  3e 01 7e 97 ea dc 6b 96   80 00 46 db ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct packet
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e38:5c2a:ecb0:3bfb:32af:3c54:ec18:db5c
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e38:5c2a:ecb0:3bfb:32af:3c54:ec18:db5c and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 38 5c 2a ec b0 3b fb   
->> 0020:  32 af 3c 54 ec 18 db 5c   80 00 1c 33 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct packet for 2nd attempt
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e1a:fe43:fbfa:aa3a:fb29:d1e6:053c:7c94
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e1a:fe43:fbfa:aa3a:fb29:d1e6:53c:7c94 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 1a fe 43 fb fa aa 3a   
->> 0020:  fb 29 d1 e6 05 3c 7c 94   80 00 e4 45 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct packet for 2nd hop
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed8:be61:89f9:5cbb:a899:0f95:b1eb:f1b3
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ed8:be61:89f9:5cbb:a899:f95:b1eb:f1b3 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e d8 be 61 89 f9 5c bb   
->> 0020:  a8 99 0f 95 b1 eb f1 b3   80 00 d5 fd ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints timeout correctly
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eef:f700:e9a1:3ae5:ca0b:cbd0:4847:64bd
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7eef:f700:e9a1:3ae5:ca0b:cbd0:4847:64bd and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e ef f7 00 e9 a1 3a e5   
->> 0020:  ca 0b cb d0 48 47 64 bd   80 00 78 62 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee stops after correct tries
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7e23:1ea8:1c7b:64c5:1473:5ac5:5e4b:7963
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e23:1ea8:1c7b:64c5:1473:5ac5:5e4b:7963 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 23 1e a8 1c 7b 64 c5   
->> 0020:  14 73 5a c5 5e 4b 79 63   80 00 f0 c7 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints IP correctly
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7e70:6424:119e:09dc:aad4:acf2:1b10:af3b
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e70:6424:119e:9dc:aad4:acf2:1b10:af3b and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 70 64 24 11 9e 09 dc   
->> 0020:  aa d4 ac f2 1b 10 af 3b   80 00 35 99 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints exceeded correctly
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7ecd:e350:4847:155c:bb6f:2219:ba9b:7df5
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ecd:e350:4847:155c:bb6f:2219:ba9b:7df5 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e cd e3 50 48 47 15 5c   
->> 0020:  bb 6f 22 19 ba 9b 7d f5   80 00 7f df ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee prints unreachable correctly
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7ee1:1a1c:7f23:f829:f8a4:1b13:b5ca:4ee8
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ee1:1a1c:7f23:f829:f8a4:1b13:b5ca:4ee8 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e e1 1a 1c 7f 23 f8 29   
->> 0020:  f8 a4 1b 13 b5 ca 4e e8   80 00 2d 05 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee properly outputs different IPs on hop
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e32:38e0:794d:3d34:bc5f:4e77:facb:6c05
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e32:38e0:794d:3d34:bc5f:4e77:facb:6c05 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 32 38 e0 79 4d 3d 34   
->> 0020:  bc 5f 4e 77 fa cb 6c 05   80 00 76 7e ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee properly resets the timeout
 Forking: trace6 -i jn0 -m 4 -q 3 -t 3 7e86:212b:aa1a:55a2:be70:b573:3b04:5cd3
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e86:212b:aa1a:55a2:be70:b573:3b04:5cd3 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 86 21 2b aa 1a 55 a2   
->> 0020:  be 70 b5 73 3b 04 5c d3   80 00 aa 90 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends another attempt after timeout
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e94:b3af:e2f0:e49e:4f32:1549:fd82:4ea9
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e94:b3af:e2f0:e49e:4f32:1549:fd82:4ea9 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 94 b3 af e2 f0 e4 9e   
->> 0020:  4f 32 15 49 fd 82 4e a9   80 00 ab 3f ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends another attempt after exceeded
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e70:d4b2:8a29:5448:9a0a:bcd5:0e18:a844
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e70:d4b2:8a29:5448:9a0a:bcd5:e18:a844 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 70 d4 b2 8a 29 54 48   
->> 0020:  9a 0a bc d5 0e 18 a8 44   80 00 16 e9 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends another attempt after unreachable
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e5b:f38e:4cd7:2d9b:0942:e506:c433:afcd
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e5b:f38e:4cd7:2d9b:942:e506:c433:afcd and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 5b f3 8e 4c d7 2d 9b   
->> 0020:  09 42 e5 06 c4 33 af cd   80 00 07 14 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends another attempt after echo reply
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e84:7f2d:add4:7647:de32:1cec:4ac4:30f6
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e84:7f2d:add4:7647:de32:1cec:4ac4:30f6 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 84 7f 2d ad d4 76 47   
->> 0020:  de 32 1c ec 4a c4 30 f6   80 00 bd 13 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee goes to another hop after exceeded
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e23:856c:fbb2:0704:f4ec:0bb9:20ba:86c3
 Read something that's not network:
 The child printed to stdout
-Stdout: 129 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e23:856c:fbb2:704:f4ec:bb9:20ba:86c3 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 23 85 6c fb b2 07 04   
->> 0020:  f4 ec 0b b9 20 ba 86 c3   80 00 a7 50 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee goes to another hop after timeout
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e05:f1ec:d967:33b7:9950:a3e3:14d3:d934
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e05:f1ec:d967:33b7:9950:a3e3:14d3:d934 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 05 f1 ec d9 67 33 b7   
->> 0020:  99 50 a3 e3 14 d3 d9 34   80 00 ad 6d ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after reply (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e5e:a0f2:10a8:f605:9401:beb4:bc44:78fa
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e5e:a0f2:10a8:f605:9401:beb4:bc44:78fa and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 5e a0 f2 10 a8 f6 05   
->> 0020:  94 01 be b4 bc 44 78 fa   80 00 a7 c6 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after reply (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e69:e623:d01a:da69:6a7e:4c7e:5125:b348
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e69:e623:d01a:da69:6a7e:4c7e:5125:b348 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 69 e6 23 d0 1a da 69   
->> 0020:  6a 7e 4c 7e 51 25 b3 48   80 00 8b 3e ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after unreachable (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e53:3a94:fb31:9990:3257:44ee:9bbc:e9e5
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e53:3a94:fb31:9990:3257:44ee:9bbc:e9e5 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 53 3a 94 fb 31 99 90   
->> 0020:  32 57 44 ee 9b bc e9 e5   80 00 0b 29 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after unreachable (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ecf:08f5:e9e2:5e53:60aa:d2b2:d085:fa54
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ecf:8f5:e9e2:5e53:60aa:d2b2:d085:fa54 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e cf 08 f5 e9 e2 5e 53   
->> 0020:  60 aa d2 b2 d0 85 fa 54   80 00 87 88 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements attempts command line option (1)
@@ -458,18 +432,17 @@ Got:
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e35:e8d4:6682:6498:d9a8:8775:6570:5a8a and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 35 e8 d4 66 82 64 98   
->> 0020:  d9 a8 87 75 65 70 5a 8a   80 00 02 7d ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements attempts command line option (2)
@@ -482,18 +455,17 @@ Got:
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e62:8029:44de:7ca5:894e:5759:d351:adac and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 62 80 29 44 de 7c a5   
->> 0020:  89 4e 57 59 d3 51 ad ac   80 00 34 05 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements hops command line option (1)
@@ -506,18 +478,17 @@ Got:
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e95:80ec:17e4:85f1:8c0c:66f1:7cc0:7cbb and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 95 80 ec 17 e4 85 f1   
->> 0020:  8c 0c 66 f1 7c c0 7c bb   80 00 cb e9 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements hops command line option (2)
@@ -530,305 +501,288 @@ Got:
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7efc:e466:da61:b63:af62:bc83:b469:2f3a and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e fc e4 66 da 61 0b 63   
->> 0020:  af 62 bc 83 b4 69 2f 3a   80 00 bd 08 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the traffic class
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaf:2716:93ac:071f:b86d:1134:2d8d:ef4f
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7eaf:2716:93ac:71f:b86d:1134:2d8d:ef4f and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e af 27 16 93 ac 07 1f   
->> 0020:  b8 6d 11 34 2d 8d ef 4f   80 00 2e ab ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the flow label (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e39:02d8:e50a:f89d:7709:d1a5:96c1:f41f
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e39:2d8:e50a:f89d:7709:d1a5:96c1:f41f and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 39 02 d8 e5 0a f8 9d   
->> 0020:  77 09 d1 a5 96 c1 f4 1f   80 00 23 70 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the flow label (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea8:ca99:b2c2:372a:cb08:cf61:c9c3:805e
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ea8:ca99:b2c2:372a:cb08:cf61:c9c3:805e and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e a8 ca 99 b2 c2 37 2a   
->> 0020:  cb 08 cf 61 c9 c3 80 5e   80 00 3d ff ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e56:9ad4:18d1:fee4:d9cd:45a3:91c6:01ff
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e56:9ad4:18d1:fee4:d9cd:45a3:91c6:1ff and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 56 9a d4 18 d1 fe e4   
->> 0020:  d9 cd 45 a3 91 c6 01 ff   80 00 71 a3 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the exceeded reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7efc:7281:cd71:65a6:3eab:49cf:714b:ce3a
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7efc:7281:cd71:65a6:3eab:49cf:714b:ce3a and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e fc 72 81 cd 71 65 a6   
->> 0020:  3e ab 49 cf 71 4b ce 3a   80 00 69 24 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the exceeded reserved field (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e0d:e98c:7e4e:32bd:f97c:8c6a:c75b:a43c
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e0d:e98c:7e4e:32bd:f97c:8c6a:c75b:a43c and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 0d e9 8c 7e 4e 32 bd   
->> 0020:  f9 7c 8c 6a c7 5b a4 3c   80 00 4b 95 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the exceeded data hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e50:5b17:9f8e:d498:0a61:03d1:bca7:0dbe
 Read something that's not network:
 The child printed to stdout
-Stdout: 128 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e50:5b17:9f8e:d498:a61:3d1:bca7:dbe and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 50 5b 17 9f 8e d4 98   
->> 0020:  0a 61 03 d1 bc a7 0d be   80 00 2f 94 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the unreachable code field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e21:2e2d:af02:c6b9:63c9:8a1f:7097:de0c
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e21:2e2d:af02:c6b9:63c9:8a1f:7097:de0c and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 21 2e 2d af 02 c6 b9   
->> 0020:  63 c9 8a 1f 70 97 de 0c   80 00 f7 22 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the unreachable reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ecf:d292:d298:4b35:61d5:55d1:6c33:ddc2
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ecf:d292:d298:4b35:61d5:55d1:6c33:ddc2 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e cf d2 92 d2 98 4b 35   
->> 0020:  61 d5 55 d1 6c 33 dd c2   80 00 e4 ed ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the unreachable reserved field (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e53:1aee:eb66:244c:3b79:1ea8:acfb:6a68
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e53:1aee:eb66:244c:3b79:1ea8:acfb:6a68 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 53 1a ee eb 66 24 4c   
->> 0020:  3b 79 1e a8 ac fb 6a 68   80 00 3b 41 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the unreachable data hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e54:2aab:ba4e:f8f6:c716:9e73:1108:db04
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e54:2aab:ba4e:f8f6:c716:9e73:1108:db04 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 54 2a ab ba 4e f8 f6   
->> 0020:  c7 16 9e 73 11 08 db 04   80 00 a7 de ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee skips hop by hop extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e87:7856:d570:4c9c:86ea:0f98:f2eb:9c53
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e87:7856:d570:4c9c:86ea:f98:f2eb:9c53 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 87 78 56 d5 70 4c 9c   
->> 0020:  86 ea 0f 98 f2 eb 9c 53   80 00 17 0e ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee skips routing extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:fa5a:d8b0:b5db:50c2:fd5d:095a:2aa5
 Read something that's not network:
 The child printed to stdout
-Stdout: 130 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ea7:fa5a:d8b0:b5db:50c2:fd5d:95a:2aa5 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e a7 fa 5a d8 b0 b5 db   
->> 0020:  50 c2 fd 5d 09 5a 2a a5   80 00 cc 0c ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee skips destination option extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea3:fbb7:1347:549a:3163:3223:4ece:765b
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ea3:fbb7:1347:549a:3163:3223:4ece:765b and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e a3 fb b7 13 47 54 9a   
->> 0020:  31 63 32 23 4e ce 76 5b   80 00 4a ce ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee uses the extension header length field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e71:b64d:216b:2871:2e25:cf37:80f9:dc62
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7e71:b64d:216b:2871:2e25:cf37:80f9:dc62 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 71 b6 4d 21 6b 28 71   
->> 0020:  2e 25 cf 37 80 f9 dc 62   80 00 7c 66 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee can traverse multiple extension headers
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ed7:19b0:1e6d:4a4f:d17c:731f:4ae9:7bc0
 Read something that's not network:
 The child printed to stdout
-Stdout: 131 byte, 0 byte dropped
+Stdout: 103 byte, 0 byte dropped
 1hop: 1
 attempt: 1
 packet sent
 checkMessage
-receiver 7ed7:19b0:1e6d:4a4f:d17c:731f:4ae9:7bc0 and my: 7f00:0:0:0:0:0:0:1
-not for me
+search icmp message
+icmpFound
+check sum
+ignored bc default
 
-Stderr: 187 byte, 0 byte dropped
->> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e d7 19 b0 1e 6d 4a 4f   
->> 0020:  d1 7c 73 1f 4a e9 7b c0   80 00 49 31 ab 00 00 00 
+Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
