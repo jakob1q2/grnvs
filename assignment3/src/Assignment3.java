@@ -176,7 +176,6 @@ public class Assignment3 {
                         done = handleIcmpEchoRep(buffer, pos, host);
                         break;
                     default: //ignore
-                        System.out.println("ignored bc default"); ////////////////////////////////////
                 }
             }
         }
