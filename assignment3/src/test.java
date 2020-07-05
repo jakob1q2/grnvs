@@ -23,9 +23,8 @@ public class test {
         System.arraycopy(b, 0, a, 1, 2);
         System.out.println(Arrays.toString(a));
         ByteBuffer bb = ByteBuffer.allocate(2);
-        char i = 0x1122;
+        char i = 0x0;
         bb.putChar(i++);
-        bb.order(ByteOrder.BIG_ENDIAN);
         byte[] res = bb.array();
         System.out.println(Arrays.toString(res));
         bb.clear();

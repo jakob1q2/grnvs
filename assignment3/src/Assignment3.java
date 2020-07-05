@@ -63,9 +63,12 @@ public class Assignment3 {
         bb2.order(ByteOrder.BIG_ENDIAN);
         stopProbes = false;
         ipHeader[0] = versionIpv6;
+
         bb2.putChar(icmpLength);
         byte[] l = bb2.array();
+        bb2.clear();
         System.arraycopy(l, 0, ipHeader, 4, 2);
+
         ipHeader[6] = icmpNH;
         System.arraycopy(srcIp, 0, ipHeader, 8, 16);
         System.arraycopy(dstIp, 0, ipHeader, 24, 16);
