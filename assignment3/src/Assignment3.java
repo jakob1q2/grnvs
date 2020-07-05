@@ -117,7 +117,7 @@ public class Assignment3 {
                         System.out.print("  *");
                         done = true;
                     } else {
-                        sock.hexdump(buffer, ret);
+                        sock.hexdump(buffer, ret); //////////////////////////////
                         done = checkMessage(buffer);
                     }
                 }
