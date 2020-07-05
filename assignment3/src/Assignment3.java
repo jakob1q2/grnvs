@@ -208,7 +208,7 @@ public class Assignment3 {
         if (buffer[pos + 1] != (byte) 0x0 || buffer[pos + 1] != (byte) 0x03 || buffer[pos + 1] != (byte) 0x04) {
             return false;
         }
-        stopProbes = true;
+        stopProbes = true; //should not hop after dest unreachable but test still fails??
         System.out.print("  " + host + "!X");
         return true;
     }
@@ -220,7 +220,7 @@ public class Assignment3 {
         }
 
         //check id
-        if (buffer[pos + 4] != icmpID && buffer[pos + 5] != (byte) 0x0) {
+        if (buffer[pos + 4] != icmpID || buffer[pos + 5] != (byte) 0x0) {
             return false;
         }
 
