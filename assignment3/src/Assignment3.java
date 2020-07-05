@@ -71,14 +71,14 @@ public class Assignment3 {
 
         int hops = 1;
         char sequenceNumber = 0x0;
-        Timeout to = new Timeout(timeout*1000);
+        Timeout to = new Timeout(timeout * 1000);
 
         while (!stopProbes && hops <= hopLimit) {
             buffer = new byte[1514];
             ipHeader[7] = (byte) hops;
             System.out.print(hops);
             for (int attempt = 1; attempt <= attempts; attempt++) {
-                to.setTimeout(timeout*1000);
+                to.setTimeout(timeout * 1000);
                 bb2.putChar(sequenceNumber++);
                 byte[] sequNum = bb2.array();
                 bb2.clear();
@@ -101,10 +101,13 @@ public class Assignment3 {
                 }
 
                 boolean done = false;
+
+                int counter = 0;
                 while (!done) {
                     buffer = new byte[1514];
                     ret = sock.read(buffer, to);
 
+                    System.out.println("Counter" + (++counter) + " and read " + ret); /////////////////////////////
                     if (0 > ret) {
                         System.err.printf("failed to read from socket: %d\n", ret);
                         sock.hexdump(buffer, length);
@@ -132,6 +135,7 @@ public class Assignment3 {
         System.arraycopy(buffer, 24, rec, 0, 16);
         String receiver = InetAddress.getByAddress(rec).getHostAddress();
         if (InetAddress.getByAddress(myIP).getHostAddress() != receiver) { //message not for me
+            System.out.println("not for me"); ///////////////////////////////////////////////////////////////
             return false;
         }
         boolean done = false;
