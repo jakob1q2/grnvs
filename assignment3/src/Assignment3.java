@@ -124,7 +124,6 @@ public class Assignment3 {
                         System.out.println("checkMessage"); ////////////////////////////////////
                         byte[] resp = new byte[ret];
                         System.arraycopy(buffer, 0, resp, 0, ret);
-                        sock.hexdump(buffer,ret);///////////////////////////////////
                         done = checkMessage(resp);
                     }
                 }
@@ -138,17 +137,24 @@ public class Assignment3 {
 
 
     private static boolean checkMessage(byte[] buffer) throws UnknownHostException {
+        //check if ipv6
+        if (buffer[0] != (byte) 0x60) {
+            System.out.println("not ipv6"); ////////////////////////////////////
 
-        //check dest address
-        byte[] rec = new byte[16];
-        System.arraycopy(buffer, 24, rec, 0, 16);
-        String receiver = InetAddress.getByAddress(rec).getHostAddress();
-        System.out.println("receiver " + receiver + " and my: " + InetAddress.getByAddress(myIP).getHostAddress()); ////////////////////////////////////
-
-        if (!InetAddress.getByAddress(myIP).getHostAddress().equals(receiver)) { //message not for me
-            System.out.println("not for me"); ////////////////////////////////////
             return false;
         }
+        //check dest address
+        /**
+         byte[] rec = new byte[16];
+         System.arraycopy(buffer, 24, rec, 0, 16);
+         String receiver = InetAddress.getByAddress(rec).getHostAddress();
+         System.out.println("receiver " + receiver + " and my: " + InetAddress.getByAddress(myIP).getHostAddress()); ////////////////////////////////////
+
+         if (!InetAddress.getByAddress(myIP).getHostAddress().equals(receiver)) { //message not for me
+         System.out.println("not for me"); ////////////////////////////////////
+         return false;
+         }
+         */
 
         boolean done = false;
 
