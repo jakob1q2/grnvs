@@ -1,7 +1,7 @@
 This is GRNVS-Tester in version: 3.2.5
 This is running the test-suite for: trace6
 
-Summary: Passed(35), Failed(23), Skipped(9)
+Summary: Passed(29), Failed(26), Skipped(12)
 Test: Testee runs - PASS
 Test: Testee prints the initial line number - PASS
 Test: Testee sends correct header - PASS
@@ -40,7 +40,7 @@ Test: Testee tests the echo reply type field - PASS
 Test: Testee tests the echo reply code field - PASS
 Test: Testee tests the echo reply identifier field - FAIL
 Test: Testee tests the echo reply sequence field - FAIL
-Test: Testee tests the echo reply checksum field - FAIL
+Test: Testee tests the echo reply checksum field - PASS
 Test: Testee tests the unreachable type field - SKIPPED
 Test: Testee tests the unreachable data field (1) - SKIPPED
 Test: Testee tests the unreachable data field (2) - SKIPPED
@@ -61,13 +61,13 @@ Test: Testee ignores the unreachable code field - FAIL
 Test: Testee ignores the unreachable reserved field (1) - FAIL
 Test: Testee ignores the unreachable reserved field (2) - FAIL
 Test: Testee ignores the unreachable data hop limit - FAIL
-Test: Testee skips hop by hop extension header - PASS
-Test: Testee skips routing extension header - PASS
-Test: Testee skips destination option extension header - PASS
-Test: Testee uses the extension header length field - PASS
-Test: Testee can traverse multiple extension headers - PASS
-Test: Testee checks next extension header type - PASS
-Test: Testee checks extension header next field - PASS
-Test: Testee validates checksum after extension headers - FAIL
+Test: Testee skips hop by hop extension header - FAIL
+Test: Testee skips routing extension header - FAIL
+Test: Testee skips destination option extension header - FAIL
+Test: Testee uses the extension header length field - FAIL
+Test: Testee can traverse multiple extension headers - FAIL
+Test: Testee checks next extension header type - SKIPPED
+Test: Testee checks extension header next field - SKIPPED
+Test: Testee validates checksum after extension headers - SKIPPED
 
-1 minutes and 15 seconds
+1 minutes and 9 seconds
