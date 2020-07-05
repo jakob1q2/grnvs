@@ -116,7 +116,7 @@ public class Assignment3 {
                         done = true;
                     } else {
                         try {
-                            done = checkMessage(buffer, done);
+                            done = checkMessage(buffer);
                         } catch (UnknownHostException e) {
                             e.printStackTrace();
                         }
@@ -131,7 +131,8 @@ public class Assignment3 {
     }
 
 
-    private static boolean checkMessage(byte[] buffer, boolean done) throws UnknownHostException {
+    private static boolean checkMessage(byte[] buffer) throws UnknownHostException {
+        boolean done = false;
         int pos = 6;
         int skip = 34;
         while (buffer[pos] == (byte) 0x00 || buffer[pos] == (byte) 0x2b || buffer[pos] == (byte) 0x3c) {
@@ -143,6 +144,7 @@ public class Assignment3 {
             byte[] src = new byte[16];
             System.arraycopy(buffer, 8, src, 0, 16);
             String host = InetAddress.getByAddress(src).getHostAddress();
+            System.out.println(host); ////////////////////////////////////////////
             switch (buffer[pos]) {
                 case icmpTimeEx:
                     done = handleIcmpTimeEx(buffer, pos, host);
