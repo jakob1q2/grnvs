@@ -136,17 +136,15 @@ public class Assignment3 {
         if (buffer[0] != (byte) 0x60) {
             return false;
         }
-        //check dest address
-        /**
-         byte[] rec = new byte[16];
-         System.arraycopy(buffer, 24, rec, 0, 16);
-         String receiver = InetAddress.getByAddress(rec).getHostAddress();
-         System.out.println("receiver " + receiver + " and my: " + InetAddress.getByAddress(myIP).getHostAddress()); ////////////////////////////////////
 
-         if (!InetAddress.getByAddress(myIP).getHostAddress().equals(receiver)) { //message not for me
-         return false;
-         }
-         */
+        //check dest address
+        byte[] rec = new byte[16];
+        System.arraycopy(buffer, 24, rec, 0, 16);
+        String receiver = InetAddress.getByAddress(rec).getHostAddress();
+        if (!InetAddress.getByAddress(myIP).getHostAddress().equals(receiver)) { //message not for me
+            return false;
+        }
+
 
         boolean done = false;
 
@@ -196,17 +194,31 @@ public class Assignment3 {
     }
 
     private static boolean handleIcmpTimeEx(byte[] buffer, int pos, String host) {
+        //check code
+        if (buffer[pos + 1] != (byte) 0x0 || buffer[pos + 1] != (byte) 0x01) {
+            return false;
+        }
+
         System.out.print("  " + host);
         return true;
     }
 
     private static boolean handleIcmpDestUnreach(byte[] buffer, int pos, String host) {
+        //check code
+        if (buffer[pos + 1] != (byte) 0x0 || buffer[pos + 1] != (byte) 0x03 || buffer[pos + 1] != (byte) 0x04) {
+            return false;
+        }
         stopProbes = true;
         System.out.print("  " + host + "!X");
         return true;
     }
 
     private static boolean handleIcmpEchoRep(byte[] buffer, int pos, String host) {
+        //check code
+        if (buffer[pos + 1] != (byte) 0x0) {
+            return false;
+        }
+
         System.out.print("  " + host);
         stopProbes = true;
         return true;
