@@ -762,13 +762,12 @@ Stderr: 0 byte, 0 byte dropped
 Running testcase: Testee does not hop after unreachable (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed4:b663:35c1:c7e4:2483:67d8:ed96:12ec
 Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 62 byte, 0 byte dropped
+Stdout: 19 byte, 0 byte dropped
 158
 -128
   *
 258
 1
-  7e39:2d8:e50a:f89d:7709:d1a5:96c1:f41f!X
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -777,19 +776,24 @@ Running testcase: Testee does not hop after unreachable (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaa:82ca:6c49:ae90:cd16:68ba:ac7a:a6f2
 Read something that's not network:
 The child printed to stdout
-Stdout: 75 byte, 0 byte dropped
+Stdout: 25 byte, 0 byte dropped
 158
 -128
   *  *  *
 258
 1
-  7ea8:ca99:b2c2:372a:cb08:cf61:c9c3:805e!X  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements attempts command line option (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e03:28da:4cd7:6a19:edd2:d399:4c79:8b00
+Initial line number did not match the expected value:
+Expected (ignoring case and excessive whitespace): 
+1
+Got: 
+158
+
 Read something that's not network:
 The child printed to stdout
 Stdout: 291 byte, 0 byte dropped
@@ -1098,7 +1102,7 @@ Running testcase: Testee ignores the hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e89:1a2b:211b:0107:0dd8:fd8b:16c2:a1a4
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 326 byte, 0 byte dropped
+Stdout: 187 byte, 0 byte dropped
 158
 -128
   *  *  *
@@ -1123,27 +1127,6 @@ Stdout: 326 byte, 0 byte dropped
 858
 -128
   *  *  *
-958
--128
-  *  *  *
-1058
--128
-  *  *  *
-1158
--128
-  *  *  *
-1258
--128
-  *  *  *
-1358
--128
-  *  *  *
-1458
--128
-  *  *  *
-1558
--128
-  *  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1152,52 +1135,12 @@ Running testcase: Testee ignores the exceeded reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ef7:edde:13ef:e520:c7e2:abdd:a44d:8188
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 326 byte, 0 byte dropped
+Stdout: 25 byte, 0 byte dropped
 158
 -128
   *  *  *
 258
 3
-  7e53:1aee:eb66:244c:3b79:1ea8:acfb:6a68  *  *
-358
--128
-  *  *  *
-458
--128
-  *  *  *
-558
--128
-  *  *  *
-658
--128
-  *  *  *
-758
--128
-  *  *  *
-858
--128
-  *  *  *
-958
--128
-  *  *  *
-1058
--128
-  *  *  *
-1158
--128
-  *  *  *
-1258
--128
-  *  *  *
-1358
--128
-  *  *  *
-1458
--128
-  *  *  *
-1558
--128
-  *  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1260,12 +1203,43 @@ Running testcase: Testee ignores the exceeded data hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e22:0aa7:4d31:b55b:03a0:0d22:0d47:5dcd
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 25 byte, 0 byte dropped
+Stdout: 265 byte, 0 byte dropped
 158
 -128
   *  *  *
 258
 3
+  7e87:7856:d570:4c9c:86ea:f98:f2eb:9c53  *  *
+358
+-128
+  *  *  *
+458
+-128
+  *  *  *
+558
+-128
+  *  *  *
+658
+-128
+  *  *  *
+758
+-128
+  *  *  *
+858
+-128
+  *  *  *
+958
+-128
+  *  *  *
+1058
+-128
+  *  *  *
+1158
+-128
+  *  *  *
+1258
+-128
+  *  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1274,13 +1248,12 @@ Running testcase: Testee ignores the unreachable code field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:fa5a:d8b0:b5db:50c2:fd5d:095a:2aa5
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 75 byte, 0 byte dropped
+Stdout: 25 byte, 0 byte dropped
 158
 -128
   *  *  *
 258
 1
-  7ea3:fbb7:1347:549a:3163:3223:4ece:765b!X  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1289,13 +1262,12 @@ Running testcase: Testee ignores the unreachable reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e71:b64d:216b:2871:2e25:cf37:80f9:dc62
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 75 byte, 0 byte dropped
+Stdout: 25 byte, 0 byte dropped
 158
 -128
   *  *  *
 258
 1
-  7ed7:19b0:1e6d:4a4f:d17c:731f:4ae9:7bc0!X  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
