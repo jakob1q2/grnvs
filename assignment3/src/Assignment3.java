@@ -20,7 +20,7 @@ public class Assignment3 {
      */
 
     private static final byte versionIpv6 = (byte) 0x60; //version IPv6 (traffic class set 0)
-    private static final byte icmpLength = 8; //length of ICMPv6 message in byte
+    private static final char icmpLength = 8; //length of ICMPv6 message in byte
     private static final byte icmpNH = (byte) 0x3a; //Next Header ICMPv6
     private static final byte icmpEchoRequ = (byte) 128; //ICMP type Echo Request
     private static final byte icmpEchoRep = (byte) 129; //ICMP type Echo Reply
@@ -59,12 +59,12 @@ public class Assignment3 {
             e.printStackTrace();
         }
 
-        ByteBuffer bb = ByteBuffer.allocate(2);
-        bb.order(ByteOrder.BIG_ENDIAN);
+        ByteBuffer bb2 = ByteBuffer.allocate(2);
+        bb2.order(ByteOrder.BIG_ENDIAN);
         stopProbes = false;
         ipHeader[0] = versionIpv6;
-        bb.putInt(icmpLength);
-        byte[] l = bb.array();
+        bb2.putChar(icmpLength);
+        byte[] l = bb2.array();
         System.arraycopy(l, 0, ipHeader, 4, 2);
         ipHeader[6] = icmpNH;
         System.arraycopy(srcIp, 0, ipHeader, 8, 16);
@@ -83,9 +83,9 @@ public class Assignment3 {
             System.out.print(hops);
             for (int attempt = 1; attempt <= attempts; ++attempt) {
 
-                bb.putChar(sequenceNumber++);
-                byte[] sequNum = bb.array();
-                bb.clear();
+                bb2.putChar(sequenceNumber++);
+                byte[] sequNum = bb2.array();
+                bb2.clear();
                 System.arraycopy(sequNum, 0, payload, 6, 2);
 
                 System.arraycopy(ipHeader, 0, buffer, 0, 40);
