@@ -106,12 +106,13 @@ public class Assignment3 {
                 while (!done) {
                     ret = sock.read(buffer, to);
 
+                    System.out.println(ret); //////////////////////////////////////////////
                     if (0 > ret) {
                         System.err.printf("failed to read from socket: %d\n", ret);
                         sock.hexdump(buffer, length);
                         System.exit(1);
                     }
-                    if (to.getTimeout() == 0 && ret == 0) {
+                    if (ret == 0) {
                         System.out.print("  *");
                         done = true;
                     } else {
