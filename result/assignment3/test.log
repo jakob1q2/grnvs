@@ -1,36 +1,36 @@
 This is GRNVS-Tester in version: 3.2.5
 This is running the test-suite for: trace6
 
-Summary: Passed(1), Failed(44), Skipped(22)
+Summary: Passed(19), Failed(26), Skipped(22)
 Test: Testee runs - PASS
-Test: Testee prints the initial line number - FAIL
-Test: Testee sends correct header - FAIL
-Test: Testee sends correct ICMP - FAIL
-Test: Testee sends correct ICMP checksum - FAIL
-Test: Testee sends correct packet - FAIL
-Test: Testee sends correct packet for 2nd attempt - FAIL
-Test: Testee sends correct packet for 2nd hop - FAIL
-Test: Testee prints timeout correctly - FAIL
-Test: Testee stops after correct tries - FAIL
+Test: Testee prints the initial line number - PASS
+Test: Testee sends correct header - PASS
+Test: Testee sends correct ICMP - PASS
+Test: Testee sends correct ICMP checksum - PASS
+Test: Testee sends correct packet - PASS
+Test: Testee sends correct packet for 2nd attempt - PASS
+Test: Testee sends correct packet for 2nd hop - PASS
+Test: Testee prints timeout correctly - PASS
+Test: Testee stops after correct tries - PASS
 Test: Testee prints IP correctly - FAIL
 Test: Testee prints exceeded correctly - FAIL
 Test: Testee prints unreachable correctly - FAIL
 Test: Testee properly outputs different IPs on hop - FAIL
 Test: Testee properly resets the timeout - FAIL
-Test: Testee sends another attempt after timeout - FAIL
-Test: Testee sends another attempt after exceeded - FAIL
-Test: Testee sends another attempt after unreachable - FAIL
-Test: Testee sends another attempt after echo reply - FAIL
+Test: Testee sends another attempt after timeout - PASS
+Test: Testee sends another attempt after exceeded - PASS
+Test: Testee sends another attempt after unreachable - PASS
+Test: Testee sends another attempt after echo reply - PASS
 Test: Testee goes to another hop after exceeded - FAIL
-Test: Testee goes to another hop after timeout - FAIL
+Test: Testee goes to another hop after timeout - PASS
 Test: Testee does not hop after reply (1) - FAIL
 Test: Testee does not hop after reply (2) - FAIL
 Test: Testee does not hop after unreachable (1) - FAIL
 Test: Testee does not hop after unreachable (2) - FAIL
-Test: Testee implements attempts command line option (1) - FAIL
-Test: Testee implements attempts command line option (2) - FAIL
-Test: Testee implements hops command line option (1) - FAIL
-Test: Testee implements hops command line option (2) - FAIL
+Test: Testee implements attempts command line option (1) - PASS
+Test: Testee implements attempts command line option (2) - PASS
+Test: Testee implements hops command line option (1) - PASS
+Test: Testee implements hops command line option (2) - PASS
 Test: Testee tests the IP header version - SKIPPED
 Test: Testee tests the IP length field - SKIPPED
 Test: Testee tests the next header field - SKIPPED
@@ -70,4 +70,4 @@ Test: Testee checks next extension header type - SKIPPED
 Test: Testee checks extension header next field - SKIPPED
 Test: Testee validates checksum after extension headers - SKIPPED
 
-0 minutes and 14 seconds
+0 minutes and 16 seconds
