@@ -137,7 +137,12 @@ public class Assignment3 {
 
 
     private static boolean checkMessage(byte[] buffer) throws UnknownHostException {
+        //check if ipv6
+        if (buffer[0] != (byte) 0x60) {
+            System.out.println("not ipv6"); ////////////////////////////////////
 
+            return false;
+        }
         //check dest address
         /**
          byte[] rec = new byte[16];
