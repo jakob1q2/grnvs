@@ -70,4 +70,4 @@ Test: Testee checks next extension header type - SKIPPED
 Test: Testee checks extension header next field - SKIPPED
 Test: Testee validates checksum after extension headers - SKIPPED
 
-1 minutes and 12 seconds
+1 minutes and 9 seconds
