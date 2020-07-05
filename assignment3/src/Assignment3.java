@@ -109,7 +109,6 @@ public class Assignment3 {
                 //start read
                 boolean done = false; //done if timeout or valid response
                 while (!done) {
-                    buffer = new byte[1514];
                     ret = sock.read(buffer, to);
 
                     if (0 > ret) {
