@@ -1,7 +1,7 @@
 This is GRNVS-Tester in version: 3.2.5
 This is running the test-suite for: trace6
 
-Summary: Passed(19), Failed(26), Skipped(22)
+Summary: Passed(20), Failed(25), Skipped(22)
 Test: Testee runs - PASS
 Test: Testee prints the initial line number - PASS
 Test: Testee sends correct header - PASS
@@ -21,7 +21,7 @@ Test: Testee sends another attempt after timeout - PASS
 Test: Testee sends another attempt after exceeded - PASS
 Test: Testee sends another attempt after unreachable - PASS
 Test: Testee sends another attempt after echo reply - PASS
-Test: Testee goes to another hop after exceeded - FAIL
+Test: Testee goes to another hop after exceeded - PASS
 Test: Testee goes to another hop after timeout - PASS
 Test: Testee does not hop after reply (1) - FAIL
 Test: Testee does not hop after reply (2) - FAIL
@@ -70,4 +70,4 @@ Test: Testee checks next extension header type - SKIPPED
 Test: Testee checks extension header next field - SKIPPED
 Test: Testee validates checksum after extension headers - SKIPPED
 
-0 minutes and 16 seconds
+0 minutes and 18 seconds

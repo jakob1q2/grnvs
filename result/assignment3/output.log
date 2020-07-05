@@ -217,23 +217,9 @@ Failed to validate IP: Hop IP
 Could not convert found string to IP
 Read something that's not network:
 The child printed to stdout
-Stdout: 171 byte, 0 byte dropped
+Stdout: 12 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
-
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
@@ -254,8 +240,8 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee sends another attempt after timeout
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e23:856c:fbb2:0704:f4ec:0bb9:20ba:86c3
-Stdout: 7 byte, 0 byte dropped
-1  *  *
+Stdout: 4 byte, 0 byte dropped
+1  *
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
@@ -285,11 +271,9 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee goes to another hop after exceeded
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e35:e8d4:6682:6498:d9a8:8775:6570:5a8a
-Read something that's not network:
-The child printed to stdout
-Stdout: 81 byte, 0 byte dropped
+Stdout: 119 byte, 0 byte dropped
 1  *
-2  *
+2  7e62:8029:44de:7ca5:894e:5759:d351:adac
 3  *
 4  *
 5  *
@@ -331,93 +315,39 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after reply (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7efc:e466:da61:0b63:af62:bc83:b469:2f3a
-Testee printed something to stdout, when we expected it to exit
-Stdout: 81 byte, 0 byte dropped
+Testee continued to run (sleep?) when it was supposed to exit
+Stdout: 47 byte, 0 byte dropped
 1  *
-2  *
-3  *
-4  *
-5  *
-6  *
-7  *
-8  *
-9  *
-10  *
-11  *
-12  *
-13  *
-14  *
-15  *
+2  7efc:e466:da61:b63:af62:bc83:b469:2f3a
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after reply (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaf:2716:93ac:071f:b86d:1134:2d8d:ef4f
-Testee printed something to stdout, when we expected it to exit
-Stdout: 171 byte, 0 byte dropped
+Testee continued to run (sleep?) when it was supposed to exit
+Stdout: 59 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
+2  7eaf:2716:93ac:71f:b86d:1134:2d8d:ef4f  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after unreachable (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7e39:02d8:e50a:f89d:7709:d1a5:96c1:f41f
-Testee printed something to stdout, when we expected it to exit
-Stdout: 81 byte, 0 byte dropped
+Testee continued to run (sleep?) when it was supposed to exit
+Stdout: 6 byte, 0 byte dropped
 1  *
-2  *
-3  *
-4  *
-5  *
-6  *
-7  *
-8  *
-9  *
-10  *
-11  *
-12  *
-13  *
-14  *
-15  *
-
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee does not hop after unreachable (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea8:ca99:b2c2:372a:cb08:cf61:c9c3:805e
-Testee printed something to stdout, when we expected it to exit
-Stdout: 171 byte, 0 byte dropped
+Testee continued to run (sleep?) when it was supposed to exit
+Stdout: 12 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
-
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
@@ -486,9 +416,9 @@ Running testcase: Testee ignores the traffic class
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ef4:b2ed:7216:ecf3:014d:f000:108b:67cf
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 206 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
+2  7e50:5b17:9f8e:d498:a61:3d1:bca7:dbe  *  *
 3  *  *  *
 4  *  *  *
 5  *  *  *
@@ -510,9 +440,9 @@ Running testcase: Testee ignores the flow label (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ebf:ab0e:d598:01d6:e5f2:d6f6:7d3e:c516
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 209 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
+2  7e21:2e2d:af02:c6b9:63c9:8a1f:7097:de0c  *  *
 3  *  *  *
 4  *  *  *
 5  *  *  *
@@ -534,9 +464,9 @@ Running testcase: Testee ignores the flow label (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e89:1a2b:211b:0107:0dd8:fd8b:16c2:a1a4
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 209 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
+2  7ecf:d292:d298:4b35:61d5:55d1:6c33:ddc2  *  *
 3  *  *  *
 4  *  *  *
 5  *  *  *
@@ -558,9 +488,9 @@ Running testcase: Testee ignores the hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ef7:edde:13ef:e520:c7e2:abdd:a44d:8188
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 209 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
+2  7e53:1aee:eb66:244c:3b79:1ea8:acfb:6a68  *  *
 3  *  *  *
 4  *  *  *
 5  *  *  *
@@ -582,9 +512,9 @@ Running testcase: Testee ignores the exceeded reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e58:4606:472b:260e:0dd2:ebb2:1f6c:3a3b
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 209 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
+2  7e54:2aab:ba4e:f8f6:c716:9e73:1108:db04  *  *
 3  *  *  *
 4  *  *  *
 5  *  *  *
@@ -606,9 +536,9 @@ Running testcase: Testee ignores the exceeded reserved field (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e22:0aa7:4d31:b55b:03a0:0d22:0d47:5dcd
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 208 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
+2  7e87:7856:d570:4c9c:86ea:f98:f2eb:9c53  *  *
 3  *  *  *
 4  *  *  *
 5  *  *  *
@@ -630,23 +560,9 @@ Running testcase: Testee ignores the exceeded data hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:fa5a:d8b0:b5db:50c2:fd5d:095a:2aa5
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 12 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
-
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
@@ -654,23 +570,9 @@ Running testcase: Testee ignores the unreachable code field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e71:b64d:216b:2871:2e25:cf37:80f9:dc62
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 12 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
-
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
@@ -678,22 +580,9 @@ Running testcase: Testee ignores the unreachable reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e31:0d7b:9c36:edca:5bbc:02db:b5de:3d52
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 61 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
+2  7e57:2d4:c44c:2495:c897:b512:8030:d2db!X  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -702,23 +591,9 @@ Running testcase: Testee ignores the unreachable reserved field (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee0:56fd:1643:c871:ffca:4db5:a88a:075e
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 12 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
-
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
@@ -726,22 +601,9 @@ Running testcase: Testee ignores the unreachable data hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea0:7ff8:e347:69e3:11b6:98b9:419f:1822
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 62 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
+2  7e4b:c8fd:a204:1a90:f449:fe15:4b48:962d!X  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -750,22 +612,9 @@ Running testcase: Testee skips hop by hop extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e15:25cb:5c8f:ae6d:4546:2786:e53f:a98d
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 60 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
+2  7e15:25cb:5c8f:ae6d:4546:2786:e53f:a98d  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -774,23 +623,9 @@ Running testcase: Testee skips routing extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e71:8a2c:75a4:bc6a:eeba:7f39:0215:67ea
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 12 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
-
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
@@ -798,22 +633,9 @@ Running testcase: Testee skips destination option extension header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e8c:b687:1b64:f561:ab1c:e790:5b90:1ee5
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 60 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
+2  7e8c:b687:1b64:f561:ab1c:e790:5b90:1ee5  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -822,22 +644,9 @@ Running testcase: Testee uses the extension header length field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea8:1177:4dcd:e13b:8760:748a:76db:74a1
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 60 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
+2  7ea8:1177:4dcd:e13b:8760:748a:76db:74a1  *  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -846,23 +655,9 @@ Running testcase: Testee can traverse multiple extension headers
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e2a:2883:8f1d:e43a:39cc:ca94:5ce8:795e
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 171 byte, 0 byte dropped
+Stdout: 12 byte, 0 byte dropped
 1  *  *  *
-2  *  *  *
-3  *  *  *
-4  *  *  *
-5  *  *  *
-6  *  *  *
-7  *  *  *
-8  *  *  *
-9  *  *  *
-10  *  *  *
-11  *  *  *
-12  *  *  *
-13  *  *  *
-14  *  *  *
-15  *  *  *
-
+2
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
