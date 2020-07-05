@@ -34,7 +34,7 @@ public class Assignment3 {
     public static void run(GRNVS_RAW sock, String dst, int timeout,
                            int attempts, int hopLimit) throws UnknownHostException {
         byte[] buffer;
-        int length = 48; //was set 0?
+        int length = 48;
         byte[] dstIp = InetAddress.getByName(dst).getAddress();
         byte[] srcIp = sock.getIPv6();
         myIP = srcIp;
@@ -54,36 +54,40 @@ public class Assignment3 {
         ByteBuffer bb2 = ByteBuffer.allocate(2);
         bb2.order(ByteOrder.BIG_ENDIAN);
         stopProbes = false;
-        ipHeader[0] = versionIpv6;
-
-        bb2.putChar(icmpLength);
-        byte[] l = bb2.array();
-        bb2.clear();
-        System.arraycopy(l, 0, ipHeader, 4, 2);
-
-        ipHeader[6] = icmpNH;
-        System.arraycopy(srcIp, 0, ipHeader, 8, 16);
-        System.arraycopy(dstIp, 0, ipHeader, 24, 16);
-
-        payload[0] = icmpEchoRequ;
-        payload[1] = (byte) 0x00; // ICMP Code
-        payload[4] = icmpID;
-
         int hops = 1;
         char sequenceNumber = 0x0;
         Timeout to = new Timeout(timeout * 1000);
 
         while (!stopProbes && hops <= hopLimit) {
-            buffer = new byte[1514];
-            ipHeader[7] = (byte) hops;
             System.out.print(hops);
             for (int attempt = 1; attempt <= attempts; attempt++) {
+                buffer = new byte[1514];
+
+                //build header
+                ipHeader[0] = versionIpv6;
+
+                bb2.putChar(icmpLength);
+                byte[] l = bb2.array();
+                bb2.clear();
+                System.arraycopy(l, 0, ipHeader, 4, 2);
+
+                ipHeader[6] = icmpNH;
+                ipHeader[7] = (byte) hops;
+                System.arraycopy(srcIp, 0, ipHeader, 8, 16);
+                System.arraycopy(dstIp, 0, ipHeader, 24, 16);
+
+                //build payload
+                payload[0] = icmpEchoRequ;
+                payload[1] = (byte) 0x00; // ICMP Code
+                payload[4] = icmpID;
+
                 to.setTimeout(timeout * 1000);
                 bb2.putChar(sequenceNumber++);
                 byte[] sequNum = bb2.array();
                 bb2.clear();
                 System.arraycopy(sequNum, 0, payload, 6, 2);
 
+                //build packet
                 System.arraycopy(ipHeader, 0, buffer, 0, 40);
                 System.arraycopy(payload, 0, buffer, 40, 8);
 
@@ -91,7 +95,7 @@ public class Assignment3 {
 
                 System.arraycopy(cksum, 0, buffer, 42, 2);
 
-
+                //send
                 int ret = sock.write(buffer, length);
 
                 if (0 >= ret) {
@@ -99,9 +103,8 @@ public class Assignment3 {
                     sock.hexdump(buffer, length);
                     System.exit(1);
                 }
-
-                boolean done = false;
-
+                //start read
+                boolean done = false; //done if timeout or valid response
                 while (!done) {
                     buffer = new byte[1514];
                     ret = sock.read(buffer, to);
@@ -112,7 +115,7 @@ public class Assignment3 {
                         System.exit(1);
                     }
                     if (ret == 0) {
-                        System.out.print("  *");
+                        System.out.print("  *"); //timeout
                         done = true;
                     } else {
                         byte[] resp = new byte[ret];
@@ -131,18 +134,22 @@ public class Assignment3 {
 
     private static boolean checkMessage(byte[] buffer) throws UnknownHostException {
 
+        //check dest address
         byte[] rec = new byte[16];
         System.arraycopy(buffer, 24, rec, 0, 16);
         String receiver = InetAddress.getByAddress(rec).getHostAddress();
         if (InetAddress.getByAddress(myIP).getHostAddress() != receiver) { //message not for me
             return false;
         }
+
         boolean done = false;
+
+        //search for Icmp message
         int pos = 6;
         int skip = 34;
-        while (buffer[pos] == (byte) 0x00 || buffer[pos] == (byte) 0x2b || buffer[pos] == (byte) 0x3c) {
+        while (buffer[pos] == (byte) 0x00 || buffer[pos] == (byte) 0x2b || buffer[pos] == (byte) 0x3c) { //skip valid extension headers
             pos += skip;
-            skip = 8 + 8 * (int) buffer[pos + 1];
+            skip = 8 + 8 * (int) buffer[pos + 1]; //extension header length in byte
         }
         if (buffer[pos] == icmpNH) {
             pos += skip;
@@ -169,6 +176,7 @@ public class Assignment3 {
     }
 
     private static boolean checkProperties(byte[] buffer, int pos) {
+        //check checksum
         byte[] sum = new byte[2];
         System.arraycopy(buffer, pos + 2, sum, 0, 2);
         buffer[pos + 2] = 0;
