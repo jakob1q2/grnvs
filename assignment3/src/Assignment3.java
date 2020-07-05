@@ -29,13 +29,15 @@ public class Assignment3 {
     private static final byte icmpDestUnreach = (byte) 1; //ICMP type Destination unreachable
     private static final byte icmpID = (byte) 0xab; // ICMP Identifier in Byte 44-45, we modify only 44
     private static boolean stopProbes;
+    private static byte[] myIP;
 
     public static void run(GRNVS_RAW sock, String dst, int timeout,
                            int attempts, int hopLimit) throws UnknownHostException {
         byte[] buffer;
         int length = 48; //was set 0?
-        byte[] dstIp = new byte[16];
+        byte[] dstIp = InetAddress.getByName(dst).getAddress();
         byte[] srcIp = sock.getIPv6();
+        myIP = srcIp;
         byte[] ipHeader = new byte[40];
         byte[] payload = new byte[8];
 
@@ -48,11 +50,6 @@ public class Assignment3 {
          * 3) Build and send the packet for each iteration
          * 4) Print the hops found in the specified format
          */
-        try {
-            dstIp = InetAddress.getByName(dst).getAddress();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
 
         ByteBuffer bb2 = ByteBuffer.allocate(2);
         bb2.order(ByteOrder.BIG_ENDIAN);
@@ -104,7 +101,9 @@ public class Assignment3 {
                 }
 
                 boolean done = false;
+                int counter = 0;
                 while (!done) {
+                    System.out.println("Counter: " + (++counter)); //////////////////////////////////////////////////
                     buffer = new byte[1514];
                     ret = sock.read(buffer, to);
 
@@ -117,7 +116,6 @@ public class Assignment3 {
                         System.out.print("  *");
                         done = true;
                     } else {
-                        sock.hexdump(buffer, ret); //////////////////////////////
                         done = checkMessage(buffer);
                     }
                 }
@@ -131,6 +129,13 @@ public class Assignment3 {
 
 
     private static boolean checkMessage(byte[] buffer) throws UnknownHostException {
+
+        byte[] rec = new byte[16];
+        System.arraycopy(buffer, 24, rec, 0, 16);
+        String receiver = InetAddress.getByAddress(rec).getHostAddress();
+        if (InetAddress.getByAddress(myIP).getHostAddress() != receiver) { //message not for me
+            return false;
+        }
         boolean done = false;
         int pos = 6;
         int skip = 34;
@@ -140,24 +145,30 @@ public class Assignment3 {
         }
         if (buffer[pos] == icmpNH) {
             pos += skip;
-            byte[] src = new byte[16];
-            System.arraycopy(buffer, 8, src, 0, 16);
-            String host = InetAddress.getByAddress(src).getHostAddress();
-            switch (buffer[pos]) {
-                case icmpTimeEx:
-                    done = handleIcmpTimeEx(buffer, pos, host);
-                    break;
-                case icmpDestUnreach:
-                    done = handleIcmpDestUnreach(buffer, pos, host);
-                    break;
-                case icmpEchoRep:
-                    done = handleIcmpEchoRep(buffer, pos, host);
-                    break;
-                default:
-                    System.out.println(buffer[pos]); /////////////////////////////////////////////////////////////////////
+            boolean relevant = checkProperties(buffer, pos);
+            if (relevant) {
+                byte[] src = new byte[16];
+                System.arraycopy(buffer, 8, src, 0, 16);
+                String host = InetAddress.getByAddress(src).getHostAddress();
+                switch (buffer[pos]) {
+                    case icmpTimeEx:
+                        done = handleIcmpTimeEx(buffer, pos, host);
+                        break;
+                    case icmpDestUnreach:
+                        done = handleIcmpDestUnreach(buffer, pos, host);
+                        break;
+                    case icmpEchoRep:
+                        done = handleIcmpEchoRep(buffer, pos, host);
+                        break;
+                    default:
+                }
             }
         }
         return done;
+    }
+
+    private static boolean checkProperties(byte[] buffer, int pos) throws UnknownHostException {
+        return true;
     }
 
     private static boolean handleIcmpTimeEx(byte[] buffer, int pos, String host) {
