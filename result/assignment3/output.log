@@ -298,13 +298,8 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee tests the echo reply identifier field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e31:0d7b:9c36:edca:5bbc:02db:b5de:3d52
-Timeout message did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
-  *
-Got: 
-  7e31:d7b:9c36:edca:5bbc:2db:b5de:3d52
-Stdout: 40 byte, 0 byte dropped
-1  7e31:d7b:9c36:edca:5bbc:2db:b5de:3d52
+Stdout: 4 byte, 0 byte dropped
+1  *
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------

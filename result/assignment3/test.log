@@ -1,7 +1,7 @@
 This is GRNVS-Tester in version: 3.2.5
 This is running the test-suite for: trace6
 
-Summary: Passed(29), Failed(26), Skipped(12)
+Summary: Passed(30), Failed(25), Skipped(12)
 Test: Testee runs - PASS
 Test: Testee prints the initial line number - PASS
 Test: Testee sends correct header - PASS
@@ -38,7 +38,7 @@ Test: Testee tests the destination IP field - PASS
 Test: Testee tests the source IP field for echo replies - FAIL
 Test: Testee tests the echo reply type field - PASS
 Test: Testee tests the echo reply code field - PASS
-Test: Testee tests the echo reply identifier field - FAIL
+Test: Testee tests the echo reply identifier field - PASS
 Test: Testee tests the echo reply sequence field - FAIL
 Test: Testee tests the echo reply checksum field - PASS
 Test: Testee tests the unreachable type field - SKIPPED
