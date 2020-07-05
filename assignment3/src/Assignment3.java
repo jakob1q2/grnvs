@@ -32,18 +32,13 @@ public class Assignment3 {
 
     public static void run(GRNVS_RAW sock, String dst, int timeout,
                            int attempts, int hopLimit) {
-        ByteBuffer bb16 = ByteBuffer.allocate(16);
-        bb16.order(ByteOrder.BIG_ENDIAN);
-        bb16.put(sock.getIPv6(), 0, 16);
         byte[] buffer = new byte[1514];
         int length = 48; //was set 0?
         byte[] dstIp = new byte[16];
-        byte[] srcIp = bb16.array();
-        bb16.clear();
+        byte[] srcIp = sock.getIPv6();
         byte[] ipHeader = new byte[40];
         byte[] payload = new byte[8];
 
-        System.out.println(dst); //////////////////////////////////
 
         /*====================================TODO===================================*/
 
@@ -54,11 +49,7 @@ public class Assignment3 {
          * 4) Print the hops found in the specified format
          */
         try {
-            bb16.put(InetAddress.getByName(dst).getAddress(), 0, 16);
-            dstIp = bb16.array();
-            bb16.clear();
-            System.out.println(Arrays.toString(dstIp));/////////////
-            System.out.println(Arrays.toString(InetAddress.getByName(dst).getAddress()));///////
+            dstIp = InetAddress.getByName(dst).getAddress();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
