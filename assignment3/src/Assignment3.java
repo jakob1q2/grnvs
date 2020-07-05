@@ -58,6 +58,7 @@ public class Assignment3 {
             dstIp = bb16.array();
             bb16.clear();
             System.out.println(Arrays.toString(dstIp));/////////////
+            System.out.println(Arrays.toString(InetAddress.getByName(dst).getAddress()));///////
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
