@@ -1,0 +1,73 @@
+This is GRNVS-Tester in version: 3.2.5
+This is running the test-suite for: trace6
+
+Summary: Passed(1), Failed(44), Skipped(22)
+Test: Testee runs - PASS
+Test: Testee prints the initial line number - FAIL
+Test: Testee sends correct header - FAIL
+Test: Testee sends correct ICMP - FAIL
+Test: Testee sends correct ICMP checksum - FAIL
+Test: Testee sends correct packet - FAIL
+Test: Testee sends correct packet for 2nd attempt - FAIL
+Test: Testee sends correct packet for 2nd hop - FAIL
+Test: Testee prints timeout correctly - FAIL
+Test: Testee stops after correct tries - FAIL
+Test: Testee prints IP correctly - FAIL
+Test: Testee prints exceeded correctly - FAIL
+Test: Testee prints unreachable correctly - FAIL
+Test: Testee properly outputs different IPs on hop - FAIL
+Test: Testee properly resets the timeout - FAIL
+Test: Testee sends another attempt after timeout - FAIL
+Test: Testee sends another attempt after exceeded - FAIL
+Test: Testee sends another attempt after unreachable - FAIL
+Test: Testee sends another attempt after echo reply - FAIL
+Test: Testee goes to another hop after exceeded - FAIL
+Test: Testee goes to another hop after timeout - FAIL
+Test: Testee does not hop after reply (1) - FAIL
+Test: Testee does not hop after reply (2) - FAIL
+Test: Testee does not hop after unreachable (1) - FAIL
+Test: Testee does not hop after unreachable (2) - FAIL
+Test: Testee implements attempts command line option (1) - FAIL
+Test: Testee implements attempts command line option (2) - FAIL
+Test: Testee implements hops command line option (1) - FAIL
+Test: Testee implements hops command line option (2) - FAIL
+Test: Testee tests the IP header version - SKIPPED
+Test: Testee tests the IP length field - SKIPPED
+Test: Testee tests the next header field - SKIPPED
+Test: Testee tests the destination IP field - SKIPPED
+Test: Testee tests the source IP field for echo replies - SKIPPED
+Test: Testee tests the echo reply type field - SKIPPED
+Test: Testee tests the echo reply code field - SKIPPED
+Test: Testee tests the echo reply identifier field - SKIPPED
+Test: Testee tests the echo reply sequence field - SKIPPED
+Test: Testee tests the echo reply checksum field - SKIPPED
+Test: Testee tests the unreachable type field - SKIPPED
+Test: Testee tests the unreachable data field (1) - SKIPPED
+Test: Testee tests the unreachable data field (2) - SKIPPED
+Test: Testee tests the unreachable checksum field - SKIPPED
+Test: Testee tests the exceeded type field - SKIPPED
+Test: Testee tests the exceeded code field - SKIPPED
+Test: Testee tests the exceeded data field (1) - SKIPPED
+Test: Testee tests the exceeded data field (2) - SKIPPED
+Test: Testee tests the exceeded checksum field - SKIPPED
+Test: Testee ignores the traffic class - FAIL
+Test: Testee ignores the flow label (1) - FAIL
+Test: Testee ignores the flow label (2) - FAIL
+Test: Testee ignores the hop limit - FAIL
+Test: Testee ignores the exceeded reserved field (1) - FAIL
+Test: Testee ignores the exceeded reserved field (2) - FAIL
+Test: Testee ignores the exceeded data hop limit - FAIL
+Test: Testee ignores the unreachable code field - FAIL
+Test: Testee ignores the unreachable reserved field (1) - FAIL
+Test: Testee ignores the unreachable reserved field (2) - FAIL
+Test: Testee ignores the unreachable data hop limit - FAIL
+Test: Testee skips hop by hop extension header - FAIL
+Test: Testee skips routing extension header - FAIL
+Test: Testee skips destination option extension header - FAIL
+Test: Testee uses the extension header length field - FAIL
+Test: Testee can traverse multiple extension headers - FAIL
+Test: Testee checks next extension header type - SKIPPED
+Test: Testee checks extension header next field - SKIPPED
+Test: Testee validates checksum after extension headers - SKIPPED
+
+0 minutes and 14 seconds

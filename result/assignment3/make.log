@@ -1,0 +1,24 @@
+make -C deps/libraw/ clean
+make[1]: Entering directory '/assignment3/deps/libraw'
+rm -rf src/raw.o src/hexdump.o src/checksum.o src/crc.o
+rm -f libraw.a
+make[1]: Leaving directory '/assignment3/deps/libraw'
+rm -rf classes
+rm -f trace6
+rm -f deps/GRNVS_RAW.o
+rm -f deps/libGRNVS.so
+rm -f trace6.jar
+cp deps/run trace6
+javac -encoding UTF-8 -classpath src -d classes src/Arguments.java src/GRNVS_RAW.java src/Timeout.java src/Assignment3.java
+Note: src/GRNVS_RAW.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+cc -Ideps/libraw/include -I/usr/lib/jvm/java-11-openjdk-amd64/bin/../include -I/usr/lib/jvm/java-11-openjdk-amd64/bin/../include/linux -Ideps -fPIC -fdiagnostics-color=always   -c -o deps/GRNVS_RAW.o deps/GRNVS_RAW.c
+make -C deps/libraw/
+make[1]: Entering directory '/assignment3/deps/libraw'
+gcc -Iinclude -ggdb -Wall -Wextra -pedantic -fdiagnostics-color=auto -O2 -fPIC -fno-strict-aliasing   -c -o src/raw.o src/raw.c
+gcc -Iinclude -ggdb -Wall -Wextra -pedantic -fdiagnostics-color=auto -O2 -fPIC -fno-strict-aliasing   -c -o src/hexdump.o src/hexdump.c
+gcc -Iinclude -ggdb -Wall -Wextra -pedantic -fdiagnostics-color=auto -O2 -fPIC -fno-strict-aliasing   -c -o src/checksum.o src/checksum.c
+gcc -Iinclude -ggdb -Wall -Wextra -pedantic -fdiagnostics-color=auto -O2 -fPIC -fno-strict-aliasing   -c -o src/crc.o src/crc.c
+ar rcs libraw.a src/raw.o src/hexdump.o src/checksum.o src/crc.o
+make[1]: Leaving directory '/assignment3/deps/libraw'
+cc deps/GRNVS_RAW.o deps/libraw/libraw.a -shared -o deps/libGRNVS.so
