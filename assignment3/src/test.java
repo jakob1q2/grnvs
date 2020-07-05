@@ -31,7 +31,7 @@ public class test {
         bb.putChar(i++);
         res = bb.array();
         System.out.println(Arrays.toString(res));
-        System.out.println((byte) 135);
+        System.out.println((int) 0b10101010);
 
 
     }

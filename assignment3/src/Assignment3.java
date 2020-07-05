@@ -134,14 +134,11 @@ public class Assignment3 {
         int pos = 6;
         int skip = 34;
         while (buffer[pos] == (byte) 0x00 || buffer[pos] == (byte) 0x2b || buffer[pos] == (byte) 0x3c) {
-            System.out.println(buffer[pos]); /////////////////////////////////////////////////////////////////////
             pos += skip;
             skip = 8 + 8 * (int) buffer[pos + 1];
         }
         if (buffer[pos] == icmpNH) {
-            System.out.println(buffer[pos]); /////////////////////////////////////////////////////////////////////
             pos += skip;
-            System.out.println(buffer[pos]); /////////////////////////////////////////////////////////////////////
             byte[] src = new byte[16];
             System.arraycopy(buffer, 8, src, 0, 16);
             String host = InetAddress.getByAddress(src).getHostAddress();
@@ -156,6 +153,7 @@ public class Assignment3 {
                     done = handleIcmpEchoRep(buffer, pos, host);
                     break;
                 default:
+                    System.out.println(buffer[pos]); /////////////////////////////////////////////////////////////////////
             }
         }
         return done;
