@@ -1,13 +1,13 @@
 This is GRNVS-Tester in version: 3.2.5
 This is running the test-suite for: trace6
 
-Summary: Passed(1), Failed(44), Skipped(22)
+Summary: Passed(6), Failed(39), Skipped(22)
 Test: Testee runs - PASS
-Test: Testee prints the initial line number - FAIL
-Test: Testee sends correct header - FAIL
-Test: Testee sends correct ICMP - FAIL
-Test: Testee sends correct ICMP checksum - FAIL
-Test: Testee sends correct packet - FAIL
+Test: Testee prints the initial line number - PASS
+Test: Testee sends correct header - PASS
+Test: Testee sends correct ICMP - PASS
+Test: Testee sends correct ICMP checksum - PASS
+Test: Testee sends correct packet - PASS
 Test: Testee sends correct packet for 2nd attempt - FAIL
 Test: Testee sends correct packet for 2nd hop - FAIL
 Test: Testee prints timeout correctly - FAIL
@@ -70,4 +70,4 @@ Test: Testee checks next extension header type - SKIPPED
 Test: Testee checks extension header next field - SKIPPED
 Test: Testee validates checksum after extension headers - SKIPPED
 
-0 minutes and 24 seconds
+0 minutes and 21 seconds
