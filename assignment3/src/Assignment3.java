@@ -31,7 +31,7 @@ public class Assignment3 {
     private static boolean stopProbes;
 
     public static void run(GRNVS_RAW sock, String dst, int timeout,
-                           int attempts, int hopLimit) {
+                           int attempts, int hopLimit) throws UnknownHostException {
         byte[] buffer = new byte[1514];
         int length = 48; //was set 0?
         byte[] dstIp = new byte[16];
@@ -79,7 +79,7 @@ public class Assignment3 {
             ipHeader[7] = (byte) hops;
             Timeout to = new Timeout(timeout);
             System.out.print(hops);
-            for (int attempt = 1; attempt <= attempts; ++attempt) {
+            for (int attempt = 1; attempt <= attempts; attempt++) {
 
                 bb2.putChar(sequenceNumber++);
                 byte[] sequNum = bb2.array();
@@ -106,7 +106,6 @@ public class Assignment3 {
                 while (!done) {
                     ret = sock.read(buffer, to);
 
-                    System.out.println(ret); //////////////////////////////////////////////
                     if (0 > ret) {
                         System.err.printf("failed to read from socket: %d\n", ret);
                         sock.hexdump(buffer, length);
@@ -116,11 +115,7 @@ public class Assignment3 {
                         System.out.print("  *");
                         done = true;
                     } else {
-                        try {
-                            done = checkMessage(buffer);
-                        } catch (UnknownHostException e) {
-                            e.printStackTrace();
-                        }
+                        done = checkMessage(buffer);
                     }
                 }
             }
@@ -137,15 +132,17 @@ public class Assignment3 {
         int pos = 6;
         int skip = 34;
         while (buffer[pos] == (byte) 0x00 || buffer[pos] == (byte) 0x2b || buffer[pos] == (byte) 0x3c) {
+            System.out.println(buffer[pos]); /////////////////////////////////////////////////////////////////////
             pos += skip;
             skip = 8 + 8 * (int) buffer[pos + 1];
         }
         if (buffer[pos] == icmpNH) {
+            System.out.println(buffer[pos]); /////////////////////////////////////////////////////////////////////
             pos += skip;
+            System.out.println(buffer[pos]); /////////////////////////////////////////////////////////////////////
             byte[] src = new byte[16];
             System.arraycopy(buffer, 8, src, 0, 16);
             String host = InetAddress.getByAddress(src).getHostAddress();
-            System.out.println(host); ////////////////////////////////////////////
             switch (buffer[pos]) {
                 case icmpTimeEx:
                     done = handleIcmpTimeEx(buffer, pos, host);
