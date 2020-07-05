@@ -41,8 +41,8 @@ Stdout: 246 byte, 0 byte dropped
 
 Stderr: 2868 byte, 0 byte dropped
 >> 0000:  60 00 00 00 00 18 3a ff   fe 80 00 00 00 00 00 00   
->> 0010:  d6 ce 4f a6 68 34 ec 23   ff 02 00 00 00 00 00 00   
->> 0020:  00 00 00 01 ff 00 00 02   87 00 82 55 00 00 00 00   
+>> 0010:  ee e8 15 e4 42 62 c1 7b   ff 02 00 00 00 00 00 00   
+>> 0020:  00 00 00 01 ff 00 00 02   87 00 f4 77 00 00 00 00   
 >> 0030:  7f 00 00 00 00 00 00 00   00 00 00 00 00 00 00 02 
 >> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
 >> 0010:  00 00 00 00 00 00 00 01   7e c2 54 f8 1b e8 e7 8d   
@@ -840,9 +840,9 @@ Running testcase: Testee sends another attempt after timeout
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e23:856c:fbb2:0704:f4ec:0bb9:20ba:86c3
 Read something that's not network:
 The child printed to stdout
-Stdout: 12 byte, 0 byte dropped
+Stdout: 15 byte, 0 byte dropped
 1-128
-  *  *
+  *  *  *
 Stderr: 187 byte, 0 byte dropped
 >> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
 >> 0010:  00 00 00 00 00 00 00 01   7e 23 85 6c fb b2 07 04   
@@ -901,7 +901,7 @@ Got:
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 147 byte, 0 byte dropped
+Stdout: 189 byte, 0 byte dropped
 1-128
   *
 2  7e62:8029:44de:7ca5:894e:5759:d351:adac
@@ -923,8 +923,16 @@ Stdout: 147 byte, 0 byte dropped
   *
 11-128
   *
-12
-Stderr: 2246 byte, 0 byte dropped
+12-128
+  *
+13-128
+  *
+14-128
+  *
+15-128
+  *
+
+Stderr: 2994 byte, 0 byte dropped
 >> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
 >> 0010:  00 00 00 00 00 00 00 01   7e 35 e8 d4 66 82 64 98   
 >> 0020:  d9 a8 87 75 65 70 5a 8a   80 00 02 7d ab 00 00 00 
@@ -961,6 +969,18 @@ Stderr: 2246 byte, 0 byte dropped
 >> 0000:  60 00 00 00 00 08 3a 0a   7f 00 00 00 00 00 00 00   
 >> 0010:  00 00 00 00 00 00 00 01   7e 35 e8 d4 66 82 64 98   
 >> 0020:  d9 a8 87 75 65 70 5a 8a   80 00 02 74 ab 00 00 09 
+>> 0000:  60 00 00 00 00 08 3a 0b   7f 00 00 00 00 00 00 00   
+>> 0010:  00 00 00 00 00 00 00 01   7e 35 e8 d4 66 82 64 98   
+>> 0020:  d9 a8 87 75 65 70 5a 8a   80 00 02 73 ab 00 00 0a 
+>> 0000:  60 00 00 00 00 08 3a 0c   7f 00 00 00 00 00 00 00   
+>> 0010:  00 00 00 00 00 00 00 01   7e 35 e8 d4 66 82 64 98   
+>> 0020:  d9 a8 87 75 65 70 5a 8a   80 00 02 72 ab 00 00 0b 
+>> 0000:  60 00 00 00 00 08 3a 0d   7f 00 00 00 00 00 00 00   
+>> 0010:  00 00 00 00 00 00 00 01   7e 35 e8 d4 66 82 64 98   
+>> 0020:  d9 a8 87 75 65 70 5a 8a   80 00 02 71 ab 00 00 0c 
+>> 0000:  60 00 00 00 00 08 3a 0e   7f 00 00 00 00 00 00 00   
+>> 0010:  00 00 00 00 00 00 00 01   7e 35 e8 d4 66 82 64 98   
+>> 0020:  d9 a8 87 75 65 70 5a 8a   80 00 02 70 ab 00 00 0d 
 
 --------------------------------------------------------------------------------
 Running testcase: Testee goes to another hop after timeout
@@ -1091,11 +1111,10 @@ Stderr: 374 byte, 0 byte dropped
 Running testcase: Testee does not hop after unreachable (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed4:b663:35c1:c7e4:2483:67d8:ed96:12ec
 Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 54 byte, 0 byte dropped
+Stdout: 11 byte, 0 byte dropped
 1-128
   *
-2  7e39:2d8:e50a:f89d:7709:d1a5:96c1:f41f!X
-
+2
 Stderr: 563 byte, 0 byte dropped
 >> 0000:  60 00 00 00 00 08 3a 01   7f 00 00 00 00 00 00 00   
 >> 0010:  00 00 00 00 00 00 00 01   7e d4 b6 63 35 c1 c7 e4   
@@ -1259,18 +1278,6 @@ Stderr: 2805 byte, 0 byte dropped
 >> 0020:  d9 cd 45 a3 91 c6 01 ff   80 00 71 a3 ab 00 00 00 
 >> 0000:  60 00 00 00 00 08 3a 02   7f 00 00 00 00 00 00 00   
 >> 0010:  00 00 00 00 00 00 00 01   7e 56 9a d4 18 d1 fe e4   
->> 0020:  d9 cd 45 a3 91 c6 01 ff   80 00 71 a2 ab 00 00 01 
->> 0000:  60 00 00 00 00 08 3a 03   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 56 9a d4 18 d1 fe e4   
->> 0020:  d9 cd 45 a3 91 c6 01 ff   80 00 71 a1 ab 00 00 02 
->> 0000:  60 00 00 00 00 08 3a 04   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 56 9a d4 18 d1 fe e4   
->> 0020:  d9 cd 45 a3 91 c6 01 ff   80 00 71 a0 ab 00 00 03 
->> 0000:  60 00 00 00 00 08 3a 05   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 56 9a d4 18 d1 fe e4   
->> 0020:  d9 cd 45 a3 91 c6 01 ff   80 00 71 9f ab 00 00 04 
->> 0000:  60 00 00 00 00 08 3a 06   7f 00 00 00 00 00 00 00   
->> 0010:  00 00 00 00 00 00 00 01   7e 56 9a d4 18 d1 fe e4   
->> 0020:  d9 c
+>> 0020:  d9
 
----- skipped 35691 bytes after 50000 bytes for a total of 85691 byte output ----
+---- skipped 31857 bytes after 50000 bytes for a total of 81857 byte output ----
