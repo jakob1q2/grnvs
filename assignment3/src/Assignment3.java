@@ -144,12 +144,14 @@ public class Assignment3 {
         System.arraycopy(buffer, 24, rec, 0, 16);
         String receiver = InetAddress.getByAddress(rec).getHostAddress();
         if (InetAddress.getByAddress(myIP).getHostAddress() != receiver) { //message not for me
+            System.out.println("not for me"); ////////////////////////////////////
             return false;
         }
 
         boolean done = false;
 
         //search for Icmp message
+        System.out.println("search icmp message"); ////////////////////////////////////
         int pos = 6;
         int skip = 34;
         while (buffer[pos] == (byte) 0x00 || buffer[pos] == (byte) 0x2b || buffer[pos] == (byte) 0x3c) { //skip valid extension headers
@@ -157,6 +159,7 @@ public class Assignment3 {
             skip = 8 + 8 * (int) buffer[pos + 1]; //extension header length in byte
         }
         if (buffer[pos] == icmpNH) {
+            System.out.println("icmpFound"); ////////////////////////////////////
             pos += skip;
             boolean relevant = checkProperties(buffer, pos);
             if (relevant) {
@@ -174,6 +177,7 @@ public class Assignment3 {
                         done = handleIcmpEchoRep(buffer, pos, host);
                         break;
                     default: //ignore
+                        System.out.println("ignored bc default"); ////////////////////////////////////
                 }
             }
         }
@@ -181,6 +185,7 @@ public class Assignment3 {
     }
 
     private static boolean checkProperties(byte[] buffer, int pos) {
+        System.out.println("check sum"); ////////////////////////////////////
         //check checksum
         byte[] sum = new byte[2];
         System.arraycopy(buffer, pos + 2, sum, 0, 2);
@@ -188,6 +193,7 @@ public class Assignment3 {
         buffer[pos + 3] = 0;
         byte[] cksum = GRNVS_RAW.checksum(buffer, 0, buffer, pos, buffer.length - 40);
         if (cksum[0] != sum[0] || cksum[1] != sum[1]) {
+            System.out.println("bad checksum"); ////////////////////////////////////
             return false;
         }
         return true;
