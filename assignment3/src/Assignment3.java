@@ -71,14 +71,14 @@ public class Assignment3 {
 
         int hops = 1;
         char sequenceNumber = 0x0;
-        Timeout to = new Timeout(timeout);
+        Timeout to = new Timeout(timeout * 1000);
 
         while (!stopProbes && hops <= hopLimit) {
             buffer = new byte[1514];
             ipHeader[7] = (byte) hops;
             System.out.print(hops);
             for (int attempt = 1; attempt <= attempts; attempt++) {
-                to.setTimeout(timeout);
+                to.setTimeout(timeout * 1000);
                 bb2.putChar(sequenceNumber++);
                 byte[] sequNum = bb2.array();
                 bb2.clear();
@@ -119,7 +119,7 @@ public class Assignment3 {
                         done = true;
                     } else {
                         byte[] resp = new byte[ret];
-                        System.arraycopy(buffer,0,resp,0,ret);
+                        System.arraycopy(buffer, 0, resp, 0, ret);
                         done = checkMessage(resp);
                     }
                 }

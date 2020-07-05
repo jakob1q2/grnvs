@@ -49,20 +49,10 @@ Running testcase: Testee sends correct packet for 2nd attempt
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e1a:fe43:fbfa:aa3a:fb29:d1e6:053c:7c94
 Read something that's not network:
 The child printed to stdout
-Stdout: 209 byte, 0 byte dropped
+Stdout: 47 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -71,82 +61,10 @@ Running testcase: Testee sends correct packet for 2nd hop
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed8:be61:89f9:5cbb:a899:0f95:b1eb:f1b3
 Read something that's not network:
 The child printed to stdout
-Stdout: 1071 byte, 0 byte dropped
+Stdout: 47 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-5start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-6start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-7start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-8start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-9start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-10start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-11start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-12start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-13start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-14start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-15start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -240,202 +158,12 @@ Failed to validate IP: Hop IP
 Could not convert found string to IP
 Read something that's not network:
 The child printed to stdout
-Stdout: 3141 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 96
+Counter2 and read 96
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-5start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-6start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-7start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-8start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-9start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-10start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-11start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-12start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-13start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-14start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-15start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -452,59 +180,12 @@ Failed to validate IP: Hop IP
 Could not convert found string to IP
 Read something that's not network:
 The child printed to stdout
-Stdout: 836 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
+Counter2 and read 96
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -513,9 +194,10 @@ Running testcase: Testee sends another attempt after timeout
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e23:856c:fbb2:0704:f4ec:0bb9:20ba:86c3
 Read something that's not network:
 The child printed to stdout
-Stdout: 36 byte, 0 byte dropped
+Stdout: 47 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -524,20 +206,12 @@ Running testcase: Testee sends another attempt after exceeded
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e05:f1ec:d967:33b7:9950:a3e3:14d3:d934
 Read something that's not network:
 The child printed to stdout
-Stdout: 209 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 96
+Counter2 and read 96
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -546,20 +220,12 @@ Running testcase: Testee sends another attempt after unreachable
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e69:e623:d01a:da69:6a7e:4c7e:5125:b348
 Read something that's not network:
 The child printed to stdout
-Stdout: 209 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 96
+Counter2 and read 96
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -568,20 +234,12 @@ Running testcase: Testee sends another attempt after echo reply
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7ecf:08f5:e9e2:5e53:60aa:d2b2:d085:fa54
 Read something that's not network:
 The child printed to stdout
-Stdout: 209 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
+Counter2 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -596,82 +254,12 @@ Counter1 and read 48
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 1071 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 96
+Counter2 and read 96
 not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-5start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-6start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-7start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-8start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-9start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-10start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-11start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-12start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-13start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-14start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-15start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -686,82 +274,10 @@ Counter1 and read 48
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 1071 byte, 0 byte dropped
+Stdout: 47 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-5start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-6start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-7start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-8start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-9start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-10start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-11start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-12start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-13start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-14start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-15start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -779,202 +295,12 @@ Running testcase: Testee does not hop after reply (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaf:2716:93ac:071f:b86d:1134:2d8d:ef4f
 Read something that's not network:
 The child printed to stdout
-Stdout: 3141 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
+Counter2 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-5start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-6start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-7start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-8start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-9start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-10start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-11start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-12start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-13start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-14start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-15start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -992,202 +318,12 @@ Running testcase: Testee does not hop after unreachable (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaa:82ca:6c49:ae90:cd16:68ba:ac7a:a6f2
 Read something that's not network:
 The child printed to stdout
-Stdout: 3141 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 96
+Counter2 and read 96
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-5start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-6start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-7start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-8start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-9start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-10start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-11start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-12start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-13start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-14start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-15start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1196,202 +332,10 @@ Running testcase: Testee implements attempts command line option (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e03:28da:4cd7:6a19:edd2:d399:4c79:8b00
 Read something that's not network:
 The child printed to stdout
-Stdout: 3141 byte, 0 byte dropped
+Stdout: 47 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-5start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-6start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-7start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-8start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-9start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-10start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-11start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-12start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-13start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-14start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-15start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1404,113 +348,28 @@ Expected (ignoring case and excessive whitespace):
 Got: 
 Counter1 and read 48
 
-Stdout: 1071 byte, 0 byte dropped
+Stdout: 47 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-5start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-6start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-7start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-8start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-9start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-10start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-11start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-12start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-13start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-14start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-15start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee implements hops command line option (1)
 Forking: trace6 -i jn0 -m 2 -q 1 -t 1 7e2a:d915:0143:2fee:1502:8761:7c13:629e
-Initial line number did not match the expected value:
-Expected (ignoring case and excessive whitespace): 
-1
-Got: 
-1start attempt
-
 Second line number did not match the expected value:
 Expected (ignoring case and excessive whitespace): 
 2
 Got: 
-not for me
+Counter1 and read 48
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 142 byte, 0 byte dropped
+Stdout: 47 byte, 0 byte dropped
 1start attempt
 Counter1 and read 48
 not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1566,8 +425,8 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the exceeded reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ef7:edde:13ef:e520:c7e2:abdd:a44d:8188
-Read something that's not network:
-The child printed to stdout
+Failed to validate IP: Hop IP
+Could not convert found string to IP
 Stdout: 15 byte, 0 byte dropped
 1start attempt
 
@@ -1616,8 +475,8 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the unreachable reserved field (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e31:0d7b:9c36:edca:5bbc:02db:b5de:3d52
-Read something that's not network:
-The child printed to stdout
+Failed to validate IP: Hop IP
+Could not convert found string to IP
 Stdout: 15 byte, 0 byte dropped
 1start attempt
 
@@ -1656,12 +515,16 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-start attempt
+Counter1 and read 48
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 15 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
+Counter1 and read 48
+not for me
+Counter2 and read 56
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1676,8 +539,12 @@ start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 15 byte, 0 byte dropped
+Stdout: 79 byte, 0 byte dropped
 1start attempt
+Counter1 and read 48
+not for me
+Counter2 and read 56
+not for me
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1692,74 +559,8 @@ start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 1081 byte, 0 byte dropped
+Stdout: 15 byte, 0 byte dropped
 1start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 64
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-2start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-3start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-4start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-5start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *start attempt
-Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-6start attempt
-Counter1 and read 48
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -1774,9 +575,8 @@ start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 36 byte, 0 byte dropped
+Stdout: 15 byte, 0 byte dropped
 1start attempt
-Counter1 and read 48
 
 Stderr: 0 byte, 0 byte dropped
 
