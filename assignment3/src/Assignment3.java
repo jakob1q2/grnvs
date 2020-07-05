@@ -158,7 +158,7 @@ public class Assignment3 {
                     case icmpEchoRep:
                         done = handleIcmpEchoRep(buffer, pos, host);
                         break;
-                    default:
+                    default: //ignore
                 }
             }
         }
