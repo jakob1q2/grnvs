@@ -7,36 +7,41 @@ Stderr: 0 byte, 0 byte dropped
 --------------------------------------------------------------------------------
 Running testcase: Testee prints the initial line number
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ec2:54f8:1be8:e78d:765a:2e63:339f:c99a
-Stdout: 1 byte, 0 byte dropped
-1
+Stdout: 15 byte, 0 byte dropped
+1start attempt
+
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct header
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e32:0db7:3158:a35a:255d:0517:58e9:5ed4
-Stdout: 1 byte, 0 byte dropped
-1
+Stdout: 15 byte, 0 byte dropped
+1start attempt
+
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct ICMP
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eb2:cdc6:9bb4:5411:0e82:7441:213d:dc87
-Stdout: 1 byte, 0 byte dropped
-1
+Stdout: 15 byte, 0 byte dropped
+1start attempt
+
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct ICMP checksum
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee9:3ea1:41e1:fc67:3e01:7e97:eadc:6b96
-Stdout: 1 byte, 0 byte dropped
-1
+Stdout: 15 byte, 0 byte dropped
+1start attempt
+
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee sends correct packet
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e38:5c2a:ecb0:3bfb:32af:3c54:ec18:db5c
-Stdout: 1 byte, 0 byte dropped
-1
+Stdout: 15 byte, 0 byte dropped
+1start attempt
+
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
@@ -44,8 +49,9 @@ Running testcase: Testee sends correct packet for 2nd attempt
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e1a:fe43:fbfa:aa3a:fb29:d1e6:053c:7c94
 Read something that's not network:
 The child printed to stdout
-Stdout: 33 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 47 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 
 Stderr: 0 byte, 0 byte dropped
@@ -55,13 +61,8 @@ Running testcase: Testee sends correct packet for 2nd hop
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed8:be61:89f9:5cbb:a899:0f95:b1eb:f1b3
 Read something that's not network:
 The child printed to stdout
-Stdout: 90 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-2Counter1 and read 48
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -74,8 +75,9 @@ Expected (ignoring case and excessive whitespace):
 Got: 
 Counter1 and read 48
 
-Stdout: 33 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 47 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 
 Stderr: 0 byte, 0 byte dropped
@@ -84,9 +86,8 @@ Stderr: 0 byte, 0 byte dropped
 Running testcase: Testee stops after correct tries
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7e23:1ea8:1c7b:64c5:1473:5ac5:5e4b:7963
 Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 33 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -97,15 +98,12 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 48
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -116,15 +114,12 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -135,7 +130,7 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Unreachable marker did not match the expected value:
 Expected (ignoring case and excessive whitespace): 
@@ -145,11 +140,8 @@ Got:
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -160,14 +152,15 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
 Read something that's not network:
 The child printed to stdout
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 79 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 Counter2 and read 96
 not for me
@@ -181,14 +174,15 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
 Read something that's not network:
 The child printed to stdout
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 79 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 Counter2 and read 96
 not for me
@@ -200,8 +194,9 @@ Running testcase: Testee sends another attempt after timeout
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e23:856c:fbb2:0704:f4ec:0bb9:20ba:86c3
 Read something that's not network:
 The child printed to stdout
-Stdout: 33 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 47 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 
 Stderr: 0 byte, 0 byte dropped
@@ -211,8 +206,9 @@ Running testcase: Testee sends another attempt after exceeded
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e05:f1ec:d967:33b7:9950:a3e3:14d3:d934
 Read something that's not network:
 The child printed to stdout
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 79 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 Counter2 and read 96
 not for me
@@ -224,8 +220,9 @@ Running testcase: Testee sends another attempt after unreachable
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7e69:e623:d01a:da69:6a7e:4c7e:5125:b348
 Read something that's not network:
 The child printed to stdout
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 79 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 Counter2 and read 96
 not for me
@@ -237,8 +234,9 @@ Running testcase: Testee sends another attempt after echo reply
 Forking: trace6 -i jn0 -m 1 -q 3 -t 1 7ecf:08f5:e9e2:5e53:60aa:d2b2:d085:fa54
 Read something that's not network:
 The child printed to stdout
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 79 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 Counter2 and read 48
 not for me
@@ -252,12 +250,13 @@ Second line number did not match the expected value:
 Expected (ignoring case and excessive whitespace): 
 2
 Got: 
-not for me
+Counter1 and read 48
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 79 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 Counter2 and read 96
 not for me
@@ -271,16 +270,13 @@ Second line number did not match the expected value:
 Expected (ignoring case and excessive whitespace): 
 2
 Got: 
-not for me
+Counter1 and read 48
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 90 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-2Counter1 and read 48
+Stdout: 47 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 
 Stderr: 0 byte, 0 byte dropped
@@ -289,11 +285,8 @@ Stderr: 0 byte, 0 byte dropped
 Running testcase: Testee does not hop after reply (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7efc:e466:da61:0b63:af62:bc83:b469:2f3a
 Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 48
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -302,8 +295,9 @@ Running testcase: Testee does not hop after reply (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaf:2716:93ac:071f:b86d:1134:2d8d:ef4f
 Read something that's not network:
 The child printed to stdout
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 79 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 Counter2 and read 48
 not for me
@@ -314,11 +308,8 @@ Stderr: 0 byte, 0 byte dropped
 Running testcase: Testee does not hop after unreachable (1)
 Forking: trace6 -i jn0 -m 15 -q 1 -t 1 7ed4:b663:35c1:c7e4:2483:67d8:ed96:12ec
 Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -327,8 +318,9 @@ Running testcase: Testee does not hop after unreachable (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7eaa:82ca:6c49:ae90:cd16:68ba:ac7a:a6f2
 Read something that's not network:
 The child printed to stdout
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 79 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 Counter2 and read 96
 not for me
@@ -340,8 +332,9 @@ Running testcase: Testee implements attempts command line option (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e03:28da:4cd7:6a19:edd2:d399:4c79:8b00
 Read something that's not network:
 The child printed to stdout
-Stdout: 33 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 47 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 
 Stderr: 0 byte, 0 byte dropped
@@ -353,10 +346,11 @@ Second line number did not match the expected value:
 Expected (ignoring case and excessive whitespace): 
 2
 Got: 
-not for me
+Counter1 and read 48
 
-Stdout: 33 byte, 0 byte dropped
-1Counter1 and read 48
+Stdout: 47 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 
 Stderr: 0 byte, 0 byte dropped
@@ -368,16 +362,13 @@ Second line number did not match the expected value:
 Expected (ignoring case and excessive whitespace): 
 2
 Got: 
-not for me
+Counter1 and read 48
 
 Read something that's not network:
 The child printed to stdout
-Stdout: 90 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 0
-  *
-2Counter1 and read 48
+Stdout: 47 byte, 0 byte dropped
+1start attempt
+Counter1 and read 48
 not for me
 
 Stderr: 0 byte, 0 byte dropped
@@ -386,9 +377,8 @@ Stderr: 0 byte, 0 byte dropped
 Running testcase: Testee implements hops command line option (2)
 Forking: trace6 -i jn0 -m 1 -q 1 -t 1 7efc:7281:cd71:65a6:3eab:49cf:714b:ce3a
 Testee continued to run (sleep?) when it was supposed to exit
-Stdout: 33 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -397,24 +387,18 @@ Running testcase: Testee ignores the traffic class
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:4f76:ea7e:64ff:81eb:61fd:fec3:9b67
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the flow label (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ef4:b2ed:7216:ecf3:014d:f000:108b:67cf
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Read something that's not network:
+The child printed to stdout
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -423,11 +407,8 @@ Running testcase: Testee ignores the flow label (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ebf:ab0e:d598:01d6:e5f2:d6f6:7d3e:c516
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -436,11 +417,8 @@ Running testcase: Testee ignores the hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e89:1a2b:211b:0107:0dd8:fd8b:16c2:a1a4
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -449,24 +427,18 @@ Running testcase: Testee ignores the exceeded reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ef7:edde:13ef:e520:c7e2:abdd:a44d:8188
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
 --------------------------------------------------------------------------------
 Running testcase: Testee ignores the exceeded reserved field (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e58:4606:472b:260e:0dd2:ebb2:1f6c:3a3b
-Failed to validate IP: Hop IP
-Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Read something that's not network:
+The child printed to stdout
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -475,11 +447,8 @@ Running testcase: Testee ignores the exceeded data hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e22:0aa7:4d31:b55b:03a0:0d22:0d47:5dcd
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -488,11 +457,8 @@ Running testcase: Testee ignores the unreachable code field
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ea7:fa5a:d8b0:b5db:50c2:fd5d:095a:2aa5
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -501,11 +467,8 @@ Running testcase: Testee ignores the unreachable reserved field (1)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e71:b64d:216b:2871:2e25:cf37:80f9:dc62
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -514,11 +477,8 @@ Running testcase: Testee ignores the unreachable reserved field (2)
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7e31:0d7b:9c36:edca:5bbc:02db:b5de:3d52
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -527,11 +487,8 @@ Running testcase: Testee ignores the unreachable data hop limit
 Forking: trace6 -i jn0 -m 15 -q 3 -t 1 7ee0:56fd:1643:c871:ffca:4db5:a88a:075e
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 96
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -542,15 +499,12 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 56
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -561,15 +515,12 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 56
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -580,15 +531,12 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 56
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -599,15 +547,12 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 64
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
@@ -618,15 +563,12 @@ Output spacing did not start with the expected value:
 Expected: 
   
 Got: 
-Counter1 and read 48
+start attempt
 
 Failed to validate IP: Hop IP
 Could not convert found string to IP
-Stdout: 65 byte, 0 byte dropped
-1Counter1 and read 48
-not for me
-Counter2 and read 64
-not for me
+Stdout: 15 byte, 0 byte dropped
+1start attempt
 
 Stderr: 0 byte, 0 byte dropped
 
