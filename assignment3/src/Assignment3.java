@@ -103,6 +103,7 @@ public class Assignment3 {
                 boolean done = false;
 
                 int counter = 0;
+                System.out.println("start attempt");
                 while (!done) {
                     buffer = new byte[1514];
                     ret = sock.read(buffer, to);
