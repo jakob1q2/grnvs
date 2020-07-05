@@ -60,7 +60,9 @@ public class Assignment3 {
 
         while (!stopProbes && hops <= hopLimit) {
             System.out.print(hops);
+            System.out.println("hop: " + hops); ////////////////////////////////////
             for (int attempt = 1; attempt <= attempts; attempt++) {
+                System.out.println("attempt: " + attempt); ////////////////////////////////////
                 buffer = new byte[1514];
 
                 //build header
@@ -103,6 +105,7 @@ public class Assignment3 {
                     sock.hexdump(buffer, length);
                     System.exit(1);
                 }
+                System.out.println("packet sent"); ////////////////////////////////////
                 //start read
                 boolean done = false; //done if timeout or valid response
                 while (!done) {
@@ -115,9 +118,11 @@ public class Assignment3 {
                         System.exit(1);
                     }
                     if (ret == 0) {
+                        System.out.println("timeout"); ////////////////////////////////////
                         System.out.print("  *"); //timeout
                         done = true;
                     } else {
+                        System.out.println("checkMessage"); ////////////////////////////////////
                         byte[] resp = new byte[ret];
                         System.arraycopy(buffer, 0, resp, 0, ret);
                         done = checkMessage(resp);
