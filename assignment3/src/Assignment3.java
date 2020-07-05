@@ -32,7 +32,7 @@ public class Assignment3 {
 
     public static void run(GRNVS_RAW sock, String dst, int timeout,
                            int attempts, int hopLimit) throws UnknownHostException {
-        byte[] buffer = new byte[1514];
+        byte[] buffer;
         int length = 48; //was set 0?
         byte[] dstIp = new byte[16];
         byte[] srcIp = sock.getIPv6();
@@ -76,6 +76,7 @@ public class Assignment3 {
         char sequenceNumber = 0x0;
 
         while (!stopProbes && hops <= hopLimit) {
+            buffer = new byte[1514];
             ipHeader[7] = (byte) hops;
             Timeout to = new Timeout(timeout);
             System.out.print(hops);
@@ -104,6 +105,7 @@ public class Assignment3 {
 
                 boolean done = false;
                 while (!done) {
+                    buffer = new byte[1514];
                     ret = sock.read(buffer, to);
 
                     if (0 > ret) {
