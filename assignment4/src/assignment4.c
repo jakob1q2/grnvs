@@ -125,7 +125,7 @@ size_t readNet(char *dest, size_t bufSize, char *src, int fd)
     }
 
     //refuse leading 0 (also message cannot be 0 long)
-    if (src[0] = '0')
+    if (src[0] == '0')
     {
         checkMessage(fd, "no leading 0", src);
     }
