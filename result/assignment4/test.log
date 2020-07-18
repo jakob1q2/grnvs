@@ -1,32 +1,29 @@
-failed to build assignment4
+"asciiclient" compiled and marked as executable: Success
+Log:
+	>  Client connected to server
+	a: Client sent protocol version
+	b: Server sent protocol version
+	c: Client sent nick
+	d: Server sent token
+	e: Client sent port for data connection
+	>  Established data connection
+	f: Server sent protocol version on data connection
+	Error: Client disconnected unexpectedly
+Client supports protocol: Failed
+Client validates server context: Precondition failed
+Client validates server version: Precondition failed
+Client validates server context for token: Precondition failed
+Client supports fragmented Netstrings: Precondition failed
+Client supports multiple Netstrings per TCP segment: Precondition failed
+Client rejects leading zeros in Netstrings: Precondition failed
+Client validate Netstrings format: Precondition failed
+Client validates server context in data connection: Precondition failed
+Client validates server version in data connection: Precondition failed
+Client validates server token in data connection: Precondition failed
+Client validates server context for token in data connection: Precondition failed
+Client validates message length: Precondition failed
 
-rm -rf build
-rm -f asciiclient
-cc -Wall -Wextra -fdiagnostics-color=auto -g src/arguments.c -c -o build/arguments.o
-cc -Wall -Wextra -fdiagnostics-color=auto -g src/assignment4.c -c -o build/assignment4.o
-src/assignment4.c: In function 'writeNet':
-src/assignment4.c:89:14: warning: operation on 'len' may be undefined [-Wsequence-point]
-     if ((len = strlen(src)) < bufSize - countDigits(len)) {
-         ~~~~~^~~~~~~~~~~~~~
-src/assignment4.c:92:25: error: expected ';' before '}' token
-         strcat(dest,",")
-                         ^
-                         ;
-     } else {
-     ~                    
-src/assignment4.c: In function 'assignment4':
-src/assignment4.c:139:9: warning: unused variable 'sdD' [-Wunused-variable]
-     int sdD;
-         ^~~
-src/assignment4.c:138:25: warning: variable 'data' set but not used [-Wunused-but-set-variable]
-     struct sockaddr_in6 data = {};
-                         ^~~~
-src/assignment4.c:125:60: warning: unused parameter 'nick' [-Wunused-parameter]
- void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
-                                                      ~~~~~~^~~~
-src/assignment4.c:125:72: warning: unused parameter 'msg' [-Wunused-parameter]
- void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
-                                                                  ~~~~~~^~~
-make: *** [Makefile:20: build/assignment4.o] Error 1
+Number of tests: 14, Tests passed: 1, Tests failed: 1, Tests skipped: 12
+This test was done with tester version 0.4.4
 
-0 minutes and 4 seconds
+0 minutes and 6 seconds

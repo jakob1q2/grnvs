@@ -3,26 +3,28 @@ rm -f asciiclient
 cc -Wall -Wextra -fdiagnostics-color=auto -g src/arguments.c -c -o build/arguments.o
 cc -Wall -Wextra -fdiagnostics-color=auto -g src/assignment4.c -c -o build/assignment4.o
 src/assignment4.c: In function 'writeNet':
-src/assignment4.c:89:14: warning: operation on 'len' may be undefined [-Wsequence-point]
-     if ((len = strlen(src)) < bufSize - countDigits(len)) {
+src/assignment4.c:99:14: warning: operation on 'len' may be undefined [-Wsequence-point]
+     if ((len = strlen(src)) < bufSize - countDigits(len))
          ~~~~~^~~~~~~~~~~~~~
-src/assignment4.c:92:25: error: expected ';' before '}' token
-         strcat(dest,",")
-                         ^
-                         ;
-     } else {
-     ~                    
+src/assignment4.c: In function 'checkMessage':
+src/assignment4.c:150:22: warning: unused parameter 'fd' [-Wunused-parameter]
+ int checkMessage(int fd, char *expected, char *actual)
+                  ~~~~^~
 src/assignment4.c: In function 'assignment4':
-src/assignment4.c:139:9: warning: unused variable 'sdD' [-Wunused-variable]
-     int sdD;
-         ^~~
-src/assignment4.c:138:25: warning: variable 'data' set but not used [-Wunused-but-set-variable]
-     struct sockaddr_in6 data = {};
-                         ^~~~
-src/assignment4.c:125:60: warning: unused parameter 'nick' [-Wunused-parameter]
- void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
-                                                      ~~~~~~^~~~
-src/assignment4.c:125:72: warning: unused parameter 'msg' [-Wunused-parameter]
- void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
+src/assignment4.c:261:18: warning: passing argument 3 of 'accept' makes pointer from integer without a cast [-Wint-conversion]
+                  sizeof(struct sockaddr_in));
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/netinet/in.h:23,
+                 from /usr/include/arpa/inet.h:22,
+                 from src/assignment4.c:1:
+/usr/include/x86_64-linux-gnu/sys/socket.h:233:28: note: expected 'socklen_t * restrict' {aka 'unsigned int * restrict'} but argument is of type 'long unsigned int'
+      socklen_t *__restrict __addr_len);
+      ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+src/assignment4.c:167:72: warning: unused parameter 'msg' [-Wunused-parameter]
+ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
                                                                   ~~~~~~^~~
-make: *** [Makefile:20: build/assignment4.o] Error 1
+src/assignment4.c: In function 'recvMessage':
+src/assignment4.c:148:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+cc build/arguments.o build/assignment4.o  -o asciiclient
