@@ -95,7 +95,7 @@ u_int16_t countDigits(size_t c)
 size_t writeNet(char *dest, size_t bufSize, char *src)
 {
     memset(dest, 0, bufSize);
-    size_t len;
+    size_t len = bufSize;
     if ((len = strlen(src)) < bufSize - countDigits(len))
     {
         sprintf(dest, "%ld:", len);
@@ -134,25 +134,34 @@ size_t readNet(char *dest, size_t bufSize, char *src)
  */
 int sendMessage(int fd, char *m, char *buf)
 {
-    int ret = write(fd, buf, writeNet(buf, BUFSIZE, m) + 1); //remember 0 Byte at end
-    printf("%s\n", buf);
-    return ret;
+    return write(fd, buf, writeNet(buf, BUFSIZE, m) + 1); //remember 0 Byte at end
 }
 
 int recvMessage(int fd, char *respDst)
 {
     memset(respDst, 0, BUFSIZE);
     read(fd, respDst, BUFSIZE);
-    readNet(respDst, BUFSIZE, respDst);
-    printf("%s\n", respDst);
+    return readNet(respDst, BUFSIZE, respDst);
 }
 
 int checkMessage(int fd, char *expected, char *actual)
 {
-    if (!strcmp(expected, actual))
+    if (actual[0] == 'E') //server sent error
     {
-
-        return -1;
+        printf("Error: %s", actual + 2);
+    }
+    else if (strcmp(expected, actual) != 0) //client sends error
+    {
+        char errmsg[BUFSIZE] = {0};
+        strcpy(errmsg, "E ");
+        strcat(errmsg, "expected: \"");
+        strcat(errmsg, expected);
+        strcat(errmsg, "\" but received: \"");
+        strcat(errmsg, actual);
+        strcat(errmsg, "\"");
+        sendMessage(fd, errmsg, actual);
+        printf("Error: %s", errmsg + 2);
+        exit(-1);
     }
     return 0;
 }
@@ -270,7 +279,7 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
         perror("error in accept() on data socket");
         exit(1);
     }
-    
+
     set_socket_options(sdD, 2);
     recvMessage(sdD, buf);
     checkMessage(sdC, "T GRNVS V:1.0", buf);
@@ -280,9 +289,34 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     sendMessage(sdD, text, buf);
 
     recvMessage(sdD, buf);
-    close(sdC);
-    close(sdL);
+    strcpy(text, "T ");
+    strcat(text, token);
+    checkMessage(sdC, text, buf);
 
+    strcpy(text, "D ");
+    strcat(text, msg);
+    sendMessage(sdD, text, buf);
+
+    recvMessage(sdD, buf);
+    strcpy(token, buf + 2);
+
+    close(sdL);
+    close(sdD);
+
+    recvMessage(sdC, buf);
+    strcpy(text, "S ");
+    sprintf(text + 2, "%ld", strlen(msg));
+    checkMessage(sdC, text, buf);
+
+    strcpy(text, "C ");
+    strcat(text, token);
+    sendMessage(sdC, text, buf);
+
+    recvMessage(sdC, buf);
+    strcpy(text, "S ACK");
+    checkMessage(sdC, text, buf);
+
+    close(sdC);
     /*===========================================================================*/
 }
 
