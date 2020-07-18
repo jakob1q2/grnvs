@@ -244,9 +244,8 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     strcat(text, nick);
     sendMessage(sdC, text, buf);
     recvMessage(sdC, buf);
-    /**if (buf[0] != 'S' || buf[1] != ' ')
+    if (buf[0] != 'S' || buf[1] != ' ')
         checkMessage(sdC, "S <token>", buf);
-        */
     strcpy(token, buf + 2);
 
     //set up listen socket
@@ -320,10 +319,8 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     sendMessage(sdD, text, buf);
 
     recvMessage(sdD, buf);
-    /**
     if (buf[0] != 'T' || buf[1] != ' ')
         checkMessage(sdD, "T <dtoken>", buf);
-    */
     strcpy(token, buf + 2);
 
     close(sdL);
