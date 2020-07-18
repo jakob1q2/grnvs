@@ -3,14 +3,17 @@ rm -f asciiclient
 cc -Wall -Wextra -fdiagnostics-color=auto -g src/arguments.c -c -o build/arguments.o
 cc -Wall -Wextra -fdiagnostics-color=auto -g src/assignment4.c -c -o build/assignment4.o
 src/assignment4.c: In function 'writeNet':
-src/assignment4.c:99:14: warning: operation on 'len' may be undefined [-Wsequence-point]
+src/assignment4.c:102:14: warning: operation on 'len' may be undefined [-Wsequence-point]
      if ((len = strlen(src)) < bufSize - countDigits(len))
          ~~~~~^~~~~~~~~~~~~~
-src/assignment4.c:95:60: warning: unused parameter 'fd' [-Wunused-parameter]
+src/assignment4.c:98:60: warning: unused parameter 'fd' [-Wunused-parameter]
  size_t writeNet(char *dest, size_t bufSize, char *src, int fd)
                                                         ~~~~^~
 src/assignment4.c: In function 'readNet':
-src/assignment4.c:120:9: warning: implicit declaration of function 'checkMessage' [-Wimplicit-function-declaration]
+src/assignment4.c:124:9: warning: implicit declaration of function 'checkMessage' [-Wimplicit-function-declaration]
          checkMessage(fd, "String in netstring format", src);
          ^~~~~~~~~~~~
+src/assignment4.c:128:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if (src[0] = '0')
+         ^~~
 cc build/arguments.o build/assignment4.o  -o asciiclient
