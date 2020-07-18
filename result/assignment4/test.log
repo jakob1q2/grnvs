@@ -18,7 +18,7 @@ Log:
 Client supports protocol: Success
 Client validates server context: Success
 Client validates server version: Success
-Client validates server context for token: Failed
+Client validates server context for token: Success
 Client supports fragmented Netstrings: Failed
 Client supports multiple Netstrings per TCP segment: Failed
 Client rejects leading zeros in Netstrings: Success
@@ -29,7 +29,7 @@ Client validates server token in data connection: Success
 Client validates server context for token in data connection: Failed
 Client validates message length: Failed
 
-Number of tests: 14, Tests passed: 9, Tests failed: 5, Tests skipped: 0
+Number of tests: 14, Tests passed: 10, Tests failed: 4, Tests skipped: 0
 This test was done with tester version 0.4.4
 
-0 minutes and 25 seconds
+0 minutes and 26 seconds

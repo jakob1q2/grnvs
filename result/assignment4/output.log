@@ -18,7 +18,7 @@ Client stderr:
 
 Running test: Client validates server context for token
 Client stdout:
-
+Error: expected: "S <token>" but received: "C [::1]:47350 ssFdw]xU\#7RGv^W"
 Client stderr:
 
 
@@ -30,7 +30,7 @@ Client stderr:
 
 Running test: Client supports multiple Netstrings per TCP segment
 Client stdout:
-
+Error: read error/timeout
 Client stderr:
 
 
@@ -60,7 +60,7 @@ Client stderr:
 
 Running test: Client validates server token in data connection
 Client stdout:
-Error: expected: "String in netstring format" but received: "31:T [::1]:47258 >S%.ctlI-(Khj#B)"
+Error: expected: "String in netstring format" but received: "31:T [::1]:47410 di4Li?KJj:CozH|_"
 Client stderr:
 
 
