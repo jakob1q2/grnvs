@@ -1,0 +1,5 @@
+rm -rf build
+rm -f asciiclient
+cc -Wall -Wextra -fdiagnostics-color=auto -g src/arguments.c -c -o build/arguments.o
+cc -Wall -Wextra -fdiagnostics-color=auto -g src/assignment4.c -c -o build/assignment4.o
+cc build/arguments.o build/assignment4.o  -o asciiclient
