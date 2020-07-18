@@ -6,4 +6,11 @@ src/assignment4.c: In function 'writeNet':
 src/assignment4.c:99:14: warning: operation on 'len' may be undefined [-Wsequence-point]
      if ((len = strlen(src)) < bufSize - countDigits(len))
          ~~~~~^~~~~~~~~~~~~~
+src/assignment4.c:95:60: warning: unused parameter 'fd' [-Wunused-parameter]
+ size_t writeNet(char *dest, size_t bufSize, char *src, int fd)
+                                                        ~~~~^~
+src/assignment4.c: In function 'readNet':
+src/assignment4.c:120:9: warning: implicit declaration of function 'checkMessage' [-Wimplicit-function-declaration]
+         checkMessage(fd, "String in netstring format", src);
+         ^~~~~~~~~~~~
 cc build/arguments.o build/assignment4.o  -o asciiclient

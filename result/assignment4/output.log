@@ -24,7 +24,7 @@ Client stderr:
 
 Running test: Client supports fragmented Netstrings
 Client stdout:
-Error: expected: "S GRNVS V:1.0" but received: "S"
+Error: expected: "String in netstring format" but received: "13:S"
 Client stderr:
 
 
@@ -36,13 +36,13 @@ Client stderr:
 
 Running test: Client rejects leading zeros in Netstrings
 Client stdout:
-
+Error: expected: "String in netstring format" but received: ""
 Client stderr:
 
 
 Running test: Client validate Netstrings format
 Client stdout:
-
+Error: expected: "String in netstring format" but received: "13:S GRNVS V:1.0;"
 Client stderr:
 
 
@@ -60,14 +60,15 @@ Client stderr:
 
 Running test: Client validates server token in data connection
 Client stdout:
-
+Error: expected: "String in netstring format" but received: "31:T [::1]:46434 vWQ"/qv}A"@?cU/)"
 Client stderr:
 
 
 Running test: Client validates server context for token in data connection
 Client stdout:
-Error: expected: "T [::1]:46302 ZR2>!;ut2J-IC{:<" but received: "S [::1]:46302 ZR2>!;ut2J-IC{:<"
+
 Client stderr:
+error in bind() on data socket: Address already in use
 
 
 Running test: Client validates message length
