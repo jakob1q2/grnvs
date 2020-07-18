@@ -89,6 +89,7 @@ size_t writeNet(char *dest, size_t bufSize, char *src) {
     if ((len = strlen(src)) < bufSize - countDigits(len)) {
         sprintf(dest, "%ld:", len);
         strcat(dest, src);
+        strcat(dest,",")
     } else {
         sprintf(dest, "0:");
     }
@@ -149,9 +150,7 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
         exit(1);
     }
 
-    printf("socket is %d\n", sdC);
     int ret = connect(sdC, (struct sockaddr *)&control, sizeof(control));
-    printf("ret is %d\n", ret);
 
     if (0 > ret) {
         close(sdC);
@@ -163,8 +162,14 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
     data.sin6_port = htons(0); // auto assign port;
     data.sin6_addr = dstip;
 
-    write(sdC, buf, writeNet(buf, bufSize, "C GRNVS V:1.0"));
-    read(sdC, buf, 256);
+    ret = writeNet(buf, bufSize, "C GRNVS V:1.0");
+    ret = write(sdC, buf, ret+1); //remember 0 Byte at end
+
+    printf("%s\n", buf);
+    memset(buf,0,bufSize);
+
+    read(sdC,buf, bufSize);
+    printf("read done");
     printf("%s", buf);
 
     /*===========================================================================*/
