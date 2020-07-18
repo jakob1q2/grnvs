@@ -124,12 +124,11 @@ size_t readNet(char *dest, size_t bufSize, char *src, int fd)
         checkMessage(fd, "String in netstring format", src);
     }
 
-    /**refuse leading 0 (also message cannot be 0 long)
+    //refuse leading 0 (also message cannot be 0 long)
     if (src[0] = '0')
     {
         checkMessage(fd, "no leading 0", src);
     }
-    */
 
     //convert
     int pos = strchr(src, ':') - src;
