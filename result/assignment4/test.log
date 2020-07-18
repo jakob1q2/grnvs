@@ -8,7 +8,9 @@ Log:
 	e: Client sent port for data connection
 	>  Established data connection
 	f: Server sent protocol version on data connection
-	Error: Client disconnected unexpectedly
+	g: Read nick in data connection
+	h: Server sent token on data connection
+	Error: read error/timeout
 Client supports protocol: Failed
 Client validates server context: Precondition failed
 Client validates server version: Precondition failed

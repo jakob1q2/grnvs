@@ -11,15 +11,6 @@ src/assignment4.c:150:22: warning: unused parameter 'fd' [-Wunused-parameter]
  int checkMessage(int fd, char *expected, char *actual)
                   ~~~~^~
 src/assignment4.c: In function 'assignment4':
-src/assignment4.c:261:18: warning: passing argument 3 of 'accept' makes pointer from integer without a cast [-Wint-conversion]
-                  sizeof(struct sockaddr_in));
-                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /usr/include/netinet/in.h:23,
-                 from /usr/include/arpa/inet.h:22,
-                 from src/assignment4.c:1:
-/usr/include/x86_64-linux-gnu/sys/socket.h:233:28: note: expected 'socklen_t * restrict' {aka 'unsigned int * restrict'} but argument is of type 'long unsigned int'
-      socklen_t *__restrict __addr_len);
-      ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
 src/assignment4.c:167:72: warning: unused parameter 'msg' [-Wunused-parameter]
  void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
                                                                   ~~~~~~^~~

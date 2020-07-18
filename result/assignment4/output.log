@@ -3,11 +3,13 @@ Client stdout:
 13:C GRNVS V:1.0,
 S GRNVS V:1.0
 8:C tester,
-S [::1]:43310 |p9u\*]`e&g/a+m{
-6:C 2177,
+S [::1]:44192 7?Ut,nTW3_vpuF(*
+7:C 33172,
+T GRNVS V:1.0
+8:D tester,
+T [::1]:44192 7?Ut,nTW3_vpuF(*
 
 Client stderr:
-error in accept() on data socket: Bad address
 
 
 Running test: Client validates server context
