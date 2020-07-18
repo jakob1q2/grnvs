@@ -130,14 +130,11 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
         return;
     }
 
-    (void)port;
-    (void)nick;
-    (void)msg;
-
     /*====================================TODO===================================*/
-    struct sockaddr_in6 control;
+    struct sockaddr_in6 control = {};
     int sdC;
-    struct sockaddr_in6 data;
+
+    struct sockaddr_in6 data = {};
     int sdD;
 
     size_t bufSize = 4096;
@@ -151,7 +148,13 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
         perror("error in socket()");
         exit(1);
     }
-    if (0 > connect(sdC, (struct sockaddr *)&control, sizeof(control))) {
+
+    printf("socket is %d\n", sdC);
+    int ret = connect(sdC, (struct sockaddr *)&control, sizeof(control));
+    printf("ret is %d\n", ret);
+
+    if (0 > ret) {
+        close(sdC);
         perror("error in connect()");
         exit(1);
     }
