@@ -206,10 +206,11 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
 
     /*====================================TODO===================================*/
     struct sockaddr_in6 control = {};
-    int sdC;
+    int sdC; //control fd
 
-    struct sockaddr_in6 listen_sock = {};
-    int sdL;
+    struct sockaddr_in6 data = {};
+    int sdL; //listening fd
+    int sdD; //data fd
 
     char buf[BUFSIZE] = {0};
     char token[BUFSIZE] = {0};
@@ -248,10 +249,10 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
         checkMessage(sdC, "S <token>", buf);
     strcpy(token, buf + 2);
 
-    //set up listen socket
-    listen_sock.sin6_family = AF_INET6;
-    listen_sock.sin6_port = htons(33172); // auto assign port;
-    listen_sock.sin6_addr = in6addr_any;
+    //set up data socket
+    data.sin6_family = AF_INET6;
+    data.sin6_port = 0; // auto assign port;
+    data.sin6_addr = in6addr_any;
 
     if (0 > (sdL = socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP)))
     {
@@ -259,7 +260,7 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
         exit(1);
     }
 
-    ret = bind(sdL, (struct sockaddr *)&listen_sock, sizeof(listen_sock));
+    ret = bind(sdL, (struct sockaddr *)&data, sizeof(data));
 
     if (0 > ret)
     {
@@ -271,12 +272,6 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
 
     set_socket_options(sdL, 2);
 
-    //tell server where to connect
-    strcpy(text, "C ");
-    sprintf(buf, "%d", ntohs(listen_sock.sin6_port));
-    strcat(text, buf);
-    sendMessage(sdC, text, buf);
-
     ret = listen(sdL, 1);
     if (ret < 0)
     {
@@ -286,10 +281,16 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
         exit(1);
     }
 
-    struct sockaddr_in6 data = {};
-    int sdD;
     socklen_t data_len = sizeof(data);
 
+    if (getsockname(sdL, (struct sockaddr *)&data, &data_len) == -1)
+        perror("error ingetsockname()");
+
+    //tell server where to connect
+    strcpy(text, "C ");
+    sprintf(buf, "%d", ntohs(data.sin6_port));
+    strcat(text, buf);
+    sendMessage(sdC, text, buf);
     sdD = accept(sdL,
                  (struct sockaddr *)&data,
                  &data_len);
