@@ -77,6 +77,9 @@ int set_socket_options(int socket, int timeout)
     return 0;
 }
 
+/**
+ * counts number of digits of decimal number
+ */
 u_int16_t countDigits(size_t c)
 {
     u_int16_t digits = 1;
@@ -115,10 +118,19 @@ size_t writeNet(char *dest, size_t bufSize, char *src, int fd)
  */
 size_t readNet(char *dest, size_t bufSize, char *src, int fd)
 {
+    //check netstring format
     if (strchr(src, ':') == NULL || strchr(src, ',') == NULL || strchr(src, ':') > strchr(src, ','))
     {
         checkMessage(fd, "String in netstring format", src);
     }
+
+    //refuse leading 0 (also message cannot be 0 long)
+    if (src[0] = '0')
+    {
+        checkMessage(fd, "no leading 0", src);
+    }
+
+    //convert
     int pos = strchr(src, ':') - src;
     char num[pos + 1];
     memset(num, 0, pos + 1);
@@ -140,6 +152,10 @@ int sendMessage(int fd, char *m, char *buf)
 {
     return write(fd, buf, writeNet(buf, BUFSIZE, m, fd) + 1); //remember 0 Byte at end
 }
+
+/**
+ * receives netstring message m from socket descriptor and stores message in respDst
+ */
 
 int recvMessage(int fd, char *respDst)
 {
@@ -219,7 +235,7 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
         exit(1);
     }
 
-    //start protocol
+    //start protocol on control socket
     sendMessage(sdC, "C GRNVS V:1.0", buf);
     recvMessage(sdC, buf);
     checkMessage(sdC, "S GRNVS V:1.0", buf);
@@ -228,7 +244,8 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     strcat(text, nick);
     sendMessage(sdC, text, buf);
     recvMessage(sdC, buf);
-    //check token message
+    if (buf[0] != 'S' || buf[1] != ' ')
+        checkMessage(sdC, "S <token>", buf);
     strcpy(token, buf + 2);
 
     //set up listen socket
@@ -302,6 +319,8 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     sendMessage(sdD, text, buf);
 
     recvMessage(sdD, buf);
+    if (buf[0] != 'T' || buf[1] != ' ')
+        checkMessage(sdD, "T <dtoken>", buf);
     strcpy(token, buf + 2);
 
     close(sdL);
