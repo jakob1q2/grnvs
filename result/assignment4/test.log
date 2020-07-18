@@ -1,6 +1,7 @@
 "asciiclient" compiled and marked as executable: Success
 Log:
-Timed out on accept
+	>  Client connected to server
+	Error: read error/timeout
 Client supports protocol: Failed
 Client validates server context: Precondition failed
 Client validates server version: Precondition failed
