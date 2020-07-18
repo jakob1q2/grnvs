@@ -22,14 +22,14 @@ Client validates server context for token: Failed
 Client supports fragmented Netstrings: Failed
 Client supports multiple Netstrings per TCP segment: Failed
 Client rejects leading zeros in Netstrings: Failed
-Client validate Netstrings format: Failed
+Client validate Netstrings format: Success
 Client validates server context in data connection: Success
 Client validates server version in data connection: Success
-Client validates server token in data connection: Failed
-Client validates server context for token in data connection: Success
+Client validates server token in data connection: Success
+Client validates server context for token in data connection: Failed
 Client validates message length: Failed
 
-Number of tests: 14, Tests passed: 7, Tests failed: 7, Tests skipped: 0
+Number of tests: 14, Tests passed: 8, Tests failed: 6, Tests skipped: 0
 This test was done with tester version 0.4.4
 
-0 minutes and 26 seconds
+0 minutes and 25 seconds
