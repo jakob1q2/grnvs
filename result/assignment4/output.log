@@ -54,23 +54,20 @@ Client stderr:
 
 Running test: Client validates server version in data connection
 Client stdout:
-
+Error: expected: "T GRNVS V:1.0" but received: "T GRNSV V:1.0"
 Client stderr:
-error in bind() on data socket: Address already in use
 
 
 Running test: Client validates server token in data connection
 Client stdout:
 
 Client stderr:
-error in bind() on data socket: Address already in use
 
 
 Running test: Client validates server context for token in data connection
 Client stdout:
-
+Error: expected: "T [::1]:46302 ZR2>!;ut2J-IC{:<" but received: "S [::1]:46302 ZR2>!;ut2J-IC{:<"
 Client stderr:
-error in bind() on data socket: Address already in use
 
 
 Running test: Client validates message length
