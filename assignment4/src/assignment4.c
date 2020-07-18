@@ -95,7 +95,7 @@ u_int16_t countDigits(size_t c)
  * dest cannot be src!
  */
 
-size_t writeNet(char *dest, size_t bufSize, char *src, int fd)
+size_t writeNet(char *dest, size_t bufSize, char *src)
 {
     memset(dest, 0, bufSize);
     size_t len = bufSize;
@@ -116,8 +116,9 @@ size_t writeNet(char *dest, size_t bufSize, char *src, int fd)
  * extracts pure String from Netstring src into dest and returns length of pure
  * String
  */
-size_t readNet(char *dest, size_t bufSize, char *src, int fd)
+size_t readNet(char *dest, size_t bufSize, char *src)
 {
+<<<<<<< HEAD
     //check netstring format
     if (strchr(src, ':') == NULL || strchr(src, ',') == NULL || strchr(src, ':') > strchr(src, ','))
     {
@@ -131,6 +132,8 @@ size_t readNet(char *dest, size_t bufSize, char *src, int fd)
     }
 
     //convert
+=======
+>>>>>>> parent of 9c3d0e8... check netstring format
     int pos = strchr(src, ':') - src;
     char num[pos + 1];
     memset(num, 0, pos + 1);
@@ -150,7 +153,7 @@ size_t readNet(char *dest, size_t bufSize, char *src, int fd)
  */
 int sendMessage(int fd, char *m, char *buf)
 {
-    return write(fd, buf, writeNet(buf, BUFSIZE, m, fd) + 1); //remember 0 Byte at end
+    return write(fd, buf, writeNet(buf, BUFSIZE, m) + 1); //remember 0 Byte at end
 }
 
 /**
@@ -161,7 +164,7 @@ int recvMessage(int fd, char *respDst)
 {
     memset(respDst, 0, BUFSIZE);
     read(fd, respDst, BUFSIZE);
-    return readNet(respDst, BUFSIZE, respDst, fd);
+    return readNet(respDst, BUFSIZE, respDst);
 }
 
 int checkMessage(int fd, char *expected, char *actual)
