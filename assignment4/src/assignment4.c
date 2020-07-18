@@ -282,7 +282,7 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
 
     set_socket_options(sdD, 2);
     recvMessage(sdD, buf);
-    checkMessage(sdC, "T GRNVS V:1.0", buf);
+    checkMessage(sdD, "T GRNVS V:1.0", buf);
 
     strcpy(text, "D ");
     strcat(text, nick);
@@ -291,7 +291,7 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     recvMessage(sdD, buf);
     strcpy(text, "T ");
     strcat(text, token);
-    checkMessage(sdC, text, buf);
+    checkMessage(sdD, text, buf);
 
     strcpy(text, "D ");
     strcat(text, msg);
