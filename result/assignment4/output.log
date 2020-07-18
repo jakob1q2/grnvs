@@ -1,5 +1,7 @@
 Checking if client follows protocol
 Client stdout:
+socket is 5
+ret is 0
 20:E read error/timeout,
 Client stderr:
 

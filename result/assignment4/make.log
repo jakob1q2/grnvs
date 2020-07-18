@@ -7,10 +7,16 @@ src/assignment4.c:89:14: warning: operation on 'len' may be undefined [-Wsequenc
      if ((len = strlen(src)) < bufSize - countDigits(len)) {
          ~~~~~^~~~~~~~~~~~~~
 src/assignment4.c: In function 'assignment4':
-src/assignment4.c:141:9: warning: unused variable 'sdD' [-Wunused-variable]
+src/assignment4.c:138:9: warning: unused variable 'sdD' [-Wunused-variable]
      int sdD;
          ^~~
-src/assignment4.c:140:25: warning: variable 'data' set but not used [-Wunused-but-set-variable]
-     struct sockaddr_in6 data;
+src/assignment4.c:137:25: warning: variable 'data' set but not used [-Wunused-but-set-variable]
+     struct sockaddr_in6 data = {};
                          ^~~~
+src/assignment4.c:124:60: warning: unused parameter 'nick' [-Wunused-parameter]
+ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
+                                                      ~~~~~~^~~~
+src/assignment4.c:124:72: warning: unused parameter 'msg' [-Wunused-parameter]
+ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg) {
+                                                                  ~~~~~~^~~
 cc build/arguments.o build/assignment4.o  -o asciiclient
