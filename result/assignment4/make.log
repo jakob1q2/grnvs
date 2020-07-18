@@ -13,7 +13,4 @@ src/assignment4.c: In function 'readNet':
 src/assignment4.c:124:9: warning: implicit declaration of function 'checkMessage' [-Wimplicit-function-declaration]
          checkMessage(fd, "String in netstring format", src);
          ^~~~~~~~~~~~
-src/assignment4.c:128:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-     if (src[0] = '0')
-         ^~~
 cc build/arguments.o build/assignment4.o  -o asciiclient
