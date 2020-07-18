@@ -124,11 +124,12 @@ size_t readNet(char *dest, size_t bufSize, char *src, int fd)
         checkMessage(fd, "String in netstring format", src);
     }
 
-    //refuse leading 0 (also message cannot be 0 long)
+    /**refuse leading 0 (also message cannot be 0 long)
     if (src[0] = '0')
     {
         checkMessage(fd, "no leading 0", src);
     }
+    */
 
     //convert
     int pos = strchr(src, ':') - src;
@@ -244,8 +245,9 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     strcat(text, nick);
     sendMessage(sdC, text, buf);
     recvMessage(sdC, buf);
-    if (buf[0] != 'S' || buf[1] != ' ')
+    /**if (buf[0] != 'S' || buf[1] != ' ')
         checkMessage(sdC, "S <token>", buf);
+        */
     strcpy(token, buf + 2);
 
     //set up listen socket
@@ -319,8 +321,10 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     sendMessage(sdD, text, buf);
 
     recvMessage(sdD, buf);
+    /**
     if (buf[0] != 'T' || buf[1] != ' ')
         checkMessage(sdD, "T <dtoken>", buf);
+    */
     strcpy(token, buf + 2);
 
     close(sdL);
