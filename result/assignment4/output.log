@@ -18,7 +18,7 @@ Client stderr:
 
 Running test: Client validates server context for token
 Client stdout:
-Error: expected: "S <token>" but received: "C [::1]:47350 ssFdw]xU\#7RGv^W"
+Error: expected: "S <token>" but received: "C [::1]:48222 Q^{z^<KGj4Mt0%r+"
 Client stderr:
 
 
@@ -60,19 +60,17 @@ Client stderr:
 
 Running test: Client validates server token in data connection
 Client stdout:
-Error: expected: "String in netstring format" but received: "31:T [::1]:47410 di4Li?KJj:CozH|_"
+Error: expected: "String in netstring format" but received: ""
 Client stderr:
 
 
 Running test: Client validates server context for token in data connection
 Client stdout:
-
+Error: expected: "T [::1]:48244 >S6ueNJ-4926^,<i" but received: "S [::1]:48244 >S6ueNJ-4926^,<i"
 Client stderr:
-error in bind() on data socket: Address already in use
 
 
 Running test: Client validates message length
 Client stdout:
-
+Error: expected: "S 13" but received: "S 14"
 Client stderr:
-error in bind() on data socket: Address already in use

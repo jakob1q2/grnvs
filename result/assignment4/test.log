@@ -25,11 +25,11 @@ Client rejects leading zeros in Netstrings: Success
 Client validate Netstrings format: Success
 Client validates server context in data connection: Success
 Client validates server version in data connection: Success
-Client validates server token in data connection: Success
-Client validates server context for token in data connection: Failed
-Client validates message length: Failed
+Client validates server token in data connection: Failed
+Client validates server context for token in data connection: Success
+Client validates message length: Success
 
-Number of tests: 14, Tests passed: 10, Tests failed: 4, Tests skipped: 0
+Number of tests: 14, Tests passed: 11, Tests failed: 3, Tests skipped: 0
 This test was done with tester version 0.4.4
 
-0 minutes and 26 seconds
+0 minutes and 25 seconds
