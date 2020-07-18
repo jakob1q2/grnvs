@@ -179,8 +179,8 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     struct sockaddr_in6 control = {};
     int sdC;
 
-    struct sockaddr_in6 data = {};
-    int sdD;
+    struct sockaddr_in6 listen_sock = {};
+    int sdL;
 
     char buf[BUFSIZE] = {0};
     char token[BUFSIZE] = {0};
@@ -215,58 +215,63 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     strcat(text, nick);
     sendMessage(sdC, text, buf);
     recvMessage(sdC, buf);
-    //check start
+    //check token message
     strcpy(token, buf + 2);
 
-    //set up data socket
-    data.sin6_family = AF_INET6;
-    data.sin6_port = 33032; // auto assign port;
-    data.sin6_addr = in6addr_any;
+    //set up listen socket
+    listen_sock.sin6_family = AF_INET6;
+    listen_sock.sin6_port = htons(33172); // auto assign port;
+    listen_sock.sin6_addr = in6addr_any;
 
-    if (0 > (sdD = socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP)))
+    if (0 > (sdL = socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP)))
     {
         perror("error in socket() on data socket");
         exit(1);
     }
 
-    ret = bind(sdD, (struct sockaddr *)&data, sizeof(data));
+    ret = bind(sdL, (struct sockaddr *)&listen_sock, sizeof(listen_sock));
 
     if (0 > ret)
     {
         close(sdC);
-        close(sdD);
+        close(sdL);
         perror("error in bind() on data socket");
         exit(1);
     }
 
-    set_socket_options(sdD, 2);
+    set_socket_options(sdL, 2);
 
     //tell server where to connect
     strcpy(text, "C ");
-    sprintf(buf, "%d", ntohs(data.sin6_port));
+    sprintf(buf, "%d", ntohs(listen_sock.sin6_port));
     strcat(text, buf);
     sendMessage(sdC, text, buf);
 
-    ret = listen(sdD, 1);
+    ret = listen(sdL, 1);
     if (ret < 0)
     {
         close(sdC);
-        close(sdD);
+        close(sdL);
         perror("error in listen() on data socket");
         exit(1);
     }
 
-    ret = accept(sdD,
+    struct sockaddr_in6 data = {};
+    int sdD;
+    socklen_t data_len = sizeof(data);
+
+    sdD = accept(sdL,
                  (struct sockaddr *)&data,
-                 sizeof(struct sockaddr_in));
-    if (ret < 0)
+                 &data_len);
+    if (sdD < 0)
     {
         close(sdC);
-        close(sdD);
+        close(sdL);
         perror("error in accept() on data socket");
         exit(1);
     }
-
+    
+    set_socket_options(sdD, 2);
     recvMessage(sdD, buf);
     checkMessage(sdC, "T GRNVS V:1.0", buf);
 
@@ -276,7 +281,7 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
 
     recvMessage(sdD, buf);
     close(sdC);
-    close(sdD);
+    close(sdL);
 
     /*===========================================================================*/
 }
