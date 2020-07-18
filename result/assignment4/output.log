@@ -1,77 +1,40 @@
 Checking if client follows protocol
 Client stdout:
-
+Error: expected: "no leading 0" but received: "03:S GRNVS V:1.0,"
 Client stderr:
 
 
 Running test: Client validates server context
-Client stdout:
-Error: expected: "S GRNVS V:1.0" but received: "C GRNVS V:1.0"
-Client stderr:
 
 
 Running test: Client validates server version
-Client stdout:
-Error: expected: "S GRNVS V:1.0" but received: "S GRNVC V:1.0"
-Client stderr:
 
 
 Running test: Client validates server context for token
-Client stdout:
-
-Client stderr:
 
 
 Running test: Client supports fragmented Netstrings
-Client stdout:
-Error: expected: "String in netstring format" but received: "13:S"
-Client stderr:
 
 
 Running test: Client supports multiple Netstrings per TCP segment
-Client stdout:
-
-Client stderr:
 
 
 Running test: Client rejects leading zeros in Netstrings
-Client stdout:
-Error: expected: "String in netstring format" but received: ""
-Client stderr:
 
 
 Running test: Client validate Netstrings format
-Client stdout:
-Error: expected: "String in netstring format" but received: "13:S GRNVS V:1.0;"
-Client stderr:
 
 
 Running test: Client validates server context in data connection
-Client stdout:
-Error: expected: "T GRNVS V:1.0" but received: "S GRNVS V:1.0"
-Client stderr:
 
 
 Running test: Client validates server version in data connection
-Client stdout:
-Error: expected: "T GRNVS V:1.0" but received: "T GRNSV V:1.0"
-Client stderr:
 
 
 Running test: Client validates server token in data connection
-Client stdout:
-Error: expected: "String in netstring format" but received: ""
-Client stderr:
 
 
 Running test: Client validates server context for token in data connection
-Client stdout:
-Error: expected: "T [::1]:47130 +&x>U?lUi33\PxfV" but received: "S [::1]:47130 +&x>U?lUi33\PxfV"
-Client stderr:
 
 
 Running test: Client validates message length
-Client stdout:
-
-Client stderr:
-error in bind() on data socket: Address already in use
