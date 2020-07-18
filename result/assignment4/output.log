@@ -1,0 +1,40 @@
+Checking if client follows protocol
+Client stdout:
+20:E read error/timeout,
+Client stderr:
+
+
+Running test: Client validates server context
+
+
+Running test: Client validates server version
+
+
+Running test: Client validates server context for token
+
+
+Running test: Client supports fragmented Netstrings
+
+
+Running test: Client supports multiple Netstrings per TCP segment
+
+
+Running test: Client rejects leading zeros in Netstrings
+
+
+Running test: Client validate Netstrings format
+
+
+Running test: Client validates server context in data connection
+
+
+Running test: Client validates server version in data connection
+
+
+Running test: Client validates server token in data connection
+
+
+Running test: Client validates server context for token in data connection
+
+
+Running test: Client validates message length

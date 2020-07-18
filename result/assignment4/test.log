@@ -1,0 +1,22 @@
+"asciiclient" compiled and marked as executable: Success
+Log:
+	>  Client connected to server
+	Error: read error/timeout
+Client supports protocol: Failed
+Client validates server context: Precondition failed
+Client validates server version: Precondition failed
+Client validates server context for token: Precondition failed
+Client supports fragmented Netstrings: Precondition failed
+Client supports multiple Netstrings per TCP segment: Precondition failed
+Client rejects leading zeros in Netstrings: Precondition failed
+Client validate Netstrings format: Precondition failed
+Client validates server context in data connection: Precondition failed
+Client validates server version in data connection: Precondition failed
+Client validates server token in data connection: Precondition failed
+Client validates server context for token in data connection: Precondition failed
+Client validates message length: Precondition failed
+
+Number of tests: 14, Tests passed: 1, Tests failed: 1, Tests skipped: 12
+This test was done with tester version 0.4.4
+
+0 minutes and 10 seconds

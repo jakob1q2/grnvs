@@ -1,0 +1,16 @@
+rm -rf build
+rm -f asciiclient
+cc -Wall -Wextra -fdiagnostics-color=auto -g src/arguments.c -c -o build/arguments.o
+cc -Wall -Wextra -fdiagnostics-color=auto -g src/assignment4.c -c -o build/assignment4.o
+src/assignment4.c: In function 'writeNet':
+src/assignment4.c:89:14: warning: operation on 'len' may be undefined [-Wsequence-point]
+     if ((len = strlen(src)) < bufSize - countDigits(len)) {
+         ~~~~~^~~~~~~~~~~~~~
+src/assignment4.c: In function 'assignment4':
+src/assignment4.c:141:9: warning: unused variable 'sdD' [-Wunused-variable]
+     int sdD;
+         ^~~
+src/assignment4.c:140:25: warning: variable 'data' set but not used [-Wunused-but-set-variable]
+     struct sockaddr_in6 data;
+                         ^~~~
+cc build/arguments.o build/assignment4.o  -o asciiclient

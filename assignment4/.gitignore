@@ -1,0 +1,12 @@
+asciiclient
+build
+*.a
+*.o
+*.pdf
+*~
+.*.sw?
+.DS_Store
+.classpath
+.idea
+.metadata
+.project
