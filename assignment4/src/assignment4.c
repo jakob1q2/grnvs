@@ -140,10 +140,8 @@ char *readNet(char *dest, size_t bufSize, char *src, int fd, int curMessageLengt
     {
         return -1;
     }
-    printf("%s\n", src);
     strncpy(dest, src + digits + 1, strLength);
     dest[strLength] = 0;
-    printf("%s\n", dest);
     return src + digits + strLength + 2;
 }
 

@@ -1,46 +1,24 @@
 Checking if client follows protocol
 Client stdout:
-13:S GRNVS V:1.0,
-S GRNVS V:1.0
-30:S [::1]:55982 )-'~B2SP}8-=0rJn,
-S [::1]:55982 )-'~B2SP}8-=0rJn
-13:T GRNVS V:1.0,
-T GRNVS V:1.0
-30:T [::1]:55982 )-'~B2SP}8-=0rJn,
-T [::1]:55982 )-'~B2SP}8-=0rJn
-30:T [::1]:39181 uW!z@Cie0-'e=q(h,
-T [::1]:39181 uW!z@Cie0-'e=q(h
-4:S 13,
-S 13
-5:S ACK,
-S ACK
 
 Client stderr:
 
 
 Running test: Client validates server context
 Client stdout:
-13:C GRNVS V:1.0,
-C GRNVS V:1.0
 Error: expected: "S GRNVS V:1.0" but received: "C GRNVS V:1.0"
 Client stderr:
 
 
 Running test: Client validates server version
 Client stdout:
-13:S GRNVC V:1.0,
-S GRNVC V:1.0
 Error: expected: "S GRNVS V:1.0" but received: "S GRNVC V:1.0"
 Client stderr:
 
 
 Running test: Client validates server context for token
 Client stdout:
-13:S GRNVS V:1.0,
-S GRNVS V:1.0
-30:C [::1]:55990 "Z}n76iX18.S#?7t,
-C [::1]:55990 "Z}n76iX18.S#?7t
-Error: expected: "S <token>" but received: "C [::1]:55990 "Z}n76iX18.S#?7t"
+Error: expected: "S <token>" but received: "C [::1]:56318 u.I[e`}uU:amsP3]"
 Client stderr:
 
 
@@ -52,11 +30,7 @@ Client stderr:
 
 Running test: Client supports multiple Netstrings per TCP segment
 Client stdout:
-13:S GRNVS V:1.0,30:S [::1]:55994 AW:?B/e6wfg_H0,{,
-S GRNVS V:1.0
-30:S [::1]:55994 AW:?B/e6wfg_H0,{,
-S [::1]:55994 AW:?B/e6wfg_H0,{
-Error: expected: "S GRNVS V:1.0" but received: "S GRNVS V:1.0S [::1]:55994 AW:?B/e6wfg_H0,{"
+Error: expected: "S GRNVS V:1.0" but received: "S GRNVS V:1.0S [::1]:56328 IIXOCwnrfEyA-gM'"
 Client stderr:
 
 
@@ -74,67 +48,29 @@ Client stderr:
 
 Running test: Client validates server context in data connection
 Client stdout:
-13:S GRNVS V:1.0,
-S GRNVS V:1.0
-30:S [::1]:56000 ,_30S#n#f6/s4yzz,
-S [::1]:56000 ,_30S#n#f6/s4yzz
-13:S GRNVS V:1.0,
-S GRNVS V:1.0
 Error: expected: "T GRNVS V:1.0" but received: "S GRNVS V:1.0"
 Client stderr:
 
 
 Running test: Client validates server version in data connection
 Client stdout:
-13:S GRNVS V:1.0,
-S GRNVS V:1.0
-30:S [::1]:56004 }}&|&}+waIX?{X2t,
-S [::1]:56004 }}&|&}+waIX?{X2t
-13:T GRNSV V:1.0,
-T GRNSV V:1.0
 Error: expected: "T GRNVS V:1.0" but received: "T GRNSV V:1.0"
 Client stderr:
 
 
 Running test: Client validates server token in data connection
 Client stdout:
-13:S GRNVS V:1.0,
-S GRNVS V:1.0
-30:S [::1]:56008 I=oZIQ>23dd<ca[\,
-S [::1]:56008 I=oZIQ>23dd<ca[\
-13:T GRNVS V:1.0,
-T GRNVS V:1.0
-Error: expected: "String in netstring format" but received: "31:T [::1]:56008 I=oZIQ>23dd<ca[\"
+Error: expected: "String in netstring format" but received: "31:T [::1]:56342 F\y_@|[X"6Snq|5*"
 Client stderr:
 
 
 Running test: Client validates server context for token in data connection
 Client stdout:
-13:S GRNVS V:1.0,
-S GRNVS V:1.0
-30:S [::1]:56012 ?]EG6t\z]YNO\bC6,
-S [::1]:56012 ?]EG6t\z]YNO\bC6
-13:T GRNVS V:1.0,
-T GRNVS V:1.0
-30:S [::1]:56012 ?]EG6t\z]YNO\bC6,
-S [::1]:56012 ?]EG6t\z]YNO\bC6
-Error: expected: "T [::1]:56012 ?]EG6t\z]YNO\bC6" but received: "S [::1]:56012 ?]EG6t\z]YNO\bC6"
+Error: expected: "T [::1]:56346 XqD`3f#/;BG3?GbF" but received: "S [::1]:56346 XqD`3f#/;BG3?GbF"
 Client stderr:
 
 
 Running test: Client validates message length
 Client stdout:
-13:S GRNVS V:1.0,
-S GRNVS V:1.0
-30:S [::1]:56016 pi};hD-F{tucQ}?3,
-S [::1]:56016 pi};hD-F{tucQ}?3
-13:T GRNVS V:1.0,
-T GRNVS V:1.0
-30:T [::1]:56016 pi};hD-F{tucQ}?3,
-T [::1]:56016 pi};hD-F{tucQ}?3
-30:T [::1]:34037 >h1d37*ED03FrcK8,
-T [::1]:34037 >h1d37*ED03FrcK8
-4:S 14,
-S 14
 Error: expected: "S 13" but received: "S 14"
 Client stderr:
