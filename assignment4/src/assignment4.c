@@ -118,7 +118,7 @@ size_t writeNet(char *dest, size_t bufSize, char *src, int fd)
  */
 char *readNet(char *dest, size_t bufSize, char *src, int fd, int curMessageLength)
 {
-    //check netstring format
+    //check initial netstring format
     if (strchr(src, ':') == NULL || (strchr(src, ',') != NULL && strchr(src, ':') > strchr(src, ',')))
     {
         checkMessage(fd, "String in netstring format", src);
@@ -146,6 +146,12 @@ char *readNet(char *dest, size_t bufSize, char *src, int fd, int curMessageLengt
             break;
         }
         strcat(src, buf);
+    }
+
+    //check netstring format again on full netstring
+    if (strchr(src, ':') == NULL || strchr(src, ',') == NULL || strchr(src, ':') > strchr(src, ','))
+    {
+        checkMessage(fd, "String in netstring format", src);
     }
 
     //convert
