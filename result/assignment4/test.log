@@ -16,20 +16,20 @@ Log:
 	k: Client echoed data token for message
 	m: Server acknowledged data token
 Client supports protocol: Success
-Client validates server context: Success
-Client validates server version: Success
-Client validates server context for token: Success
+Client validates server context: Failed
+Client validates server version: Failed
+Client validates server context for token: Failed
 Client supports fragmented Netstrings: Failed
 Client supports multiple Netstrings per TCP segment: Failed
 Client rejects leading zeros in Netstrings: Success
 Client validate Netstrings format: Success
-Client validates server context in data connection: Success
-Client validates server version in data connection: Success
+Client validates server context in data connection: Failed
+Client validates server version in data connection: Failed
 Client validates server token in data connection: Failed
-Client validates server context for token in data connection: Success
-Client validates message length: Success
+Client validates server context for token in data connection: Failed
+Client validates message length: Failed
 
-Number of tests: 14, Tests passed: 11, Tests failed: 3, Tests skipped: 0
+Number of tests: 14, Tests passed: 4, Tests failed: 10, Tests skipped: 0
 This test was done with tester version 0.4.4
 
-0 minutes and 25 seconds
+0 minutes and 20 seconds
