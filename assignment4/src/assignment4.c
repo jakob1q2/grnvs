@@ -119,7 +119,7 @@ size_t writeNet(char *dest, size_t bufSize, char *src, int fd)
 char *readNet(char *dest, size_t bufSize, char *src, int fd, int curMessageLength)
 {
     //check netstring format
-    if (strchr(src, ':') == NULL || strchr(src, ',') == NULL || strchr(src, ':') > strchr(src, ','))
+    if (strchr(src, ':') == NULL || (strchr(src, ',') != NULL && strchr(src, ':') > strchr(src, ',')))
     {
         checkMessage(fd, "String in netstring format", src);
     }
@@ -130,12 +130,26 @@ char *readNet(char *dest, size_t bufSize, char *src, int fd, int curMessageLengt
         checkMessage(fd, "no leading 0", src);
     }
 
-    //convert
+    //get netstring length
     int digits = strchr(src, ':') - src;
     char num[digits + 1];
     memset(num, 0, digits + 1);
     strncpy(num, src, digits);
     size_t strLength = atol(num);
+
+    //handle fragmented netstring
+    char buf[BUFSIZE] = {0};
+    strcpy(buf, src);
+    while (strLength > strlen(buf))
+    {
+        if (read(fd, buf, strLength - strlen(buf)) < 0)
+        {
+            break;
+        }
+        strcat(src, buf);
+    }
+
+    //convert
     if (strLength + curMessageLength > bufSize) //catch buffer overflow on full message
     {
         return -1;
