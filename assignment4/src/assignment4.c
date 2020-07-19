@@ -174,6 +174,7 @@ int sendMessage(int fd, char *m, char *buf)
 
 /**
  * receives netstring message m from socket descriptor and stores message in respDst
+ * returns number of netstrings read
  */
 
 int recvMessage(int fd, char *respDst)
@@ -189,21 +190,18 @@ int recvMessage(int fd, char *respDst)
     {
         return -1;
     }
-    printf("next: %s\n", next);
-
-    while (*next != 0) //more netstrings available
+    int nets = 0;
+    while (*next != 0) //another netstring available
     {
         next = readNet(buf, BUFSIZE, next, fd, message_length); //iterate over buf and extract netstrings
-        printf("next: %s\n", next);
-        message_length += strlen(buf);
-        strcat(respDst, buf);
-        printf("respDst now: %s\n", respDst);
+        sprintf(respDst + message_length, "%s", buf);
+        message_length += strlen(buf) + 1;
+        sprintf(respDst + message_length, "%s", buf);
+        nets++;
         strcpy(buf, next); //move to beginning of buf
-        printf("rest buf now: %s\n", buf);
         next = buf;
     }
-
-    return 0;
+    return nets;
 }
 
 int checkMessage(int fd, char *expected, char *actual)
@@ -228,6 +226,18 @@ int checkMessage(int fd, char *expected, char *actual)
 
     //all good
     return 0;
+}
+
+char *updateNets(int num, char *cur, char *buf)
+{
+    if (num == 0)
+    {
+        return buf;
+    }
+    else
+    {
+        return cur += strlen(cur) + 1;
+    }
 }
 
 /**
@@ -256,9 +266,12 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     int sdL; //listening fd
     int sdD; //data fd
 
-    char buf[BUFSIZE] = {0};
+    char recvbuf[BUFSIZE] = {0};
+    char sendbuf[BUFSIZE] = {0};
     char token[BUFSIZE] = {0};
     char text[BUFSIZE] = {0};
+    int netStringsInBuf = 0;
+    char *startOfNetstring = recvbuf;
 
     //set up control socket
     control.sin6_family = AF_INET6;
@@ -281,17 +294,22 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     }
 
     //start protocol on control socket
-    sendMessage(sdC, "C GRNVS V:1.0", buf);
-    recvMessage(sdC, buf);
-    checkMessage(sdC, "S GRNVS V:1.0", buf);
+    sendMessage(sdC, "C GRNVS V:1.0", sendbuf);
+    netStringsInBuf = recvMessage(sdC, recvbuf);
+    checkMessage(sdC, "S GRNVS V:1.0", startOfNetstring);
+    netStringsInBuf--;
+    startOfNetstring = updateNets(netStringsInBuf, startOfNetstring, recvbuf);
 
     strcpy(text, "C ");
     strcat(text, nick);
-    sendMessage(sdC, text, buf);
-    recvMessage(sdC, buf);
-    if (buf[0] != 'S' || buf[1] != ' ')
-        checkMessage(sdC, "S <token>", buf);
-    strcpy(token, buf + 2);
+    sendMessage(sdC, text, sendbuf);
+    if (netStringsInBuf == 0)
+        netStringsInBuf = recvMessage(sdC, recvbuf);
+    if (startOfNetstring[0] != 'S' || startOfNetstring[1] != ' ')
+        checkMessage(sdC, "S <token>", startOfNetstring);
+    strcpy(token, startOfNetstring + 2);
+    netStringsInBuf--;
+    startOfNetstring = updateNets(netStringsInBuf, startOfNetstring, recvbuf);
 
     //set up data socket
     data.sin6_family = AF_INET6;
@@ -332,9 +350,9 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
 
     //tell server where to connect
     strcpy(text, "C ");
-    sprintf(buf, "%d", ntohs(data.sin6_port));
-    strcat(text, buf);
-    sendMessage(sdC, text, buf);
+    sprintf(sendbuf, "%d", ntohs(data.sin6_port));
+    strcat(text, sendbuf);
+    sendMessage(sdC, text, sendbuf);
     sdD = accept(sdL,
                  (struct sockaddr *)&data,
                  &data_len);
@@ -348,43 +366,57 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
 
     //communicate on data socket
     set_socket_options(sdD, 2);
-    recvMessage(sdD, buf);
-    checkMessage(sdD, "T GRNVS V:1.0", buf);
+    startOfNetstring = recvbuf;
+    netStringsInBuf = recvMessage(sdD, recvbuf);
+    checkMessage(sdD, "T GRNVS V:1.0", startOfNetstring);
+    netStringsInBuf--;
+    startOfNetstring = updateNets(netStringsInBuf, startOfNetstring, recvbuf);
 
     strcpy(text, "D ");
     strcat(text, nick);
-    sendMessage(sdD, text, buf);
+    sendMessage(sdD, text, sendbuf);
 
-    recvMessage(sdD, buf);
+    if (netStringsInBuf == 0)
+        netStringsInBuf = recvMessage(sdD, recvbuf);
     strcpy(text, "T ");
     strcat(text, token);
-    checkMessage(sdD, text, buf);
+    checkMessage(sdD, text, startOfNetstring);
+    netStringsInBuf--;
+    startOfNetstring = updateNets(netStringsInBuf, startOfNetstring, recvbuf);
 
     strcpy(text, "D ");
     strcat(text, msg);
-    sendMessage(sdD, text, buf);
+    sendMessage(sdD, text, sendbuf);
 
-    recvMessage(sdD, buf);
-    if (buf[0] != 'T' || buf[1] != ' ')
-        checkMessage(sdD, "T <dtoken>", buf);
-    strcpy(token, buf + 2);
-
+    if (netStringsInBuf == 0)
+        netStringsInBuf = recvMessage(sdD, recvbuf);
+    if (startOfNetstring[0] != 'T' || startOfNetstring[1] != ' ')
+        checkMessage(sdD, "T <dtoken>", startOfNetstring);
+    strcpy(token, recvbuf + 2);
+    netStringsInBuf--;
+    startOfNetstring = updateNets(netStringsInBuf, startOfNetstring, recvbuf);
     close(sdL);
     close(sdD);
 
     //finish up on control socket
-    recvMessage(sdC, buf);
+    if (netStringsInBuf == 0)
+        netStringsInBuf = recvMessage(sdC, recvbuf);
     strcpy(text, "S ");
     sprintf(text + 2, "%ld", strlen(msg));
-    checkMessage(sdC, text, buf);
+    checkMessage(sdC, text, startOfNetstring);
+    netStringsInBuf--;
+    startOfNetstring = updateNets(netStringsInBuf, startOfNetstring, recvbuf);
 
     strcpy(text, "C ");
     strcat(text, token);
-    sendMessage(sdC, text, buf);
+    sendMessage(sdC, text, sendbuf);
 
-    recvMessage(sdC, buf);
+    if (netStringsInBuf == 0)
+        netStringsInBuf = recvMessage(sdC, recvbuf);
     strcpy(text, "S ACK");
-    checkMessage(sdC, text, buf);
+    checkMessage(sdC, text, startOfNetstring);
+    netStringsInBuf--;
+    startOfNetstring = updateNets(netStringsInBuf, startOfNetstring, recvbuf);
 
     close(sdC);
     /*===========================================================================*/

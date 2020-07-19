@@ -1,234 +1,76 @@
 Checking if client follows protocol
 Client stdout:
-next: 13:S GRNVS V:1.0,
-next: 
-respDst now: S GRNVS V:1.0
-rest buf now: 
-next: 30:S [::1]:58260 <12g~mc8"FC]=PGS,
-next: 
-respDst now: S [::1]:58260 <12g~mc8"FC]=PGS
-rest buf now: 
-next: 13:T GRNVS V:1.0,
-next: 
-respDst now: T GRNVS V:1.0
-rest buf now: 
-next: 30:T [::1]:58260 <12g~mc8"FC]=PGS,
-next: 
-respDst now: T [::1]:58260 <12g~mc8"FC]=PGS
-rest buf now: 
-next: 30:T [::1]:56375 QL?1Tqa[0WP\f0Yq,
-next: 
-respDst now: T [::1]:56375 QL?1Tqa[0WP\f0Yq
-rest buf now: 
-next: 4:S 13,
-next: 
-respDst now: S 13
-rest buf now: 
-next: 5:S ACK,
-next: 
-respDst now: S ACK
-rest buf now: 
 
 Client stderr:
 
 
 Running test: Client validates server context
 Client stdout:
-next: 13:C GRNVS V:1.0,
-next: 
-respDst now: C GRNVS V:1.0
-rest buf now: 
 Error: expected: "S GRNVS V:1.0" but received: "C GRNVS V:1.0"
 Client stderr:
 
 
 Running test: Client validates server version
 Client stdout:
-next: 13:S GRNVC V:1.0,
-next: 
-respDst now: S GRNVC V:1.0
-rest buf now: 
 Error: expected: "S GRNVS V:1.0" but received: "S GRNVC V:1.0"
 Client stderr:
 
 
 Running test: Client validates server context for token
 Client stdout:
-next: 13:S GRNVS V:1.0,
-next: 
-respDst now: S GRNVS V:1.0
-rest buf now: 
-next: 30:C [::1]:58274 =o7Lm^HxsU253a0%,
-next: 
-respDst now: C [::1]:58274 =o7Lm^HxsU253a0%
-rest buf now: 
-Error: expected: "S <token>" but received: "C [::1]:58274 =o7Lm^HxsU253a0%"
+Error: expected: "S <token>" but received: "C [::1]:60122 vq6(MvW6j[T>Bpx4"
 Client stderr:
 
 
 Running test: Client supports fragmented Netstrings
 Client stdout:
-next: 13:S
-next: 
-respDst now: S GRNVS V:1.0
-rest buf now: 
-next: 30:S [::1]:58278 K%5vx^C0za.-/zSo,
-next: 
-respDst now: S [::1]:58278 K%5vx^C0za.-/zSo
-rest buf now: 
-next: 13:T GRNVS V:1.0,
-next: 
-respDst now: T GRNVS V:1.0
-rest buf now: 
-next: 30:T [::1]:58278 K%5vx^C0za.-/zSo,
-next: 
-respDst now: T [::1]:58278 K%5vx^C0za.-/zSo
-rest buf now: 
-next: 30:T [::1]:56091 OA:STP!)zKa_*.4J,
-next: 
-respDst now: T [::1]:56091 OA:STP!)zKa_*.4J
-rest buf now: 
-next: 4:S 13,
-next: 
-respDst now: S 13
-rest buf now: 
-next: 5:S ACK,
-next: 
-respDst now: S ACK
-rest buf now: 
 
 Client stderr:
 
 
 Running test: Client supports multiple Netstrings per TCP segment
 Client stdout:
-next: 13:S GRNVS V:1.0,30:S [::1]:58290 ,$Ujk:A.0`;btk;l,
-next: 30:S [::1]:58290 ,$Ujk:A.0`;btk;l,
-respDst now: S GRNVS V:1.0
-rest buf now: 30:S [::1]:58290 ,$Ujk:A.0`;btk;l,
-next: 
-respDst now: S GRNVS V:1.0S [::1]:58290 ,$Ujk:A.0`;btk;l
-rest buf now: 
-Error: expected: "S GRNVS V:1.0" but received: "S GRNVS V:1.0S [::1]:58290 ,$Ujk:A.0`;btk;l"
+
 Client stderr:
 
 
 Running test: Client rejects leading zeros in Netstrings
 Client stdout:
-next: 013:S GRNVS V:1.0,
 Error: expected: "no leading 0" but received: "013:S GRNVS V:1.0,"
 Client stderr:
 
 
 Running test: Client validate Netstrings format
 Client stdout:
-next: 13:S GRNVS V:1.0;
 Error: expected: "String in netstring format" but received: "13:S GRNVS V:1.0;"
 Client stderr:
 
 
 Running test: Client validates server context in data connection
 Client stdout:
-next: 13:S GRNVS V:1.0,
-next: 
-respDst now: S GRNVS V:1.0
-rest buf now: 
-next: 30:S [::1]:58304 ce@\45_<*u;W0u~Y,
-next: 
-respDst now: S [::1]:58304 ce@\45_<*u;W0u~Y
-rest buf now: 
-next: 13:S GRNVS V:1.0,
-next: 
-respDst now: S GRNVS V:1.0
-rest buf now: 
 Error: expected: "T GRNVS V:1.0" but received: "S GRNVS V:1.0"
 Client stderr:
 
 
 Running test: Client validates server version in data connection
 Client stdout:
-next: 13:S GRNVS V:1.0,
-next: 
-respDst now: S GRNVS V:1.0
-rest buf now: 
-next: 30:S [::1]:58312 zMs,Y!<5V4}5c<_F,
-next: 
-respDst now: S [::1]:58312 zMs,Y!<5V4}5c<_F
-rest buf now: 
-next: 13:T GRNSV V:1.0,
-next: 
-respDst now: T GRNSV V:1.0
-rest buf now: 
 Error: expected: "T GRNVS V:1.0" but received: "T GRNSV V:1.0"
 Client stderr:
 
 
 Running test: Client validates server token in data connection
 Client stdout:
-next: 13:S GRNVS V:1.0,
-next: 
-respDst now: S GRNVS V:1.0
-rest buf now: 
-next: 30:S [::1]:58320 8q|&aF9PE$;0%?tH,
-next: 
-respDst now: S [::1]:58320 8q|&aF9PE$;0%?tH
-rest buf now: 
-next: 13:T GRNVS V:1.0,
-next: 
-respDst now: T GRNVS V:1.0
-rest buf now: 
-next: 31:T [::1]:58320 8q|&aF9PE$;0%?tH
-Error: expected: "String in netstring format" but received: "31:T [::1]:58320 8q|&aF9PE$;0%?tH"
+Error: expected: "String in netstring format" but received: "31:T [::1]:60144 bbO#7P-(_*G1LD[3"
 Client stderr:
 
 
 Running test: Client validates server context for token in data connection
 Client stdout:
-next: 13:S GRNVS V:1.0,
-next: 
-respDst now: S GRNVS V:1.0
-rest buf now: 
-next: 30:S [::1]:58328 B5;}}@ops-}+3]_-,
-next: 
-respDst now: S [::1]:58328 B5;}}@ops-}+3]_-
-rest buf now: 
-next: 13:T GRNVS V:1.0,
-next: 
-respDst now: T GRNVS V:1.0
-rest buf now: 
-next: 30:S [::1]:58328 B5;}}@ops-}+3]_-,
-next: 
-respDst now: S [::1]:58328 B5;}}@ops-}+3]_-
-rest buf now: 
-Error: expected: "T [::1]:58328 B5;}}@ops-}+3]_-" but received: "S [::1]:58328 B5;}}@ops-}+3]_-"
+Error: expected: "T [::1]:60148 +npYBMJ(zYY^W@0f" but received: "S [::1]:60148 +npYBMJ(zYY^W@0f"
 Client stderr:
 
 
 Running test: Client validates message length
 Client stdout:
-next: 13:S GRNVS V:1.0,
-next: 
-respDst now: S GRNVS V:1.0
-rest buf now: 
-next: 30:S [::1]:58336 }:XIIq@+8:h'$EF[,
-next: 
-respDst now: S [::1]:58336 }:XIIq@+8:h'$EF[
-rest buf now: 
-next: 13:T GRNVS V:1.0,
-next: 
-respDst now: T GRNVS V:1.0
-rest buf now: 
-next: 30:T [::1]:58336 }:XIIq@+8:h'$EF[,
-next: 
-respDst now: T [::1]:58336 }:XIIq@+8:h'$EF[
-rest buf now: 
-next: 30:T [::1]:60005 6(Rh'(61'>`KYstd,
-next: 
-respDst now: T [::1]:60005 6(Rh'(61'>`KYstd
-rest buf now: 
-next: 4:S 14,
-next: 
-respDst now: S 14
-rest buf now: 
 Error: expected: "S 13" but received: "S 14"
 Client stderr:
