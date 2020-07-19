@@ -116,7 +116,7 @@ size_t writeNet(char *dest, size_t bufSize, char *src, int fd)
  * extracts pure String from Netstring src into dest and returns length of pure
  * String
  */
-size_t readNet(char *dest, size_t bufSize, char *src, int fd)
+char *readNet(char *dest, size_t bufSize, char *src, int fd, int curMessageLength)
 {
     //check netstring format
     if (strchr(src, ':') == NULL || strchr(src, ',') == NULL || strchr(src, ':') > strchr(src, ','))
@@ -131,18 +131,20 @@ size_t readNet(char *dest, size_t bufSize, char *src, int fd)
     }
 
     //convert
-    int pos = strchr(src, ':') - src;
-    char num[pos + 1];
-    memset(num, 0, pos + 1);
-    strncpy(num, src, pos);
+    int digits = strchr(src, ':') - src;
+    char num[digits + 1];
+    memset(num, 0, digits + 1);
+    strncpy(num, src, digits);
     size_t strLength = atol(num);
-    if (strLength > bufSize)
+    if (strLength + curMessageLength > bufSize) //catch buffer overflow on full message
     {
         return -1;
     }
-    strncpy(dest, src + pos + 1, strLength);
+    printf("%s\n", src);
+    strncpy(dest, src + digits + 1, strLength);
     dest[strLength] = 0;
-    return strLength;
+    printf("%s\n", dest);
+    return src + digits + strLength + 2;
 }
 
 /**
@@ -160,8 +162,26 @@ int sendMessage(int fd, char *m, char *buf)
 int recvMessage(int fd, char *respDst)
 {
     memset(respDst, 0, BUFSIZE);
-    read(fd, respDst, BUFSIZE);
-    return readNet(respDst, BUFSIZE, respDst, fd);
+    int message_length = 0;
+    char buf[BUFSIZE] = {0};
+    char *next = buf;
+
+    int ret = read(fd, buf, BUFSIZE);
+
+    if (ret < 0)
+    {
+        return -1;
+    }
+    while (*next != 0) //more netstrings available
+    {
+        next = readNet(buf, BUFSIZE, next, fd, message_length); //iterate over buf and extract netstrings
+        message_length += strlen(buf);
+        strcat(respDst, buf);
+        strcpy(buf, next); //move to beginning of buf
+        next = buf;
+    }
+
+    return 0;
 }
 
 int checkMessage(int fd, char *expected, char *actual)
@@ -302,6 +322,7 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
         exit(1);
     }
 
+    //communicate on data socket
     set_socket_options(sdD, 2);
     recvMessage(sdD, buf);
     checkMessage(sdD, "T GRNVS V:1.0", buf);
@@ -327,6 +348,7 @@ void assignment4(const char *ipaddr, in_port_t port, char *nick, char *msg)
     close(sdL);
     close(sdD);
 
+    //finish up on control socket
     recvMessage(sdC, buf);
     strcpy(text, "S ");
     sprintf(text + 2, "%ld", strlen(msg));
