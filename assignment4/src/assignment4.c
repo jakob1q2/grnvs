@@ -139,9 +139,8 @@ char *readNet(char *dest, size_t bufSize, char *src, int fd, int curMessageLengt
 
     //handle fragmented netstring
     char buf[BUFSIZE] = {0};
-    strcpy(buf, src);
     printf("start read %s\n", buf);
-    while (strLength > strlen(buf)) //read more until netstring completed or timeout
+    while (strLength > strlen(src)) //read more until netstring completed or timeout
     {
         if (read(fd, buf, strLength - strlen(buf)) < 0)
         {
