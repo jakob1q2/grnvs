@@ -18,19 +18,19 @@ Client stderr:
 
 Running test: Client validates server context for token
 Client stdout:
-Error: expected: "S <token>" but received: "C [::1]:56318 u.I[e`}uU:amsP3]"
+Error: expected: "S <token>" but received: "C [::1]:57016 *jjWyQ7v(;(&0B4g"
 Client stderr:
 
 
 Running test: Client supports fragmented Netstrings
 Client stdout:
-Error: expected: "String in netstring format" but received: "13:S"
+
 Client stderr:
 
 
 Running test: Client supports multiple Netstrings per TCP segment
 Client stdout:
-Error: expected: "S GRNVS V:1.0" but received: "S GRNVS V:1.0S [::1]:56328 IIXOCwnrfEyA-gM'"
+Error: expected: "S GRNVS V:1.0" but received: "S GRNVS V:1.0S [::1]:57020 !?.]:7EOI$,:;^C7"
 Client stderr:
 
 
@@ -42,7 +42,7 @@ Client stderr:
 
 Running test: Client validate Netstrings format
 Client stdout:
-Error: expected: "String in netstring format" but received: "13:S GRNVS V:1.0;"
+Error: expected: "S <token>" but received: ""
 Client stderr:
 
 
@@ -60,13 +60,13 @@ Client stderr:
 
 Running test: Client validates server token in data connection
 Client stdout:
-Error: expected: "String in netstring format" but received: "31:T [::1]:56342 F\y_@|[X"6Snq|5*"
+Error: expected: "T <dtoken>" but received: ""
 Client stderr:
 
 
 Running test: Client validates server context for token in data connection
 Client stdout:
-Error: expected: "T [::1]:56346 XqD`3f#/;BG3?GbF" but received: "S [::1]:56346 XqD`3f#/;BG3?GbF"
+Error: expected: "T [::1]:57038 zcN,]"A!T?Lpo]C6" but received: "S [::1]:57038 zcN,]"A!T?Lpo]C6"
 Client stderr:
 
 
