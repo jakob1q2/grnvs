@@ -139,7 +139,6 @@ char *readNet(char *dest, size_t bufSize, char *src, int fd, int curMessageLengt
 
     //handle fragmented netstring
     char buf[BUFSIZE] = {0};
-    printf("start read %s\n", buf);
     while (strLength > strlen(src)) //read more until netstring completed or timeout
     {
         if (read(fd, buf, strLength - strlen(buf)) < 0)
@@ -147,10 +146,7 @@ char *readNet(char *dest, size_t bufSize, char *src, int fd, int curMessageLengt
             break;
         }
         strcat(src, buf);
-        printf("added %s\n", buf);
     }
-
-    printf("done read %s\n", src);
 
     //convert
     if (strLength + curMessageLength > bufSize) //catch buffer overflow on full message
