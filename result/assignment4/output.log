@@ -1,77 +1,36 @@
 Checking if client follows protocol
 Client stdout:
-start read 
-done read 13:S GRNVS V:1.0,
-start read 
-done read 30:S [::1]:57564 v.W_U*-2H1Xu};G6,
-start read 
-done read 13:T GRNVS V:1.0,
-start read 
-done read 30:T [::1]:57564 v.W_U*-2H1Xu};G6,
-start read 
-done read 30:T [::1]:59741 BH.sk|fBf_J]Ze\B,
-start read 
-done read 4:S 13,
-start read 
-done read 5:S ACK,
 
 Client stderr:
 
 
 Running test: Client validates server context
 Client stdout:
-start read 
-done read 13:C GRNVS V:1.0,
 Error: expected: "S GRNVS V:1.0" but received: "C GRNVS V:1.0"
 Client stderr:
 
 
 Running test: Client validates server version
 Client stdout:
-start read 
-done read 13:S GRNVC V:1.0,
 Error: expected: "S GRNVS V:1.0" but received: "S GRNVC V:1.0"
 Client stderr:
 
 
 Running test: Client validates server context for token
 Client stdout:
-start read 
-done read 13:S GRNVS V:1.0,
-start read 
-done read 30:C [::1]:57572 QDN#dz=&*'h*lCSF,
-Error: expected: "S <token>" but received: "C [::1]:57572 QDN#dz=&*'h*lCSF"
+Error: expected: "S <token>" but received: "C [::1]:57678 ];PC#`\6[>WZInQh"
 Client stderr:
 
 
 Running test: Client supports fragmented Netstrings
 Client stdout:
-start read 
-added  GRNVS V:1.0,
-done read 13:S GRNVS V:1.0,
-start read 
-done read 30:S [::1]:57574 :$$C\ZaVN1|J0^YB,
-start read 
-done read 13:T GRNVS V:1.0,
-start read 
-done read 30:T [::1]:57574 :$$C\ZaVN1|J0^YB,
-start read 
-done read 30:T [::1]:44941 x"\qMCi[%@H0nXQy,
-start read 
-done read 4:S 13,
-start read 
-done read 5:S ACK,
 
 Client stderr:
 
 
 Running test: Client supports multiple Netstrings per TCP segment
 Client stdout:
-start read 
-done read 13:S GRNVS V:1.0,30:S [::1]:57578 d{3xk\k(@?Q&u{\L,
-start read 
-done read 30:S [::1]:57578 d{3xk\k(@?Q&u{\L,
-Error: expected: "S GRNVS V:1.0" but received: "S GRNVS V:1.0S [::1]:57578 d{3xk\k(@?Q&u{\L"
+Error: expected: "S GRNVS V:1.0" but received: "S GRNVS V:1.0S [::1]:57690 v>tx[z^!{s<bh%zN"
 Client stderr:
 
 
@@ -83,77 +42,35 @@ Client stderr:
 
 Running test: Client validate Netstrings format
 Client stdout:
-start read 
-done read 13:S GRNVS V:1.0;
 Error: expected: "S <token>" but received: ""
 Client stderr:
 
 
 Running test: Client validates server context in data connection
 Client stdout:
-start read 
-done read 13:S GRNVS V:1.0,
-start read 
-done read 30:S [::1]:57584 I>cv:^jrWLiepgbe,
-start read 
-done read 13:S GRNVS V:1.0,
 Error: expected: "T GRNVS V:1.0" but received: "S GRNVS V:1.0"
 Client stderr:
 
 
 Running test: Client validates server version in data connection
 Client stdout:
-start read 
-done read 13:S GRNVS V:1.0,
-start read 
-done read 30:S [::1]:57588 o#+iV,}&p=#V'?{y,
-start read 
-done read 13:T GRNSV V:1.0,
 Error: expected: "T GRNVS V:1.0" but received: "T GRNSV V:1.0"
 Client stderr:
 
 
 Running test: Client validates server token in data connection
 Client stdout:
-start read 
-done read 13:S GRNVS V:1.0,
-start read 
-done read 30:S [::1]:57592 OMX94heG#Bro|D[m,
-start read 
-done read 13:T GRNVS V:1.0,
-start read 
-done read 31:T [::1]:57592 OMX94heG#Bro|D[m
 Error: expected: "T <dtoken>" but received: ""
 Client stderr:
 
 
 Running test: Client validates server context for token in data connection
 Client stdout:
-start read 
-done read 13:S GRNVS V:1.0,
-start read 
-done read 30:S [::1]:57596 {sL2rV_J7:gNNlK@,
-start read 
-done read 13:T GRNVS V:1.0,
-start read 
-done read 30:S [::1]:57596 {sL2rV_J7:gNNlK@,
-Error: expected: "T [::1]:57596 {sL2rV_J7:gNNlK@" but received: "S [::1]:57596 {sL2rV_J7:gNNlK@"
+Error: expected: "T [::1]:57720 ;zM(K}h`$S_i@BwU" but received: "S [::1]:57720 ;zM(K}h`$S_i@BwU"
 Client stderr:
 
 
 Running test: Client validates message length
 Client stdout:
-start read 
-done read 13:S GRNVS V:1.0,
-start read 
-done read 30:S [::1]:57604 7#&gU-&,n{[%Y#JI,
-start read 
-done read 13:T GRNVS V:1.0,
-start read 
-done read 30:T [::1]:57604 7#&gU-&,n{[%Y#JI,
-start read 
-done read 30:T [::1]:60291 ,BK#`'M=(TDtA{>p,
-start read 
-done read 4:S 14,
 Error: expected: "S 13" but received: "S 14"
 Client stderr:
