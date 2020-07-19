@@ -189,12 +189,17 @@ int recvMessage(int fd, char *respDst)
     {
         return -1;
     }
+    printf("next: %s\n", next);
+
     while (*next != 0) //more netstrings available
     {
         next = readNet(buf, BUFSIZE, next, fd, message_length); //iterate over buf and extract netstrings
+        printf("next: %s\n", next);
         message_length += strlen(buf);
         strcat(respDst, buf);
+        printf("respDst now: %s\n", respDst);
         strcpy(buf, next); //move to beginning of buf
+        printf("rest buf now: %s\n", buf);
         next = buf;
     }
 
@@ -220,6 +225,8 @@ int checkMessage(int fd, char *expected, char *actual)
         printf("Error: %s", errmsg + 2);
         exit(-1);
     }
+
+    //all good
     return 0;
 }
 
